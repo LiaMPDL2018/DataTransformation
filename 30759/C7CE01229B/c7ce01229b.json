@@ -1,0 +1,154 @@
+{
+    "localtags" : [ ],
+    "metadata" : {
+        "title" : "Syntheses, structural diversity, magnetic properties and dye absorption of various Co(ii) MOFs based on a semi-flexible 4-(3,5-dicarboxylatobenzyloxy)benzoic acid",
+        "creator" : [{
+            "person" : {
+                "givenName" : "Xiang-min",
+                "familyName" : "Meng",
+                "organizations" : [{
+                    "identifier" : "  ",
+                    "name" : ["College of Marine Science and Biological Engineering", "Qingdao University of Science and Technology"],
+                    "identifierpath" : [ ],
+                    "address" : ["Qingdao", "Shandong", "266100", "P.R. China"]
+                },{
+                    "identifier" : "  ",
+                    "name" : ["Key Laboratory of Marine Chemistry Theory and Technology", "Ministry of Education", "College of Chemistry and Chemical Engineering", "Ocean University of China"],
+                    "identifierpath" : [ ],
+                    "address" : ["Qingdao", "Shandong", "266100", "P.R. China"]
+                }],
+                "identifier" : [{
+                    "id" : " ",
+                    "type" : " "
+                }]
+            },
+            "role" : " AUTHOR ",
+            "type" : " PERSON "
+        },{
+            "person" : {
+                "givenName" : "Lian-sheng",
+                "familyName" : "Cui", 
+                "organizations" : [{
+                    "identifier" : " ",
+                    "name" : ["College of Chemistry and Environmental Engineering", "Baise University"],
+                    "identifierpath" : [ ],
+                    "address" : ["Baise", "Guangxi", "533000", "P.R. China"]
+                }],
+                "identifier" : [ ]
+            },
+            "role" :" AUTHOR ",
+            "type" :" PERSON "
+        },{
+            "person" : {
+                "givenName" : "Xin-ping",
+                "familyName" : "Wang", 
+                "organizations" : [{
+                    "identifier" : "  ",
+                    "name" : ["College of Marine Science and Biological Engineering", "Qingdao University of Science and Technology"],
+                    "identifierpath" : [ ],
+                    "address" : ["Qingdao", "Shandong", "266100", "P.R. China"]
+                }],
+                "identifier" : [ ]
+            },
+            "role" :" AUTHOR ",
+            "type" :" PERSON "
+        },{
+            "person" : {
+                "givenName" : "Xiao-yin",
+                "familyName" : "Zhang", 
+                "organizations" : [{
+                    "identifier" : "  ",
+                    "name" : ["Key Laboratory of Marine Chemistry Theory and Technology", "Ministry of Education", "College of Chemistry and Chemical Engineering", "Ocean University of China"],
+                    "identifierpath" : [ ],
+                    "address" : ["Qingdao", "Shandong", "266100", "P.R. China"]
+                }],
+                "identifier" : [ ]
+            },
+            "role" :" AUTHOR ",
+            "type" :" PERSON "
+        },{
+            "person" : {
+                "givenName" : "Xia",
+                "familyName" : "Zhang", 
+                "organizations" : [{
+                    "identifier" : "  ",
+                    "name" : ["Key Laboratory of Marine Chemistry Theory and Technology", "Ministry of Education", "College of Chemistry and Chemical Engineering", "Ocean University of China"],
+                    "identifierpath" : [ ],
+                    "address" : ["Qingdao", "Shandong", "266100", "P.R. China"]
+                }],
+                "identifier" : []
+            },
+            "role" :" AUTHOR ",
+            "type" :" PERSON "
+        },{
+            "person" : {
+                "givenName" : "Shuang-yu",
+                "familyName" : "Bi", 
+                "organizations" : [{
+                    "identifier" : "  ",
+                    "name" : ["Key Laboratory of Marine Chemistry Theory and Technology", "Ministry of Education", "College of Chemistry and Chemical Engineering", "Ocean University of China"],
+                    "identifierpath" : [ ],
+                    "address" : ["Qingdao", "Shandong", "266100", "P.R. China"]
+                }],
+                "identifier" : [{
+                    "id" : "0000-0001-9150-2791",
+                    "type" : "ORCID"}]
+            },
+            "role" :" CORRES ",
+            "type" :" PERSON "
+        }],
+        "datePublishedOnline" : "2017-10-27",
+        "dateAccepted" : "2017-10-04",
+        "dateSubmitted" : "2017-07-03",
+        "event" : {
+            "title" : " xx ",
+            "place" : " xx ",
+            "startDate" : "eg. 2017-10-25",
+            "endDate" : "eg. 2017-10-28"
+        },
+        "genre" : "eg. ARTICLE, POSTER",
+        "identifiers" : [{
+            "id" : "10.1039/c7ce01229b",
+            "type" : "DOI"
+        }],
+        "languages" : ["eng", "de", "ch"],
+        "source" : [{
+            "title" : "CrystEngComm", 
+            "volumn" : "19",
+            "issue" : "44", 
+            "startPage" : "6630", 
+            "endPage" : "6643",
+            "sequenceNumber" : " ",
+            "publishInfo" : {
+                "publisher" : "The Royal Society of Chemistry"
+            },
+            "identifiers" : [{
+                "id" : " ",
+                "type" : " "
+            }],
+            "genre" : "JOURNAL"
+        }],
+        "freeKeywords" : " ",
+        "abstracts" : [{
+            "languages" : ["eng", "de", "ch"],
+            "value" : " "
+        }],
+        "subjects" : [{
+            "type" :"eg. DDC"
+        }],
+        "totalNumberOfPages" : "eg. 10",
+        "projectInfo" : [{
+            "title" :" ",
+            "fundingInfo" : {
+                "fundingOrganization" : {
+                    "title" :"National Natural Science Foundation of China",
+                    "identifiers" : [{
+                        "id" :"10.13039/501100001809",
+                        "type" : " "
+                    }]
+                }
+            },
+            "awardNumber" : "21371161"
+        }]
+    }
+}

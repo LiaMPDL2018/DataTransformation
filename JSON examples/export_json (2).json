@@ -1,0 +1,160 @@
+{
+  "numberOfRecords" : 1,
+  "records" : [ {
+    "data" : {
+      "objectId" : "item_3000942",
+      "versionNumber" : 1,
+      "modificationDate" : "2018-06-28T13:06:30.962+0000",
+      "versionState" : "RELEASED",
+      "versionPid" : "21.T11998/0000-000C-6396-B",
+      "modifier" : {
+        "objectId" : "user_2050286"
+      },
+      "lastModificationDate" : "2018-06-28T13:06:30.962+0000",
+      "publicState" : "RELEASED",
+      "objectPid" : "21.T11998/0000-000C-6395-C",
+      "creator" : {
+        "objectId" : "user_2050286"
+      },
+      "context" : {
+        "objectId" : "ctx_969661",
+        "name" : "Publications of the Limnological River Station Schlitz",
+        "lastModificationDate" : "2012-04-20T07:43:53.337+0000",
+        "creationDate" : "2011-06-08T10:33:44.735+0000",
+        "creator" : {
+          "objectId" : "user_user42"
+        },
+        "modifier" : {
+          "objectId" : "user_user42"
+        }
+      },
+      "creationDate" : "2018-06-28T12:50:02.123+0000",
+      "latestRelease" : {
+        "objectId" : "item_3000942",
+        "versionNumber" : 1,
+        "modificationDate" : "2018-06-28T13:06:30.962+0000",
+        "versionState" : "RELEASED",
+        "versionPid" : "21.T11998/0000-000C-6396-B",
+        "modifier" : {
+          "objectId" : "user_2050286"
+        }
+      },
+      "latestVersion" : {
+        "objectId" : "item_3000942",
+        "versionNumber" : 1,
+        "modificationDate" : "2018-06-28T13:06:30.962+0000",
+        "versionState" : "RELEASED",
+        "versionPid" : "21.T11998/0000-000C-6396-B",
+        "modifier" : {
+          "objectId" : "user_2050286"
+        }
+      },
+      "localTags" : [ "multiple_import", "pohlon 2018-06-28 14:50" ],
+      "metadata" : {
+        "title" : "Recovery dynamics of prokaryotes and extracellular enzymes during sediment rewetting after desiccation",
+        "creators" : [ {
+          "person" : {
+            "givenName" : "Elisabeth",
+            "familyName" : "Pohlon"
+          },
+          "role" : "AUTHOR",
+          "type" : "PERSON"
+        }, {
+          "person" : {
+            "givenName" : "Nora K.",
+            "familyName" : "Rütz"
+          },
+          "role" : "AUTHOR",
+          "type" : "PERSON"
+        }, {
+          "person" : {
+            "givenName" : "Klemens",
+            "familyName" : "Ekschmitt"
+          },
+          "role" : "AUTHOR",
+          "type" : "PERSON"
+        }, {
+          "person" : {
+            "givenName" : "Jürgen",
+            "familyName" : "Marxsen",
+            "organizations" : [ {
+              "identifier" : "ou_976546",
+              "name" : "Limnological River Station Schlitz, Max Planck Institute for Limnology, Max Planck Institute for Evolutionary Biology, Max Planck Society",
+              "identifierPath" : [ "ou_976546", "ou_976545", "ou_971545", "ou_persistent13" ]
+            } ],
+            "identifier" : {
+              "id" : "/persons/resource/persons56815",
+              "type" : "CONE"
+            }
+          },
+          "role" : "AUTHOR",
+          "type" : "PERSON"
+        } ],
+        "dateAccepted" : "2018-05-16",
+        "dateModified" : "2017-05-14",
+        "datePublishedInPrint" : "2018-05",
+        "datePublishedOnline" : "2018-05-25",
+        "dateSubmitted" : "2017-08-08",
+        "genre" : "ARTICLE",
+        "identifiers" : [ {
+          "id" : "10.1007/s10750-018-3662-4",
+          "type" : "DOI"
+        }, {
+          "id" : "Pohlon2018",
+          "type" : "BIBTEX_CITEKEY"
+        } ],
+        "languages" : [ "eng" ],
+        "sources" : [ {
+          "title" : "Hydrobiologia",
+          "alternativeTitles" : [ {
+            "value" : "Hydrobiologia - The International Journal of Aquatic Sciences",
+            "type" : "OTHER"
+          } ],
+          "startPage" : "1",
+          "endPage" : "12",
+          "publishingInfo" : {
+            "place" : "Amsterdam",
+            "publisher" : "Springer"
+          },
+          "identifiers" : [ {
+            "id" : "1573-5117",
+            "type" : "ISSN"
+          }, {
+            "id" : "http://www.sherpa.ac.uk/romeo/issn/0018-8158/",
+            "type" : "OTHER"
+          }, {
+            "id" : "0018-8158",
+            "type" : "ISSN"
+          }, {
+            "id" : "https://qa.inge.mpdl.mpg.de/cone/journals/resource/954925565693",
+            "type" : "CONE"
+          } ],
+          "genre" : "JOURNAL"
+        } ],
+        "freeKeywords" : "Stream; Sediment; Rewetting; Prokaryotic community; Extracellular enzymes",
+        "abstracts" : [ {
+          "language" : "eng",
+          "value" : "Intermittent flow of headwaters occurs with increasing frequency in temperate regions over last decades. Here, we assessed the effects of rewetting process on benthic prokaryotic communities from the Breitenbach (Hesse, Germany) for 10 days following experimental drought of different duration and intensity, by measuring the abundance of selected prokaryotic groups and potential extracellular enzyme activities (EEA). Desiccation time and intensity affected the recovery of the microbial community structure and the utilization of organic substrates in sediments, but recovery differed among prokaryotic groups and enzymes. Prokaryotes grew moderately to levels above the initial wet state, whereas Alphaproteobacteria were promoted. The EEA increased rapidly with overshoots within the first days of rewetting indicating high activation after desiccation. The ratios between the EEA changed with the duration of desiccation indicating changes of macromolecular organic matter utilization. The prokaryotic community and its functions were still distinctly different from the initial stream situation, and thus no resilience could be considered after short time (10 days) of recovery from desiccation. We propose that desiccation effects might be enhanced, if desiccation events occur under the effect of changing climate more often, more regularly, and/or for longer time spans."
+        } ]
+      },
+      "files" : [ {
+        "objectId" : "file_3000943",
+        "lastModificationDate" : "2018-06-28T13:06:07.603+0000",
+        "creationDate" : "2018-06-28T12:50:02.127+0000",
+        "creator" : {
+          "objectId" : "user_2050286"
+        },
+        "visibility" : "PUBLIC",
+        "content" : "https://doi.org/10.1007/s10750-018-3662-4",
+        "storage" : "EXTERNAL_URL",
+        "size" : 0,
+        "metadata" : {
+          "title" : "Link",
+          "contentCategory" : "publisher-version",
+          "size" : 0
+        }
+      } ]
+    },
+    "persistenceId" : "item_3000942_1"
+  } ]
+}

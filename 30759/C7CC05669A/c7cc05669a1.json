@@ -1,0 +1,111 @@
+{
+    "localtags" : [ ],
+    "metadata" : {
+        "title" : "The active site for the water oxidising anodic iridium oxide probed through in situ Raman spectroscopy",
+        "creator" : [{
+            "person" : {
+                "givenName" : "Zoran",
+                "familyName" : "Pavlovic",
+                "organizations" : [{
+                    "identifier" : " ? ",
+                    "identifierpath" : ["?"],
+                    "name" : ["Department of Heterogeneous Catalysis", "Max Planck Institute for Chemical Energy Conversion"],
+                    "address" : ["Stiftstrasse 34-36", "Muelheim and Ruhr", "45470", "Germany"]
+                }],
+                "identifier" : [{
+                    "id" : "0000-0002-4965-8458",
+                    "type" : "ORCID"
+                }]
+            },
+            "role" : " AUTHOR ",
+            "type" : " PERSON "
+        },{
+            "person" : {
+                "givenName" : "Chinmoy",
+                "familyName" : "Ranjan", 
+                "organizations" : [{
+                    "name" : ["Department of Heterogeneous Catalysis", "Max Planck Institute for Chemical Energy Conversion"],
+                    "address" : ["Stiftstrasse 34-36", "Muelheim and Ruhr", "45470", "Germany"]
+                }],
+                "identifier" : [{
+                    "id" : "0000-0002-3758-3751",
+                    "type" : "ORCID"
+                }]
+            },
+            "role" :" AUTHOR ",
+            "type" :" PERSON "
+        },{
+            "person" : {
+                "givenName" : "Maurice",
+                "familyName" : "van Gastel",
+                "organizations" : [{
+                    "name" : ["Department of Heterogeneous Catalysis", "Max Planck Institute for Chemical Energy Conversion"],
+                    "address" : ["Stiftstrasse 34-36", "Muelheim and Ruhr", "45470", "Germany"]
+                }],
+                "identifier" : [{
+                    "id" : "G-8572-2012",
+                    "type" : "RESID"
+                }, {
+                    "id" : "0000-0002-1547-6365",
+                    "type" : "ORCID"
+                }]
+            }
+        },{
+            "person" : {
+                "givenName" : "Robert",
+                "familyName" : "Schlögl",
+                "organizations" : [{
+                    "name" : ["Department of Heterogeneous Catalysis", "Max Planck Institute for Chemical Energy Conversion"],
+                    "address" : ["Stiftstrasse 34-36", "Muelheim and Ruhr", "45470", "Germany"]
+                }]
+            }
+        }],
+        "datePublishedOnline" : "2017-10-16",
+        "dateAccepted" : "2017-10-09",
+        "dateSubmitted" : "2017-08-25",
+        "genre" : "ARTICLE",
+        "identifiers" : [{
+            "id" : "10.1039/c7cc05669a",
+            "type" : "DOI"
+        }],
+        "languages" : ["eng"],
+        "source" : [{
+            "title" : "Chemical Communications", 
+            "volumn" : "53",
+            "issue" : "92", 
+            "startPage" : "12414", 
+            "endPage" : "12417",
+            "sequenceNumber" : " ",
+            "publishInfo" : {
+                "publisher" : "The Royal Society of Chemistry"
+            },
+            "identifiers" : [{
+                "id" : " ",
+                "type" : " "
+            }],
+            "genre" : "JOURNAL"
+        }],
+        "freeKeywords" : "The structure of anodic iridium oxide (IrOx) under water oxidation was explored using in situ Raman spectroscopy and theoretical calculations.",
+        "abstracts" : [{
+            "languages" : ["eng"],
+            "value" : "The structure of anodic iridium oxide (IrOx) under water oxidation was explored using in situ Raman spectroscopy and theoretical calculations. Isotopic substitution experiments and theoretical calculations confirmed formation of an IrO species during oxygen evolution reaction."
+        }],
+        "subjects" : [{
+            "type" :" "
+        }],
+        "totalNumberOfPages" : "4",
+        "projectInfo" : [{
+            "title" :" ",
+            "fundingInfo" : {
+                "fundingOrganization" : {
+                    "title" :"Bundesministerium für Wirtschaft und Energie",
+                    "identifiers" : [{
+                        "id" :"10.13039/501100006360",
+                        "type" : ""
+                    }]
+                }
+            },
+            "awardNumber" : "03ESP106"
+        }]
+    }
+}

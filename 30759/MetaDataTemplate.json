@@ -1,0 +1,86 @@
+{
+    "localtags" : [ ],
+    "metadata" : {
+        "title" : " xx ",
+        "creator" : [{
+            "person" : {
+                "givenName" : " xx1 ",
+                "familyName" : " xx1 ",
+                "organizations" : [{
+                    "identifier" : " eg. ou_976546 ",
+                    "name" : " eg. Limnological River Station Schlitz, external ",
+                    "identifierpath" : [ "eg. ou_976546", "ou_976545", "ou_971545", "ou_persistent13" ]
+                }],
+                "identifier" : [{
+                    "id" : " xx ",
+                    "type" : "eg.CONE, orcid"
+                }]
+            },
+            "role" : " AUTHOR ",
+            "type" : " PERSON "
+        },{
+            "person" : {
+                "givenName" : " xx2 ",
+                "familyName" : " xx1 ", 
+                "organizations" : [],
+                "identifier" : " "
+            },
+            "role" :" AUTHOR ",
+            "type" :" PERSON "
+        }],
+        "datePublishedOnline" : "eg. 2018-05-25",
+        "datePublishedInPrint" : "eg. 2018-05-25",
+        "dateAccepted" : "eg. 2018-05-16",
+        "dateModified" : "eg. 2017-05-14",
+        "dateSubmitted" : "eg. 2017-08-08",
+        "event" : {
+            "title" : " xx ",
+            "place" : " xx ",
+            "startDate" : "eg. 2017-10-25",
+            "endDate" : "eg. 2017-10-28"
+        },
+        "genre" : "eg. ARTICLE, POSTER",
+        "identifiers" : [{
+            "id" : " ",
+            "type" : "eg. DOI, BIBTEX_CITEKEY, ISI"
+        }],
+        "languages" : ["eng", "de", "ch"],
+        "source" : [{
+            "title" : " ", 
+            "volumn" : " ",
+            "issue" : " ", 
+            "startPage" : " ", 
+            "endPage" : " ",
+            "sequenceNumber" : " ",
+            "publishInfo" : {
+                "publisher" : " "
+            },
+            "identifiers" : [{
+                "id" : " ",
+                "type" : "eg. ISSN, CONE, OTHER"
+            }],
+            "genre" : "JOURNAL"
+        }],
+        "freeKeywords" : " ",
+        "abstracts" : [{
+            "languages" : ["eng", "de", "ch"],
+            "value" : " "
+        }],
+        "subjects" : [{
+            "type" :"eg. DDC"
+        }],
+        "totalNumberOfPages" : "eg. 10",
+        "projectInfo" : [{
+            "title" :" ",
+            "fundingInfo" : {
+                "fundingOrganization" : {
+                    "title" :" ",
+                    "identifiers" : [{
+                        "id" :" ",
+                        "type" : ""
+                    }]
+                }
+            }
+        }]
+    }
+}
