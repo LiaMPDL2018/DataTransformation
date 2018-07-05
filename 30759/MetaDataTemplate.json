@@ -8,7 +8,7 @@
                 "familyName" : " xx1 ",
                 "organizations" : [{
                     "identifier" : " eg. ou_976546 ",
-                    "name" : " eg. Limnological River Station Schlitz, external ",
+                    "name" : [" eg. Limnological River Station Schlitz, external "],
                     "identifierpath" : [ "eg. ou_976546", "ou_976545", "ou_971545", "ou_persistent13" ]
                 }],
                 "identifier" : [{
@@ -20,17 +20,25 @@
             "type" : " PERSON "
         },{
             "person" : {
-                "givenName" : " xx2 ",
-                "familyName" : " xx1 ", 
-                "organizations" : [],
-                "identifier" : " "
+                "givenName" : "",
+                "familyName" : "",
+                "organizations" : [{
+                    "identifier" : "",
+                    "name" : [""],
+                    "identifierpath" : [ "" ],
+                    "address" : [""]
+                }],
+                "identifier" : [{
+                    "id" : "",
+                    "type" : ""
+                }]
             },
-            "role" :" AUTHOR ",
-            "type" :" PERSON "
+            "role" : " AUTHOR ",
+            "type" : " PERSON "
         }],
-        "datePublishedOnline" : "eg. 2018-05-25",
-        "datePublishedInPrint" : "eg. 2018-05-25",
-        "dateAccepted" : "eg. 2018-05-16",
+        "datePublishedOnline" : "eg. 2017-05-25",
+        "datePublishedInPrint" : "eg. 2017-05-25",
+        "dateAccepted" : "eg. 2017-05-16",
         "dateModified" : "eg. 2017-05-14",
         "dateSubmitted" : "eg. 2017-08-08",
         "event" : {
@@ -80,7 +88,8 @@
                         "type" : " "
                     }]
                 }
-            }
+            },
+            "awardNumber" : " "
         }]
     }
 }
