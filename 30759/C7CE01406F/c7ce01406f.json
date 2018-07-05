@@ -1,119 +1,86 @@
 {
+    "context" : {
+        "objectId" : "ctx_01406"
+    },
     "localtags" : [ ],
     "metadata" : {
         "title" : "Effect of precursor concentration on size evolution of iron oxide nanoparticles",
-        "creator" : [{
+        "creators" : [{
             "person" : {
                 "givenName" : "Hamed",
                 "familyName" : "Sharifi Dehsari",
                 "organizations" : [{
                     "identifier" : "ou_1309545",
-                    "name" : ["Max Planck Institute for Polymer Research"],
-                    "identifierpath" : [ "ou_1309545" ],
-                    "address" : ["Ackermannweg 10", "Mainz", "Germany"]
-                }],
-                "identifier" : [{
-                    "id" : "0000-0003-3179-0589",
-                    "type" : "ORCID"
+                    "name" : "Max Planck Institute for Polymer Research",
+                    "address" : "Ackermannweg 10, Mainz, Germany"
                 }]
             },
-            "role" : " AUTHOR ",
-            "type" : " PERSON "
+            "role" : "AUTHOR",
+            "type" : "PERSON"
         },{
             "person" : {
                 "givenName" : "Anielen",
                 "familyName" : "Halda Ribeiro",
                 "organizations" : [{
                     "identifier" : "ou_1309545",
-                    "name" : ["Max Planck Institute for Polymer Research"],
-                    "identifierpath" : [ "ou_1309545" ],
-                    "address" : ["Ackermannweg 10", "Mainz", "Germany"]
-                }],
-                "identifier" : [{
-                    "id" : "0000-0003-1051-2889",
-                    "type" : "ORCID"
+                    "name" : "Max Planck Institute for Polymer Research",
+                    "address" : "Ackermannweg 10, Mainz, Germany"
                 }]
             },
-            "role" : " AUTHOR ",
-            "type" : " PERSON "
+            "role" : "AUTHOR",
+            "type" : "PERSON"
         },{
             "person" : {
                 "givenName" : "Bora",
                 "familyName" : "Ersöz",
                 "organizations" : [{
                     "identifier" : "ou_1309545",
-                    "name" : ["Max Planck Institute for Polymer Research"],
-                    "identifierpath" : [ "ou_1309545" ],
-                    "address" : ["Ackermannweg 10", "Mainz", "Germany"]
-                }],
-                "identifier" : [{
-                    "id" : "",
-                    "type" : ""
+                    "name" : "Max Planck Institute for Polymer Research",
+                    "address" : "Ackermannweg 10, Mainz, Germany"
                 }]
             },
-            "role" : " AUTHOR ",
-            "type" : " PERSON "
+            "role" : "AUTHOR",
+            "type" : "PERSON"
         },{
             "person" : {
                 "givenName" : "Wolfgang",
                 "familyName" : "Tremel",
                 "organizations" : [{
                     "identifier" : "",
-                    "name" : ["Institute of Inorganic Chemistry and Analytical Chemistry", "Johannes Gutenberg University"],
-                    "identifierpath" : [ "" ],
-                    "address" : ["Mainz", "Germany"]
-                }],
-                "identifier" : [{
-                    "id" : "0000-0002-4536-994X",
-                    "type" : "ORCID"
+                    "name" : "Institute of Inorganic Chemistry and Analytical Chemistry, Johannes Gutenberg University",
+                    "address" : "Mainz, Germany"
                 }]
             },
-            "role" : " AUTHOR ",
-            "type" : " PERSON "
+            "role" : "AUTHOR",
+            "type" : "PERSON"
         },{
             "person" : {
                 "givenName" : "Gerhard",
                 "familyName" : "Jakob",
                 "organizations" : [{
                     "identifier" : "",
-                    "name" : ["Institute of Physics", "Johannes Gutenberg University"],
-                    "identifierpath" : [ "" ],
-                    "address" : ["Mainz", "Germany"]
-                }],
-                "identifier" : [{
-                    "id" : "0000-0001-9466-0840",
-                    "type" : "ORCID"
+                    "name" : "Institute of Physics, Johannes Gutenberg University",
+                    "address" : "Mainz, Germany"
                 }]
             },
-            "role" : " AUTHOR ",
-            "type" : " PERSON "
+            "role" : "AUTHOR",
+            "type" : "PERSON"
         },{
             "person" : {
                 "givenName" : "Kamal",
                 "familyName" : "Asadi",
                 "organizations" : [{
                     "identifier" : "ou_1309545",
-                    "name" : ["Max Planck Institute for Polymer Research"],
-                    "identifierpath" : [ "ou_1309545" ],
-                    "address" : ["Ackermannweg 10", "Mainz", "Germany"]
-                }],
-                "identifier" : [{
-                    "id" : "0000-0003-0447-4337",
-                    "type" : "ORCID"
+                    "name" : "Max Planck Institute for Polymer Research",
+                    "address" : "Ackermannweg 10, Mainz, Germany"
                 }]
             },
-            "role" : " CORRES ",
-            "type" : " PERSON "
+            "role" : "CORRES",
+            "type" : "PERSON"
         }],
         "datePublishedOnline" : "2017-10-31",
         "dateAccepted" : "2017-10-16",
         "dateSubmitted" : "2017-08-01",
-        "event" : {
-            "title" : "",
-            "place" : "",
-            "startDate" : "",
-            "endDate" : ""
-        },
         "genre" : "ARTICLE",
         "identifiers" : [{
             "id" : "10.1039/c7ce01406f",
@@ -122,11 +89,10 @@
         "languages" : ["eng"],
         "source" : [{
             "title" : "CrystEngComm", 
-            "volumn" : "19",
+            "volum" : "19",
             "issue" : "44", 
             "startPage" : "6694", 
             "endPage" : "6702",
-            "sequenceNumber" : " ",
             "publishInfo" : {
                 "publisher" : "The Royal Society of Chemistry"
             },
@@ -141,22 +107,18 @@
             "languages" : ["eng"],
             "value" : "Thermal decomposition is a promising route for the synthesis of magnetic nanoparticles. The simplicity of the synthesis method is counterbalanced by the complex chemistry of the system such as precursor decomposition and surfactant–reducing agent interactions. Control over nanoparticle size is achieved by adjusting the reaction parameters, namely, the precursor concentration. The results, however, are conflicting as both an increase and a decrease in nanoparticle size, as a function of increasing concentration, have been reported. Here, we address the issue of size-controlled synthesis via the precursor concentration. We synthesized iron oxide nanoparticles with sizes from 6 nm to 24 nm with narrow size distributions. We show that the size does not monotonically increase with increasing precursor concentration. After an initial increase, the size reaches a maximum and then shows a decrease with increasing precursor concentration. We argue that the observation of two different size regimes is closely related to the critical role of the amount of surfactant. We confirm the effect of surfactant amount on nucleation and growth and explain the observed trend. Furthermore, we show that the nanoparticles show size-dependent but superior superparamagnetic properties at room temperature."
         }],
-        "subjects" : [{
-            "type" :" "
-        }],
         "totalNumberOfPages" : "9",
         "projectInfo" : [{
             "title" :" ",
+            "grantIdentifier" : {
+                "id" : "Sofja Kovalevskaja Award",
+                "type" : "GRANT ID"
+            },
             "fundingInfo" : {
                 "fundingOrganization" : {
-                    "title" :"Alexander von Humboldt-Stiftung",
-                    "identifiers" : [{
-                        "id" :"10.13039/100005156",
-                        "type" : " "
-                    }]
+                    "title" :"Alexander von Humboldt-Stiftung"
                 }
-            },
-            "awardNumber" : "Sofja Kovalevskaja Award"
+            }
         }]
     }
 }

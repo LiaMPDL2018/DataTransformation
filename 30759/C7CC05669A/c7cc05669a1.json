@@ -1,64 +1,70 @@
 {
+    "context" : {
+        "objectId" : "ctx_28054"
+    },
     "localtags" : [ ],
     "metadata" : {
         "title" : "The active site for the water oxidising anodic iridium oxide probed through in situ Raman spectroscopy",
-        "creator" : [{
+        "creators" : [{
             "person" : {
                 "givenName" : "Zoran",
                 "familyName" : "Pavlovic",
                 "organizations" : [{
-                    "identifier" : " ? ",
-                    "identifierpath" : ["?"],
-                    "name" : ["Department of Heterogeneous Catalysis", "Max Planck Institute for Chemical Energy Conversion"],
-                    "address" : ["Stiftstrasse 34-36", "Muelheim and Ruhr", "45470", "Germany"]
+                    "identifier" : "",
+                    "name" : "Department of Heterogeneous Catalysis, Max Planck Institute for Chemical Energy Conversion",
+                    "address" : "Stiftstrasse 34-36, Muelheim and Ruhr, 45470, Germany"
                 }],
                 "identifier" : [{
-                    "id" : "0000-0002-4965-8458",
-                    "type" : "ORCID"
+                    "id" : "",
+                    "type" : "CONE"
                 }]
             },
-            "role" : " AUTHOR ",
-            "type" : " PERSON "
+            "role" : "AUTHOR",
+            "type" : "PERSON"
         },{
             "person" : {
                 "givenName" : "Chinmoy",
                 "familyName" : "Ranjan", 
                 "organizations" : [{
-                    "name" : ["Department of Heterogeneous Catalysis", "Max Planck Institute for Chemical Energy Conversion"],
-                    "address" : ["Stiftstrasse 34-36", "Muelheim and Ruhr", "45470", "Germany"]
+                    "identifier" : "",
+                    "name" : "Department of Heterogeneous Catalysis, Max Planck Institute for Chemical Energy Conversion",
+                    "address" : "Stiftstrasse 34-36, Muelheim and Ruhr, 45470, Germany"
                 }],
                 "identifier" : [{
-                    "id" : "0000-0002-3758-3751",
-                    "type" : "ORCID"
+                    "id" : "",
+                    "type" : "CONE"
                 }]
             },
-            "role" :" AUTHOR ",
-            "type" :" PERSON "
+            "role" :"AUTHOR",
+            "type" :"PERSON"
         },{
             "person" : {
                 "givenName" : "Maurice",
                 "familyName" : "van Gastel",
                 "organizations" : [{
-                    "name" : ["Department of Heterogeneous Catalysis", "Max Planck Institute for Chemical Energy Conversion"],
-                    "address" : ["Stiftstrasse 34-36", "Muelheim and Ruhr", "45470", "Germany"]
+                    "identifier" : "",
+                    "name" : "Department of Heterogeneous Catalysis, Max Planck Institute for Chemical Energy Conversion",
+                    "address" : "Stiftstrasse 34-36, Muelheim and Ruhr, 45470, Germany"
                 }],
                 "identifier" : [{
-                    "id" : "G-8572-2012",
-                    "type" : "RESID"
-                }, {
-                    "id" : "0000-0002-1547-6365",
-                    "type" : "ORCID"
+                    "id" : "",
+                    "type" : "CONE"
                 }]
-            }
+            },
+            "role" :"AUTHOR",
+            "type" :"PERSON"
         },{
             "person" : {
                 "givenName" : "Robert",
                 "familyName" : "Schlögl",
                 "organizations" : [{
-                    "name" : ["Department of Heterogeneous Catalysis", "Max Planck Institute for Chemical Energy Conversion"],
-                    "address" : ["Stiftstrasse 34-36", "Muelheim and Ruhr", "45470", "Germany"]
+                    "identifier" : "",
+                    "name" : "Department of Heterogeneous Catalysis, Max Planck Institute for Chemical Energy Conversion",
+                    "address" : "Stiftstrasse 34-36, Muelheim and Ruhr, 45470, Germany"
                 }]
-            }
+            },
+            "role" :"AUTHOR",
+            "type" :"PERSON"
         }],
         "datePublishedOnline" : "2017-10-16",
         "dateAccepted" : "2017-10-09",
@@ -71,11 +77,10 @@
         "languages" : ["eng"],
         "source" : [{
             "title" : "Chemical Communications", 
-            "volumn" : "53",
+            "volum" : "53",
             "issue" : "92", 
             "startPage" : "12414", 
             "endPage" : "12417",
-            "sequenceNumber" : " ",
             "publishInfo" : {
                 "publisher" : "The Royal Society of Chemistry"
             },
@@ -90,22 +95,18 @@
             "languages" : ["eng"],
             "value" : "The structure of anodic iridium oxide (IrOx) under water oxidation was explored using in situ Raman spectroscopy and theoretical calculations. Isotopic substitution experiments and theoretical calculations confirmed formation of an IrO species during oxygen evolution reaction."
         }],
-        "subjects" : [{
-            "type" :" "
-        }],
         "totalNumberOfPages" : "4",
         "projectInfo" : [{
             "title" :" ",
+            "grantIdentifier" : {
+                "id" : "03ESP106",
+                "type" : "GRANT ID"
+            },
             "fundingInfo" : {
                 "fundingOrganization" : {
-                    "title" :"Bundesministerium für Wirtschaft und Energie",
-                    "identifiers" : [{
-                        "id" :"10.13039/501100006360",
-                        "type" : ""
-                    }]
+                    "title" :"Bundesministerium für Wirtschaft und Energie"
                 }
-            },
-            "awardNumber" : "03ESP106"
+            }
         }]
     }
 }

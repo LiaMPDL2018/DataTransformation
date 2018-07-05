@@ -1,40 +1,42 @@
 {
+    "context" : {
+        "objectId" : "random?"
+    },
     "localtags" : [ ],
     "metadata" : {
         "title" : " xx ",
-        "creator" : [{
+        "creators" : [{
             "person" : {
                 "givenName" : " xx1 ",
                 "familyName" : " xx1 ",
                 "organizations" : [{
-                    "identifier" : " eg. ou_976546 ",
-                    "name" : [" eg. Limnological River Station Schlitz, external "],
-                    "identifierpath" : [ "eg. ou_976546", "ou_976545", "ou_971545", "ou_persistent13" ]
+                    "identifier" : "eg. ou_976546",
+                    "name" : "eg. Limnological River Station Schlitz, external",
+                    "address" : ""
                 }],
                 "identifier" : [{
-                    "id" : " xx ",
-                    "type" : "eg.CONE, orcid"
+                    "id" : "",
+                    "type" : "CONE"
                 }]
             },
-            "role" : " AUTHOR ",
-            "type" : " PERSON "
+            "role" : "AUTHOR",
+            "type" : "PERSON"
         },{
             "person" : {
                 "givenName" : "",
                 "familyName" : "",
                 "organizations" : [{
                     "identifier" : "",
-                    "name" : [""],
-                    "identifierpath" : [ "" ],
-                    "address" : [""]
+                    "name" : "",
+                    "address" : ""
                 }],
                 "identifier" : [{
                     "id" : "",
-                    "type" : ""
+                    "type" : "CONE"
                 }]
             },
-            "role" : " AUTHOR ",
-            "type" : " PERSON "
+            "role" : "AUTHOR",
+            "type" : "PERSON"
         }],
         "datePublishedOnline" : "eg. 2017-05-25",
         "datePublishedInPrint" : "eg. 2017-05-25",
@@ -55,7 +57,7 @@
         "languages" : ["eng", "de", "ch"],
         "source" : [{
             "title" : " ", 
-            "volumn" : " ",
+            "volum" : " ",
             "issue" : " ", 
             "startPage" : " ", 
             "endPage" : " ",
@@ -80,16 +82,15 @@
         "totalNumberOfPages" : "eg. 10",
         "projectInfo" : [{
             "title" :" ",
+            "grantIdentifier" : {
+                "id" : "",
+                "type" : "GRANT ID"
+            },
             "fundingInfo" : {
                 "fundingOrganization" : {
-                    "title" :" ",
-                    "identifiers" : [{
-                        "id" :" ",
-                        "type" : " "
-                    }]
+                    "title" :" "
                 }
-            },
-            "awardNumber" : " "
+            }
         }]
     }
 }
