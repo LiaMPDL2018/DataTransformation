@@ -96,21 +96,21 @@
             "type" : "DOI"
         }],
         "languages" : ["eng"],
-        "source" : [{
+        "sources" : [{
             "title" : "Physical Chemistry Chemical Physics", 
-            "volum" : "19",
+            "volume" : "19",
             "issue" : "41", 
             "startPage" : "28388", 
             "endPage" : "28400",
-            "publishInfo" : {
+            "publishingInfo" : {
                 "publisher" : "The Royal Society of Chemistry"
             },
             "identifiers" : [{
                 "id" : "1463-9076",
-                "type" : "ISSN(PRINT)"
+                "type" : "ISSN"
             },{
                 "id" : "1463-9084",
-                "type" : "ISSN(ONLINE)"
+                "type" : "ISSN"
             }],
             "genre" : "JOURNAL"
         }],
@@ -124,7 +124,7 @@
             "title" :" ",
             "grantIdentifier" : {
                 "id" : "EXC 1069",
-                "type" : "GRANT ID"
+                "type" : "GRANT_ID"
             },
             "fundingInfo" : {
                 "fundingOrganization" : {

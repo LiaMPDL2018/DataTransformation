@@ -87,13 +87,13 @@
             "type" : "DOI"
         }],
         "languages" : ["eng"],
-        "source" : [{
+        "sources" : [{
             "title" : "CrystEngComm", 
-            "volum" : "19",
+            "volume" : "19",
             "issue" : "44", 
             "startPage" : "6694", 
             "endPage" : "6702",
-            "publishInfo" : {
+            "publishingInfo" : {
                 "publisher" : "The Royal Society of Chemistry"
             },
             "identifiers" : [{
@@ -112,7 +112,7 @@
             "title" :" ",
             "grantIdentifier" : {
                 "id" : "Sofja Kovalevskaja Award",
-                "type" : "GRANT ID"
+                "type" : "GRANT_ID"
             },
             "fundingInfo" : {
                 "fundingOrganization" : {

@@ -92,16 +92,20 @@
             "type" : "DOI"
         }],
         "languages" : ["eng"],
-        "source" : [{
+        "sources" : [{
             "title" : "CrystEngComm", 
-            "volum" : "19",
+            "volume" : "19",
             "issue" : "44", 
             "startPage" : "6630", 
             "endPage" : "6643",
             "sequenceNumber" : " ",
-            "publishInfo" : {
+            "publishingInfo" : {
                 "publisher" : "The Royal Society of Chemistry"
             },
+            "identifiers" : [{
+                "id" : "1466-8033",
+                "type" : "ISSN"
+            }],
             "genre" : "JOURNAL"
         }],
         "freeKeywords" : "Various polymeric structures of MOFs",
@@ -114,7 +118,7 @@
             "title" : "",
             "grantIdentifier": {
                 "id" : "21371161",
-                "type" : "GRANT ID"
+                "type" : "GRANT_ID"
             }, 
             "fundingInfo" : {
                 "fundingOrganization" : {

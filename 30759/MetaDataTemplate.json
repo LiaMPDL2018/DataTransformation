@@ -55,14 +55,14 @@
             "type" : "eg. DOI, BIBTEX_CITEKEY, ISI"
         }],
         "languages" : ["eng", "de", "ch"],
-        "source" : [{
+        "sources" : [{
             "title" : " ", 
-            "volum" : " ",
+            "volume" : " ",
             "issue" : " ", 
             "startPage" : " ", 
             "endPage" : " ",
             "sequenceNumber" : " ",
-            "publishInfo" : {
+            "publishingInfo" : {
                 "publisher" : " "
             },
             "identifiers" : [{
@@ -84,7 +84,7 @@
             "title" :" ",
             "grantIdentifier" : {
                 "id" : "",
-                "type" : "GRANT ID"
+                "type" : "GRANT_ID"
             },
             "fundingInfo" : {
                 "fundingOrganization" : {
