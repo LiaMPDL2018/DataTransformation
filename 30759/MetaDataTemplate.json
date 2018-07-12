@@ -1,6 +1,6 @@
 {
     "context" : {
-        "objectId" : "random?"
+        "objectId" : "ctx_random?"
     },
     "localtags" : [ ],
     "metadata" : {
@@ -49,14 +49,15 @@
             "startDate" : "eg. 2017-10-25",
             "endDate" : "eg. 2017-10-28"
         },
-        "genre" : "eg. ARTICLE, POSTER",
+        "genre" : "ARTICLE",
         "identifiers" : [{
             "id" : " ",
-            "type" : "eg. DOI, BIBTEX_CITEKEY, ISI"
+            "type" : "DOI"
         }],
-        "languages" : ["eng", "de", "ch"],
+        "languages" : ["eng"],
         "sources" : [{
             "title" : " ", 
+            "year" : "",
             "volume" : " ",
             "issue" : " ", 
             "startPage" : " ", 
@@ -67,13 +68,13 @@
             },
             "identifiers" : [{
                 "id" : " ",
-                "type" : "eg. ISSN, CONE, OTHER"
+                "type" : "ISSN"
             }],
             "genre" : "JOURNAL"
         }],
         "freeKeywords" : " ",
         "abstracts" : [{
-            "languages" : ["eng", "de", "ch"],
+            "languages" : ["eng"],
             "value" : " "
         }],
         "subjects" : [{
@@ -88,7 +89,40 @@
             },
             "fundingInfo" : {
                 "fundingOrganization" : {
-                    "title" :" "
+                    "title" :" ",
+                    "identifiers" : [ {
+                        "id" : "OrgId1",
+                        "type" : "OPEN_AIRE"
+                    } ]
+                },
+                "fundingProgram" : {
+                    "title" : "Program Name 1",
+                    "identifiers" : [ {
+                        "id" : "ProgramId1",
+                        "type" : "OPEN_AIRE"
+                    } ]
+                }
+            }
+        },{
+            "title" : "Project Name 2",
+            "grantIdentifier" : {
+                "id" : "grantid2",
+                "type" : "GRANT_ID"
+            },
+            "fundingInfo" : {
+                "fundingOrganization" : {
+                    "title" : "Organization Name 2",
+                    "identifiers" : [ {
+                        "id" : "OrgId2",
+                        "type" : "OPEN_AIRE"
+                    } ]
+                },
+              "fundingProgram" : {
+                    "title" : "Program Name 2",
+                    "identifiers" : [ {
+                        "id" : "ProgramId2",
+                        "type" : "OPEN_AIRE"
+                    } ]
                 }
             }
         }]

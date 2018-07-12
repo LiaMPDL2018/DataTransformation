@@ -85,8 +85,11 @@
                 "publisher" : "The Royal Society of Chemistry"
             },
             "identifiers" : [{
-                "id" : " ",
-                "type" : " "
+                "id" : "1359-7345",
+                "type" : "ISSN"
+            },{
+                "id" : "1364-548X",
+                "type" : "ISSN"
             }],
             "genre" : "JOURNAL"
         }],
