@@ -80,7 +80,7 @@
                     "address" : "Marburg, Germany"
                 }]
             },
-            "role" :"CORRES",
+            "role" :"CORRES?AUTHOR",
             "type" :"PERSON"
         }],
         "datePublishedOnline" : "2017-10-27",

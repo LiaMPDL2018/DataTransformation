@@ -15,7 +15,7 @@
                     "address" : "Am Mühlenberg 1, 14476 Potsdam, Germany"
                 }],
                 "identifier" : [{
-                    "id" : "",
+                    "id" : "persons/resource/persons200485",
                     "type" : "CONE"
                 }]
             },
@@ -31,7 +31,7 @@
                     "address" : "Am Mühlenberg 1, 14476 Potsdam, Germany"
                 }],
                 "identifier" : [{
-                    "id" : "",
+                    "id" : "persons/resource/persons1057",
                     "type" : "CONE"
                 }]
             },

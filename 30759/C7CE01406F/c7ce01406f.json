@@ -13,6 +13,10 @@
                     "identifier" : "ou_1309545",
                     "name" : "Max Planck Institute for Polymer Research",
                     "address" : "Ackermannweg 10, Mainz, Germany"
+                }],
+                "identifier" : [{
+                    "id" : "/persons/resource/persons199878",
+                    "type" : "CONE"
                 }]
             },
             "role" : "AUTHOR",
@@ -37,6 +41,10 @@
                     "identifier" : "ou_1309545",
                     "name" : "Max Planck Institute for Polymer Research",
                     "address" : "Ackermannweg 10, Mainz, Germany"
+                }],
+                "identifier" : [{
+                    "id" : "/persons/resource/persons212955",
+                    "type" : "CONE"
                 }]
             },
             "role" : "AUTHOR",
@@ -73,9 +81,13 @@
                     "identifier" : "ou_1309545",
                     "name" : "Max Planck Institute for Polymer Research",
                     "address" : "Ackermannweg 10, Mainz, Germany"
+                }],
+                "identifier" : [{
+                    "id" : "/persons/resource/persons103158",
+                    "type" : "CONE"
                 }]
             },
-            "role" : "CORRES",
+            "role" : "CORRES?AUTHOR",
             "type" : "PERSON"
         }],
         "datePublishedOnline" : "2017-10-31",

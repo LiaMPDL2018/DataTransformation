@@ -15,7 +15,7 @@
                     "address" : "Max-Planck-Str. 1, 40237 Düsseldorf, Germany"
                 }],
                 "identifier" : [{
-                    "id" : "",
+                    "id" : "persons/resource/persons129706",
                     "type" : "CONE"
                 }]
             },
@@ -31,7 +31,7 @@
                     "address" : "Max-Planck-Str. 1, 40237 Düsseldorf, Germany"
                 }],
                 "identifier" : [{
-                    "id" : "",
+                    "id" : "persons/resource/persons133083",
                     "type" : "CONE"
                 }]
             },
@@ -51,7 +51,7 @@
                     "address" : "7491 Trondheim, Norway"
                 }],
                 "identifier" : [{
-                    "id" : "",
+                    "id" : "persons/resource/persons125132",
                     "type" : "CONE"
                 }]
             },

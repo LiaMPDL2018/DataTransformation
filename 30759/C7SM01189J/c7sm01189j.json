@@ -51,7 +51,7 @@
                     "address" : "Stuttgart, Germany"
                 }],
                 "identifier" : [{
-                    "id" : "",
+                    "id" : "persons/resource/persons140424",
                     "type" : "CONE"
                 }]
             },
@@ -87,7 +87,7 @@
                     "address" : "Stuttgart, Germany"
                 }],
                 "identifier" : [{
-                    "id" : "",
+                    "id" : "persons/resource/persons182794",
                     "type" : "CONE"
                 }]
             },

@@ -15,7 +15,7 @@
                     "address" : "Ackermannweg 10, D-55128 Mainz, Germany"
                 }],
                 "identifier" : [{
-                    "id" : "",
+                    "id" : "/persons/resource/persons212609",
                     "type" : "CONE"
                 }]
             },
@@ -47,7 +47,7 @@
                     "address" : "Ackermannweg 10, D-55128 Mainz, Germany"
                 }],
                 "identifier" : [{
-                    "id" : "",
+                    "id" : "/persons/resource/persons147414",
                     "type" : "CONE"
                 }]
             },
@@ -67,7 +67,7 @@
                     "address" : "8000 Aarhus C, Denmark"
                 }],
                 "identifier" : [{
-                    "id" : "",
+                    "id" : "/persons/resource/persons79137",
                     "type" : "CONE"
                 }]
             },
@@ -83,7 +83,7 @@
                     "address" : "Ackermannweg 10, D-55128 Mainz, Germany"
                 }],
                 "identifier" : [{
-                    "id" : "",
+                    "id" : "/persons/resource/persons47659",
                     "type" : "CONE"
                 }]
             },
@@ -99,7 +99,7 @@
                     "address" : "Ackermannweg 10, D-55128 Mainz, Germany"
                 }],
                 "identifier" : [{
-                    "id" : "",
+                    "id" : "/persons/resource/persons146597",
                     "type" : "CONE"
                 }]
             },
