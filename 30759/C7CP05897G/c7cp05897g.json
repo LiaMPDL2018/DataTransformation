@@ -139,7 +139,7 @@
             }],
             "genre" : "JOURNAL"
         }],
-        "freeKeywords" : "Real-time observation of the ultrafast motions of leucine side chains within model peptides at the water–air interface with representative folds – α-helix, 3<inf>10</inf>-helix, β-strand – show that interfacial dynamics are mostly determined by surface interactions.",
+        "freeKeywords" : "Real-time observation of the ultrafast motions of leucine side chains within model peptides at the water–air interface with representative folds – α-helix, 310-helix, β-strand – show that interfacial dynamics are mostly determined by surface interactions.",
         "abstracts" : [{
             "languages" : ["eng"],
             "value" : "Protein side chain dynamics are critical for specific protein binding to surfaces and protein-driven surface manipulation. At the same time, it is highly challenging to probe side chain motions specifically at interfaces. One important open question is the degree to which the motions of side chains are dictated by local protein folding or by interactions with the surface. Here, we present a real-time measurement of the orientational dynamics of leucine side chains within leucine–lysine (LK) model peptides at the water–air interface, with three representative peptide folds: α-helix, 3<inf>10</inf>-helix and β-strand. The results, modeled and supported by molecular dynamics simulations, show that the different peptide folds exhibit remarkably similar sub-picosecond orientational side chain dynamics at the air/water interface. This demonstrates that the side chain motional dynamics is decoupled from the local secondary structure."

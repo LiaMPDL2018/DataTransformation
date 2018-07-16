@@ -69,7 +69,6 @@
         "languages" : ["eng"],
         "sources" : [{
             "title" : "Nanoscale Horizons",
-            "year" : "2018", 
             "volume" : "3",
             "issue" : "1", 
             "startPage" : "58", 
@@ -87,10 +86,10 @@
             }],
             "genre" : "JOURNAL"
         }],
-        "freeKeywords" : "The luminescence from both ends of a ZnO nanorod grown <it>via</it> a corrosion process is significantly different.",
+        "freeKeywords" : "The luminescence from both ends of a ZnO nanorod grown via a corrosion process is significantly different.",
         "abstracts" : [{
             "languages" : ["eng"],
-            "value" : "ZnO nanorods were grown on a zinc substrate <it>via</it> cathodic delamination of a polymer coating, a tailored corrosion process, at room temperature. A comparison between <it>in situ</it> Raman spectra and post mortem cross sectional analysis by Raman spectroscopy, photoluminescence spectroscopy and scanning electron microscopy shows that in the initial stages of the synthesis, preferentially defect rich ZnO grows. At later stages, crystalline wurtzite ZnO growth dominates. The result is nanorod arrays consisting of nanorods with a large density of point defects in the ≈500 nm range near the zinc substrate, and low defect density in the regions further away from the interface. The growth, which proceeds over several hours, can be interrupted at any time. Large salt concentrations in the corrosive medium increase the growth rate, but also the amount of point defects. The resulting rods show strongly position-dependent luminescence and Raman spectra. Different luminescence can thus be selectively excited, based on the position of excitation."
+            "value" : "ZnO nanorods were grown on a zinc substrate <it>via</it> cathodic delamination of a polymer coating, a tailored corrosion process, at room temperature. A comparison between in situ Raman spectra and post mortem cross sectional analysis by Raman spectroscopy, photoluminescence spectroscopy and scanning electron microscopy shows that in the initial stages of the synthesis, preferentially defect rich ZnO grows. At later stages, crystalline wurtzite ZnO growth dominates. The result is nanorod arrays consisting of nanorods with a large density of point defects in the ≈500 nm range near the zinc substrate, and low defect density in the regions further away from the interface. The growth, which proceeds over several hours, can be interrupted at any time. Large salt concentrations in the corrosive medium increase the growth rate, but also the amount of point defects. The resulting rods show strongly position-dependent luminescence and Raman spectra. Different luminescence can thus be selectively excited, based on the position of excitation."
         }],
         "totalNumberOfPages" : "8",
         "projectInfo" : [{

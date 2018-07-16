@@ -83,7 +83,6 @@
         "languages" : ["eng"],
         "sources" : [{
             "title" : "Polymer Chemistry", 
-            "year" : "2017",
             "volume" : "8",
             "issue" : "40", 
             "startPage" : "6204", 
@@ -101,7 +100,7 @@
         "freeKeywords" : "In here, the reversible deactivation radical polymerization of vinyl esters inside metal–organic frameworks is presented for the first time.",
         "abstracts" : [{
             "languages" : ["eng"],
-            "value" : "Free radical and RAFT polymerization of vinyl esters with different molecular dimensions are conducted in the nanochannels of metal–organic-frameworks (MOFs). The combination of MOFs with the RAFT technique enables the synthesis of highly isotactic poly(vinyl ester)s with a controlled molecular weight and narrow molecular weight distribution, and stereocontrolled isotactic-<it>block</it>-atactic vinyl ester block copolymers."
+            "value" : "Free radical and RAFT polymerization of vinyl esters with different molecular dimensions are conducted in the nanochannels of metal–organic-frameworks (MOFs). The combination of MOFs with the RAFT technique enables the synthesis of highly isotactic poly(vinyl ester)s with a controlled molecular weight and narrow molecular weight distribution, and stereocontrolled isotactic-block-atactic vinyl ester block copolymers."
         }],
         "totalNumberOfPages" : "5",
         "projectInfo" : [{
