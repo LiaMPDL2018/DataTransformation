@@ -87,7 +87,7 @@
                     "type" : "CONE"
                 }]
             },
-            "role" : "CORRES?AUTHOR",
+            "role" : "AUTHOR",
             "type" : "PERSON"
         },{
             "person" : {
