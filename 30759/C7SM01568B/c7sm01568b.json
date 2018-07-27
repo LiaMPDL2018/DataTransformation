@@ -1,6 +1,6 @@
 {
     "context" : {
-        "objectId" : "ctx_01568"
+        "objectId" : "ctx_persistent3"
     },
     "localtags" : [ ],
     "metadata" : {
@@ -29,10 +29,6 @@
                     "identifier" : "",
                     "name" : "Department of Physics, Institute for Advanced Studies in Basic Sciences (IASBS)",
                     "address" : "Zanjan 45137-66731, Iran"
-                }],
-                "identifier" : [{
-                    "id" : "",
-                    "type" : "CONE"
                 }]
             },
             "role" : "AUTHOR",
@@ -45,10 +41,6 @@
                     "identifier" : "",
                     "name" : "Department of Physics, Alzahra University",
                     "address" : "Tehran, Iran"
-                }],
-                "identifier" : [{
-                    "id" : "",
-                    "type" : "CONE"
                 }]
             },
             "role" : "AUTHOR",
@@ -101,5 +93,18 @@
             "value" : "Chemotaxis is a ubiquitous biological phenomenon in which cells detect a spatial gradient of chemoattractant, and then move towards the source. Here we present a position-dependent advection–diffusion model that quantitatively describes the statistical features of the chemotactic motion of the social amoeba Dictyostelium discoideum in a linear gradient of cAMP (cyclic adenosine monophosphate). We fit the model to experimental trajectories that are recorded in a microfluidic setup with stationary cAMP gradients and extract the diffusion and drift coefficients in the gradient direction. Our analysis shows that for the majority of gradients, both coefficients decrease over time and become negative as the cells crawl up the gradient. The extracted model parameters also show that besides the expected drift in the direction of the chemoattractant gradient, we observe a nonlinear dependency of the corresponding variance on time, which can be explained by the model. Furthermore, the results of the model show that the non-linear term in the mean squared displacement of the cell trajectories can dominate the linear term on large time scales."
         }],
         "totalNumberOfPages" : "14"
-    }
+    },
+    "files" : [ {
+
+      "visibility" : "PUBLIC",
+      
+      "content" : "returned by staging",
+      "storage" : "INTERNAL_MANAGED",
+      
+      "metadata" : {
+        "title" : "C7SM01568B.pdf",
+        "contentCategory" : "any-fulltext"
+        
+      }
+    } ]
 }

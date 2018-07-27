@@ -1,6 +1,6 @@
 {
     "context" : {
-        "objectId" : "ctx_05445"
+        "objectId" : "ctx_persistent3"
     },
     "localtags" : [ ],
     "metadata" : {
@@ -29,10 +29,6 @@
                     "identifier" : "",
                     "name" : "Department of Chemistry, Aarhus University",
                     "address" : "8000 Aarhus C, Denmark"
-                }],
-                "identifier" : [{
-                    "id" : "",
-                    "type" : "CONE"
                 }]
             },
             "role" : "AUTHOR",
@@ -141,5 +137,18 @@
             "value" : "Development of new materials for drug delivery and biosensing requires the fine-tuning of interfacial properties. We report here the influence of the poly(ethylene glycol) (PEG) grafting density in model phospholipid monolayers on the adsorption behavior of bovine serum albumin and human fibrinogen, not only with respect to the amount of adsorbed protein, but also its orientational ordering on the surface. As expected, with increasing interfacial PEG density, the amount of adsorbed protein decreases up to the point where complete protein repellency is reached. However, at intermediate concentrations, the net orientation of adsorbed fibrinogen is highest. The different proteins respond differently to PEG, not only in the amount of protein adsorbed, but also in the manner that proteins adsorb. The results show that for specific cases, tuning the interfacial PEG concentration allows to guide the protein adsorption configuration, a feature sought after in materials for both biosensing and biomedical applications."
         }],
         "totalNumberOfPages" : "7"
-    }
+    },
+    "files" : [ {
+
+      "visibility" : "PUBLIC",
+      
+      "content" : "returned by staging",
+      "storage" : "INTERNAL_MANAGED",
+      
+      "metadata" : {
+        "title" : "C7CP05445A.pdf",
+        "contentCategory" : "any-fulltext"
+        
+      }
+    } ]
 }

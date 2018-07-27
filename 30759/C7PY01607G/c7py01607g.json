@@ -1,7 +1,7 @@
 
 {
     "context" : {
-        "objectId" : "ctx_01607?"
+        "objectId" : "ctx_persistent3"
     },
     "localtags" : [ ],
     "metadata" : {
@@ -115,5 +115,18 @@
                 }
             }
         }]
-    }
+    },
+    "files" : [ {
+
+      "visibility" : "PUBLIC",
+      
+      "content" : "returned by staging",
+      "storage" : "INTERNAL_MANAGED",
+      
+      "metadata" : {
+        "title" : "C7PY01607G.pdf",
+        "contentCategory" : "any-fulltext"
+        
+      }
+    } ]
 }

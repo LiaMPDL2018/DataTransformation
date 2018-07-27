@@ -1,6 +1,6 @@
 {
     "context" : {
-        "objectId" : "ctx_03942"
+        "objectId" : "ctx_persistent3"
     },
     "localtags" : [ ],
     "metadata" : {
@@ -132,5 +132,18 @@
                 }
             }
         }]
-    }
+    },
+    "files" : [ {
+
+      "visibility" : "PUBLIC",
+      
+      "content" : "returned by staging",
+      "storage" : "INTERNAL_MANAGED",
+      
+      "metadata" : {
+        "title" : "C7CP0342E.pdf",
+        "contentCategory" : "any-fulltext"
+        
+      }
+    } ]
 }

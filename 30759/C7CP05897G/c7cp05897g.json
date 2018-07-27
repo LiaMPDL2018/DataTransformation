@@ -1,6 +1,6 @@
 {
     "context" : {
-        "objectId" : "ctx_05897"
+        "objectId" : "ctx_persistent3"
     },
     "localtags" : [ ],
     "metadata" : {
@@ -45,10 +45,6 @@
                     "identifier" : "",
                     "name" : "Department of Chemical Engineering, University of Washington",
                     "address" : "Seattle, WA 98195, USA"
-                }],
-                "identifier" : [{
-                    "id" : "",
-                    "type" : "CONE"
                 }]
             },
             "role" : "AUTHOR",
@@ -61,10 +57,6 @@
                     "identifier" : "",
                     "name" : "Department of Chemical Engineering, University of Washington",
                     "address" : "Seattle, WA 98195, USA"
-                }],
-                "identifier" : [{
-                    "id" : "",
-                    "type" : "CONE"
                 }]
             },
             "role" : "AUTHOR",
@@ -179,5 +171,18 @@
                 }
             }
         }]
-    }
+    },
+    "files" : [ {
+
+      "visibility" : "PUBLIC",
+      
+      "content" : "returned by staging",
+      "storage" : "INTERNAL_MANAGED",
+      
+      "metadata" : {
+        "title" : "C7CP05897G.pdf",
+        "contentCategory" : "any-fulltext"
+        
+      }
+    } ]
 }

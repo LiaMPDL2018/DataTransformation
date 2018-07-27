@@ -1,6 +1,6 @@
 {
     "context" : {
-        "objectId" : "ctx_01229"
+        "objectId" : "ctx_persistent3"
     },
     "localtags" : [ ],
     "metadata" : {
@@ -52,7 +52,6 @@
                 "organizations" : [{
                     "identifier" : "",
                     "name" : "Key Laboratory of Marine Chemistry Theory and Technology, Ministry of Education, College of Chemistry and Chemical Engineering, Ocean University of China",
-                    "identifierpath" : [ ],
                     "address" : "Qingdao, Shandong, 266100, P.R. China"
                 }]
             },
@@ -126,5 +125,18 @@
                 }
             }
         }]
-    }
+    },
+    "files" : [ {
+
+      "visibility" : "PUBLIC",
+      
+      "content" : "returned by staging",
+      "storage" : "INTERNAL_MANAGED",
+      
+      "metadata" : {
+        "title" : "C7CE01229B.pdf",
+        "contentCategory" : "any-fulltext"
+        
+      }
+    } ]
 }

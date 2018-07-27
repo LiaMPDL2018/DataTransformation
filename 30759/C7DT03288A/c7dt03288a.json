@@ -1,6 +1,6 @@
 {
     "context" : {
-        "objectId" : "ctx_03288"
+        "objectId" : "ctx_persistent3"
     },
     "localtags" : [ ],
     "metadata" : {
@@ -13,10 +13,6 @@
                     "identifier" : "",
                     "name" : "Max Planck Institute for Solid State Research",
                     "address" : "Heisenbergstr. 1, 70569 Stuttgart, Germany"
-                }],
-                "identifier" : [{
-                    "id" : "",
-                    "type" : "CONE"
                 }]
             },
             "role" : "AUTHOR",
@@ -29,10 +25,6 @@
                     "identifier" : "",
                     "name" : "Max Planck Institute for Solid State Research",
                     "address" : "Heisenbergstr. 1, 70569 Stuttgart, Germany"
-                }],
-                "identifier" : [{
-                    "id" : "",
-                    "type" : "CONE"
                 }]
             },
             "role" : "AUTHOR",
@@ -45,10 +37,6 @@
                     "identifier" : "",
                     "name" : "State Academy of Art and Design",
                     "address" : "Am Weißenhof 1, 70191 Stuttgart, Germany"
-                }],
-                "identifier" : [{
-                    "id" : "",
-                    "type" : "CONE"
                 }]
             },
             "role" : "AUTHOR",
@@ -61,10 +49,6 @@
                     "identifier" : "",
                     "name" : "High Resolution Powder Diffraction Beamline (I11), Diamond Light Source Ltd",
                     "address" : "Harwell Science and Innovation Campus, Didcot, Oxfordshire, OX11 0DE, UK"
-                }],
-                "identifier" : [{
-                    "id" : "",
-                    "type" : "CONE"
                 }]
             },
             "role" : "AUTHOR",
@@ -77,10 +61,6 @@
                     "identifier" : "",
                     "name" : "Max Planck Institute for Solid State Research",
                     "address" : "Heisenbergstr. 1, 70569 Stuttgart, Germany"
-                }],
-                "identifier" : [{
-                    "id" : "",
-                    "type" : "CONE"
                 }]
             },
             "role" : "AUTHOR",
@@ -131,5 +111,18 @@
                 }
             }
         }]
-    }
+    },
+    "files" : [ {
+
+      "visibility" : "PUBLIC",
+      
+      "content" : "returned by staging",
+      "storage" : "INTERNAL_MANAGED",
+      
+      "metadata" : {
+        "title" : "C7DT03288A.pdf",
+        "contentCategory" : "any-fulltext"
+        
+      }
+    } ]
 }

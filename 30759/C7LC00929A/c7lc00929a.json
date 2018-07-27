@@ -1,6 +1,6 @@
 {
     "context" : {
-        "objectId" : "ctx_00929"
+        "objectId" : "ctx_persistent3"
     },
     "localtags" : [ ],
     "metadata" : {
@@ -65,10 +65,6 @@
                     "identifier" : "",
                     "name" : "Institute of Microtechnology, TU Braunschweig",
                     "address" : "38124 Braunschweig, Germany"
-                }],
-                "identifier" : [{
-                    "id" : "",
-                    "type" : "CONE"
                 }]
             },
             "role" : "AUTHOR",
@@ -81,10 +77,6 @@
                     "identifier" : "",
                     "name" : "Institute of Microtechnology, TU Braunschweig",
                     "address" : "38124 Braunschweig, Germany"
-                }],
-                "identifier" : [{
-                    "id" : "",
-                    "type" : "CONE"
                 }]
             },
             "role" : "AUTHOR",
@@ -171,5 +163,18 @@
                 }
             }
         }]
-    }
+    },
+    "files" : [ {
+
+      "visibility" : "PUBLIC",
+      
+      "content" : "returned by staging",
+      "storage" : "INTERNAL_MANAGED",
+      
+      "metadata" : {
+        "title" : "C7LC00929A.pdf",
+        "contentCategory" : "any-fulltext"
+        
+      }
+    } ]
 }

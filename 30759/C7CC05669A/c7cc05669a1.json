@@ -1,6 +1,6 @@
 {
     "context" : {
-        "objectId" : "ctx_28054"
+        "objectId" : "ctx_persistent3"
     },
     "localtags" : [ ],
     "metadata" : {
@@ -13,10 +13,6 @@
                     "identifier" : "",
                     "name" : "Department of Heterogeneous Catalysis, Max Planck Institute for Chemical Energy Conversion",
                     "address" : "Stiftstrasse 34-36, Muelheim and Ruhr, 45470, Germany"
-                }],
-                "identifier" : [{
-                    "id" : "",
-                    "type" : "CONE"
                 }]
             },
             "role" : "AUTHOR",
@@ -29,10 +25,6 @@
                     "identifier" : "",
                     "name" : "Department of Heterogeneous Catalysis, Max Planck Institute for Chemical Energy Conversion",
                     "address" : "Stiftstrasse 34-36, Muelheim and Ruhr, 45470, Germany"
-                }],
-                "identifier" : [{
-                    "id" : "",
-                    "type" : "CONE"
                 }]
             },
             "role" :"AUTHOR",
@@ -45,10 +37,6 @@
                     "identifier" : "",
                     "name" : "Department of Heterogeneous Catalysis, Max Planck Institute for Chemical Energy Conversion",
                     "address" : "Stiftstrasse 34-36, Muelheim and Ruhr, 45470, Germany"
-                }],
-                "identifier" : [{
-                    "id" : "",
-                    "type" : "CONE"
                 }]
             },
             "role" :"AUTHOR",
@@ -103,7 +91,7 @@
             "title" :" ",
             "grantIdentifier" : {
                 "id" : "03ESP106",
-                "type" : "GRANT ID"
+                "type" : "GRANT_ID"
             },
             "fundingInfo" : {
                 "fundingOrganization" : {
@@ -111,5 +99,18 @@
                 }
             }
         }]
-    }
+    },
+    "files" : [ {
+
+      "visibility" : "PUBLIC",
+      
+      "content" : "returned by staging",
+      "storage" : "INTERNAL_MANAGED",
+      
+      "metadata" : {
+        "title" : "C7CC05669A.pdf",
+        "contentCategory" : "any-fulltext"
+        
+      }
+    } ]
 }

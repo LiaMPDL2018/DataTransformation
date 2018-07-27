@@ -1,0 +1,1721 @@
+{
+    "article": {
+        "@dtd": "RSCART3.8",
+        "@type": "COM",
+        "@xmlns": "http://www.rsc.org/schema/rscart38",
+        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+        "@xsi:schemaLocation": "http://www.rsc.org/schema/rscart38 http://www.rsc.org/schema/rscart38/rscart38.xsd",
+        "@xmlns:tmp": "http://www.rsc.org/editing",
+        "@tmp:status": "aaprep",
+        "art-admin": {
+            "ms-id": "c7cc05669a",
+            "doi": "10.1039/c7cc05669a",
+            "received": {
+                "date": {
+                    "year": "2017",
+                    "month": "August",
+                    "day": "25"
+                }
+            },
+            "date": {
+                "@role": "accepted",
+                "year": "2017",
+                "month": "October",
+                "day": "9"
+            }
+        },
+        "published": [
+            {
+                "@type": "web",
+                "journalref": {
+                    "link": "CC"
+                },
+                "volumeref": {
+                    "link": "Unassigned"
+                },
+                "issueref": {
+                    "link": "Advance Articles"
+                },
+                "pubfront": {
+                    "fpage": null,
+                    "lpage": null,
+                    "no-of-pages": null,
+                    "date": {
+                        "year": "2017",
+                        "month": "October",
+                        "day": "16"
+                    }
+                }
+            },
+            {
+                "@type": "print",
+                "journalref": {
+                    "link": "CC"
+                },
+                "volumeref": {
+                    "link": null
+                },
+                "issueref": {
+                    "link": null
+                },
+                "pubfront": {
+                    "fpage": null,
+                    "lpage": null,
+                    "no-of-pages": null,
+                    "date": {
+                        "year": "Unassigned",
+                        "month": "Unassigned",
+                        "day": "Unassigned"
+                    }
+                }
+            },
+            {
+                "@type": "subsyear",
+                "journalref": {
+                    "link": "CC"
+                },
+                "volumeref": {
+                    "link": null
+                },
+                "issueref": {
+                    "link": null
+                },
+                "pubfront": {
+                    "fpage": null,
+                    "lpage": null,
+                    "no-of-pages": null,
+                    "date": {
+                        "year": "2017",
+                        "month": "Unassigned",
+                        "day": "Unassigned"
+                    }
+                }
+            }
+        ],
+        "art-links": {
+            "suppinf": {
+                "link": "INFO"
+            },
+            "fundgrp": {
+                "funder": {
+                    "funder-name": "Bundesministerium f\u00fcr Wirtschaft und Energie",
+                    "funder-identifier": "10.13039/501100006360",
+                    "award-number": "03ESP106D"
+                }
+            }
+        },
+        "art-front": {
+            "titlegrp": {
+                "title": {
+                    "it": "in situ",
+                    "fnoteref": {
+                        "@idrefs": "fn1"
+                    },
+                    "footnote": {
+                        "@id": "fn1",
+                        "url": "10.1039/c7cc05669a",
+                        "#text": "Electronic supplementary information (ESI) available: Experimental details, cyclic voltammograms, Raman spectra in various electrochemical media and computational details. See DOI:"
+                    },
+                    "#text": "The active site for the water oxidising anodic iridium oxide probed through  Raman spectroscopy"
+                }
+            },
+            "authgrp": {
+                "author": [
+                    {
+                        "@aff": "affa",
+                        "person": {
+                            "@orcid": "0000-0002-4965-8458",
+                            "persname": {
+                                "fname": "Zoran",
+                                "surname": "Pavlovic"
+                            }
+                        }
+                    },
+                    {
+                        "@aff": "affa",
+                        "@role": "corres",
+                        "person": {
+                            "@orcid": "0000-0002-3758-3751",
+                            "persname": {
+                                "fname": "Chinmoy",
+                                "surname": "Ranjan"
+                            }
+                        }
+                    },
+                    {
+                        "@aff": "affa",
+                        "person": {
+                            "@orcid": "0000-0002-1547-6365",
+                            "@resid": "G-8572-2012",
+                            "persname": {
+                                "fname": "Maurice",
+                                "surname": "van Gastel"
+                            }
+                        }
+                    },
+                    {
+                        "@aff": "affa",
+                        "person": {
+                            "persname": {
+                                "fname": "Robert",
+                                "surname": "Schl\u00f6gl"
+                            }
+                        }
+                    }
+                ],
+                "aff": {
+                    "@id": "affa",
+                    "org": {
+                        "orgname": {
+                            "nameelt": [
+                                "Department of Heterogeneous Catalysis",
+                                "Max Planck Institute for Chemical Energy Conversion",
+                                "Stiftstrasse 34-36"
+                            ]
+                        }
+                    },
+                    "address": {
+                        "city": "Muelheim and Ruhr",
+                        "postcode": "45470",
+                        "country": "Germany"
+                    },
+                    "email": "chinmoy.ranjan@cec.mpg.de"
+                }
+            },
+            "art-toc-entry": {
+                "ictext": {
+                    "inf": {
+                        "it": "x"
+                    },
+                    "it": "in situ",
+                    "#text": "The structure of anodic iridium oxide (IrO) under water oxidation was explored using  Raman spectroscopy and theoretical calculations."
+                },
+                "icgraphic": {
+                    "@id": "ga",
+                    "@xsrc": "c7cc05669a-ga.tif"
+                }
+            },
+            "abstract": {
+                "p": {
+                    "inf": {
+                        "it": "x"
+                    },
+                    "it": "in situ",
+                    "#text": "The structure of anodic iridium oxide (IrO) under water oxidation was explored using  Raman spectroscopy and theoretical calculations. Isotopic substitution experiments and theoretical calculations confirmed formation of an Ir\ue001O species during oxygen evolution reaction."
+                }
+            }
+        },
+        "art-body": {
+            "section": [
+                {
+                    "p": [
+                        {
+                            "citref": [
+                                {
+                                    "@idrefs": "cit1 cit2",
+                                    "#text": "1,2"
+                                },
+                                {
+                                    "@idrefs": "cit3",
+                                    "#text": "3"
+                                },
+                                {
+                                    "@idrefs": "cit4 cit5 cit6 cit7 cit8",
+                                    "#text": "4\u20138"
+                                },
+                                {
+                                    "@idrefs": "cit9",
+                                    "#text": "9"
+                                },
+                                {
+                                    "@idrefs": "cit10",
+                                    "#text": "10"
+                                },
+                                {
+                                    "@idrefs": "cit11",
+                                    "#text": "11"
+                                },
+                                {
+                                    "@idrefs": "cit12 cit13",
+                                    "#text": "12,13"
+                                },
+                                {
+                                    "@idrefs": "cit12",
+                                    "#text": "12"
+                                },
+                                {
+                                    "@idrefs": "cit14 cit15 cit16",
+                                    "#text": "14\u201316"
+                                },
+                                {
+                                    "@idrefs": "cit17",
+                                    "#text": "17"
+                                },
+                                {
+                                    "@idrefs": "cit18",
+                                    "#text": "18"
+                                },
+                                {
+                                    "@idrefs": "cit11",
+                                    "#text": "11"
+                                }
+                            ],
+                            "inf": [
+                                {
+                                    "it": "x"
+                                },
+                                "2",
+                                {
+                                    "it": "x"
+                                },
+                                {
+                                    "it": "x"
+                                },
+                                {
+                                    "it": "x"
+                                },
+                                {
+                                    "it": "x"
+                                },
+                                {
+                                    "it": "x"
+                                },
+                                {
+                                    "it": "x"
+                                },
+                                {
+                                    "it": "x"
+                                },
+                                {
+                                    "it": "x"
+                                },
+                                {
+                                    "it": "x"
+                                },
+                                {
+                                    "it": "x"
+                                }
+                            ],
+                            "it": [
+                                "et al.",
+                                "et al.",
+                                "ex situ",
+                                "et al.",
+                                "et al.",
+                                "et al.",
+                                "et al.",
+                                "in situ",
+                                "et al.",
+                                "in situ",
+                                "in situ"
+                            ],
+                            "sup": [
+                                "5+",
+                                "3+",
+                                "5+",
+                                "\u22121"
+                            ],
+                            "#text": "The oxygen electrode remains a central challenge in implementing a hydrogen-based economy. IrO remains one of the most important catalysts for water oxidation reaction. Dimensionally stable anodes (DSA) are composed of primarily IrO. These materials require being treated through activation protocols before they can be implemented. IrO materials were shown to be very active by Mallouk  In the alkaline media, Mallouk  proposed that these materials are unstable and form molecular species that show oxygen activity. In fact, the activity shown by these materials in alkaline electrolytes was much higher than in acidic or neutral electrolytes. We have recently characterized the active IrO material through  Raman spectroscopy on anodic IrO grown on an iridium foil. Attempts to understand the mechanism of OER on IrO has encouraged operando studies using XPS and XAS. These investigations focused on an Ir-centered approach to understanding the nature of the active catalyst. XPS studies observed an additional Ir 4f peak at higher binding energy (+0.7 eV) during OER and suggested an Ir species forming during the catalytic event. Minguzzi  suggested the formation of both Ir and Ir during OER. But both these studies do not compare the shifts to standard Ir-containing compounds. High oxidation states (+5 or greater) are only known for fluorine-containing molecules amongst the stable Ir compounds or in IrO molecular species isolated within a noble gas matrix. Reier  and Pfeiffer  observed an additional feature at 529 eV in the O-Kedge NEXAFS spectra of highly OER active Ir\u2013NiO and amorphous IrO respectively. Using DFT calculations, they have suggested this to be an electrophilic oxygen species present in these materials. By the nature of their inquiry, these studies cannot clarify the exact chemical nature of the IrO active site which is possible through vibrational spectroscopy. Mo  carried out  Raman spectroscopy on IrO/Au system but essentially used XAS data for interpretation of results. Frei and coworkers have investigated IrO clusters as OER catalysts using rapid scan FTIR under visible light. They reported detection of a transient Ir\u2013OOH species with O\u2013O vibration being detected at 830 cm. This work goes beyond work reported by Pavlovic  and uses  Raman spectroscopy to understand the behavior of these materials under conditions of OER. Specifically we focus on active site that forms . We suggest a Ir\ue001O species, with five coordinated square pyramidal Ir as the active site for water oxidation and suggest a mechanistic pathway for product formation and replenishment of the active site."
+                        },
+                        {
+                            "inf": [
+                                {
+                                    "it": "x"
+                                },
+                                "2",
+                                {
+                                    "it": "x"
+                                }
+                            ],
+                            "fnoteref": {
+                                "@idrefs": "fn1"
+                            },
+                            "it": [
+                                "et al.",
+                                "in situ"
+                            ],
+                            "citref": [
+                                {
+                                    "@idrefs": "cit9",
+                                    "#text": "9"
+                                },
+                                {
+                                    "@idrefs": "cit11",
+                                    "#text": "11"
+                                }
+                            ],
+                            "sup": "2",
+                            "#text": "Cyclic voltammogram of IrO materials in different electrolytes is well known (Fig. S1, ESI). All the potentials reported in this paper are referenced to the reversible hydrogen electrode (RHE). The material was electroprecipitated at 1.5 V onto a Au substrate as shown by Mallouk  In our previous publication we have shown that the anodic Iridium oxide is essentially a hydrous material with OH and HO groups playing important role in its overall structure. Experiments of IrO/Au were conducted in an  Raman cell, using Biologic VSP-300 potentiostat. Raman spectra were collected with Ocean Optics QE65 pro spectrometer using 785 nm Laser source. The Laser intensity was maintained at 500 mW per 0.1 mm at the sample (collection time of 10 s). The potential was scanned from 0.4\u20131.8 V, at steps of 0.1 V."
+                        },
+                        {
+                            "it": [
+                                "in situ",
+                                "et al.",
+                                "E",
+                                "E",
+                                "E",
+                                "E",
+                                "\u03b4",
+                                "f",
+                                "et al."
+                            ],
+                            "figref": [
+                                {
+                                    "@idrefs": "fig1",
+                                    "#text": "Fig. 1"
+                                },
+                                {
+                                    "@idrefs": "fig2",
+                                    "#text": "Fig. 2"
+                                },
+                                {
+                                    "@idrefs": "fig2",
+                                    "#text": "Fig. 2"
+                                }
+                            ],
+                            "fnoteref": [
+                                {
+                                    "@idrefs": "fn1"
+                                },
+                                {
+                                    "@idrefs": "fn1"
+                                },
+                                {
+                                    "@idrefs": "fn1"
+                                },
+                                {
+                                    "@idrefs": "fn1"
+                                }
+                            ],
+                            "sup": [
+                                "\u22121",
+                                "\u22121",
+                                "3+",
+                                "3+",
+                                "4+",
+                                "\u22121",
+                                "\u22121",
+                                "\u22121",
+                                "\u22121",
+                                "\u22121",
+                                "16"
+                            ],
+                            "citref": [
+                                {
+                                    "@idrefs": "cit11",
+                                    "#text": "11"
+                                },
+                                {
+                                    "@idrefs": "cit11",
+                                    "#text": "11"
+                                },
+                                {
+                                    "@idrefs": "cit18",
+                                    "#text": "18"
+                                },
+                                {
+                                    "@idrefs": "cit18",
+                                    "#text": "18"
+                                },
+                                {
+                                    "@idrefs": "cit18",
+                                    "#text": "18"
+                                },
+                                {
+                                    "@idrefs": "cit18",
+                                    "#text": "18"
+                                },
+                                {
+                                    "@idrefs": "cit18",
+                                    "#text": "18"
+                                },
+                                {
+                                    "@idrefs": "cit18",
+                                    "#text": "18"
+                                },
+                                {
+                                    "@idrefs": "cit16",
+                                    "#text": "16"
+                                }
+                            ],
+                            "inf": [
+                                {
+                                    "it": "x"
+                                },
+                                "6",
+                                {
+                                    "it": "x"
+                                },
+                                {
+                                    "it": "x"
+                                },
+                                {
+                                    "it": "x"
+                                },
+                                {
+                                    "it": "x"
+                                },
+                                {
+                                    "it": "x"
+                                },
+                                "2",
+                                "2",
+                                "2",
+                                "2",
+                                "2",
+                                "2",
+                                "2",
+                                "2",
+                                "2"
+                            ],
+                            "tableref": {
+                                "@idrefs": "tab1",
+                                "#text": "Table 1"
+                            },
+                            "ugraphic": [
+                                {
+                                    "@display": "inline",
+                                    "@id": "ugt1",
+                                    "@xsrc": "c7cc05669a-t1.tif"
+                                },
+                                {
+                                    "@display": "inline",
+                                    "@id": "ugt2",
+                                    "@xsrc": "c7cc05669a-t2.tif"
+                                }
+                            ],
+                            "#text": "Results of the  Raman experiment are shown in . More details of the experiments are provided in the ESI. Peaks at 225 and 324 cm originate from the Au surface. The peaks from 450\u2013780 cm originate from iridium oxygen vibrations, where peak assignments have been used from Pavlovic  Electrochemically, four regions (R) in the IrO CV can be clearly identified. R1( < 0.4 V), R2 (0.4 <  < 0.7 V), R3 (0.7 <  < 1.2 V) and R4 ( < 1.4 V). Whereas R1 corresponds to a colorless compound rich in Ir, R2 represents the region of first oxidation wave from Ir\u2194 Ir. At the beginning of the experiment at OCP, there is a certain peak structure (465, 527, 600, 702 cm), which can be attributed to the Ir\u2013O\u2013Ir stretch vibrations of \u03bc-oxo type from the basal plane of edge sharing IrO octahedra. As soon as the potential of 0.4 V is applied, a sharp peak at 520 cm is formed. This is the most dominant peak  in region R1. Region R1 has no \u03b5 peak which appears in R2. The \u03b5 peak loses intensity in R3. R4 shows significant drift of peaks \u03b3 \u2192 \u03b5 towards higher frequencies. At potentials 1.3 V and higher, AuO is formed (Fig. S4, ESI). Thus peaks in R4 have substantial AuO contribution to them. The final peaks observed at OCP in the treated materials are composed of both IrO and AuO peaks. The peak \u03b7 at 771 cm is seen in R4. This peak disappears as soon as the applied potential is switched off. This peak does not exist in experiments done on a bare Au surface and thus must be assigned to IrO material under conditions of water oxidation. Isotopic substitution using DO and HO as synthesis and reaction media were also carried out. Results have been tabulated in .  shows effects of isotopic substitution on \u03b7. In the experiment that has 50\u2009:\u200950 (HO\u2009:\u2009HO), only two peaks of nearly equal intensity were visible. Thus this peak could be assigned to Ir\ue001O vibration (as opposed to any other species that contained O\u2013O, or OH vibration). If O movement is the primary oscillator in this vibration, then one can expect a shift of  upon O substitution. Deuterium substitution resulted in almost no shift of the peak (\u0394 \u223c 5 cm). For Ir\u2013O\u2013OH containing groups, the shift reported by Frei  due to deuteration was 30 cm. Small shifts due to deuteration are possible through altered hydrogen bonding contributions from the solvent. Vibrations where the motion of the hydrogen atom explicitly contribute to the vibrational mode show significant alteration of frequency upon deuteration due to the large mass change . Fig. S5 (ESI) shows the results from various experiments with combinations of HO, DO, and HO containing electrolytes. , shows \u03b7 peak at OER potentials in variously labeled electrolytes. Fig. S5(d) (ESI) shows the results of experiments when material was synthesized in HO and tested in HO. Peaks \u03b3 to \u03b5 begin to split into two sets of peaks in the beginning of R3 indicating that material exchanges oxygens with the electrolyte even at potentials as low as 0.7 V. Even the position of \u03b7 peak only shows the contribution from O isotope."
+                        },
+                        {
+                            "inf": [
+                                {
+                                    "it": "x"
+                                },
+                                "6",
+                                {
+                                    "it": "x"
+                                },
+                                "2",
+                                "6",
+                                {
+                                    "it": "n"
+                                },
+                                "6",
+                                {
+                                    "it": "n"
+                                },
+                                {
+                                    "it": "x"
+                                },
+                                "2",
+                                {
+                                    "it": "x"
+                                },
+                                {
+                                    "it": "xz"
+                                },
+                                "2g",
+                                {
+                                    "it": "x"
+                                }
+                            ],
+                            "fnoteref": [
+                                {
+                                    "@idrefs": "fn1"
+                                },
+                                {
+                                    "@idrefs": "fn1"
+                                },
+                                {
+                                    "@idrefs": "fn1"
+                                },
+                                {
+                                    "@idrefs": "fn1"
+                                }
+                            ],
+                            "sup": [
+                                "4+",
+                                "4+",
+                                "4+",
+                                "\u22121",
+                                "\u22121",
+                                "\u22121",
+                                "\u22121",
+                                "\u22121",
+                                "\u22121",
+                                "5+",
+                                "4+",
+                                "4+",
+                                "4+",
+                                "3+",
+                                "\u2212",
+                                "5+",
+                                "4+",
+                                "\u2212",
+                                "\u2212"
+                            ],
+                            "figref": [
+                                {
+                                    "@idrefs": "fig3",
+                                    "#text": "Fig. 3"
+                                },
+                                {
+                                    "@idrefs": "fig3",
+                                    "#text": "Fig. 3"
+                                },
+                                {
+                                    "@idrefs": "fig3",
+                                    "#text": "Fig. 3(b)"
+                                },
+                                {
+                                    "@idrefs": "fig4",
+                                    "#text": "Fig. 4"
+                                },
+                                {
+                                    "@idrefs": "fig3",
+                                    "#text": "Fig. 3"
+                                }
+                            ],
+                            "it": [
+                                "e.g.",
+                                "et al.",
+                                "et al.",
+                                "et al.",
+                                "et al.",
+                                "et al.",
+                                "in situ"
+                            ],
+                            "citref": [
+                                {
+                                    "@idrefs": "cit19",
+                                    "#text": "19"
+                                },
+                                {
+                                    "@idrefs": "cit20 cit21 cit22",
+                                    "#text": "20\u201322"
+                                },
+                                {
+                                    "@idrefs": "cit16 cit23 cit24",
+                                    "#text": "16,23,24"
+                                },
+                                {
+                                    "@idrefs": "cit25 cit26",
+                                    "#text": "25,26"
+                                },
+                                {
+                                    "@idrefs": "cit23",
+                                    "#text": "23"
+                                },
+                                {
+                                    "@idrefs": "cit23 cit24",
+                                    "#text": "23,24"
+                                },
+                                {
+                                    "@idrefs": "cit27",
+                                    "#text": "27"
+                                }
+                            ],
+                            "#text": "Theoretical calculations using density functional theory were carried out to better understand the IrO system (Fig. S6\u2013S8, ESI). Specifically, calculations were performed to understand the identity of the Ir\ue001O species. A trimeric IrO unit was used to construct a model system for calculation. It was found that an Ir\u2013O unit on the central Ir atom resulted in the formation of a square pyramidal central Ir atom. [Ir\u2013Ir\u2013Ir] trimeric IrO cluster was used for computation (). The Ir\u2013O vibration was computed to be at 829 cm. Furthermore it was found that the vibrations could be significantly modulated through hydrogen bonding near the \u201cIr\u2013O\u201d  the Ir\u2013O vibration was reduced to 766 cm from 829 cm by placing a HO molecule near the Ir\u2013O moiety. Besides, the relative intensity of this vibration was found to be very strong compared to the other vibrations within this molecule. We believe at the optimum potential some of the [IrO] species turn into the OER active Ir\ue001O species that removes any further oxidative strain from the material. Even though present in much less quantity, the extremely high Raman activity of the Ir\u2013O stretch vibration makes it possible for the active species to be detected within a matrix of [IrO] containing material. The 771 cm peak can also be detected in acidic media but has a much smaller intensity (the OER activity of the material in acidic and neutral media is much less than alkaline media (Fig. S2, ESI)). This is likely because the material is highly condensed in the acidic and neutral media and not many exposed active sites containing Ir\ue001O species form, which gets reflected in the overall activity of the material. Ir\u2013OOH species (Fig. S7, ESI) were also computed. The frequency of vibration of O\u2013O stretch was 715 cm, besides the O\u2013O stretch Raman intensity was much smaller. In light of our experimental and computational investigations we assign the observed 771 cm vibration to Ir\ue001O stretch of a square pyramidal Ir site. The frontier orbitals of IrO were calculated and have been visualized in . The SOMO () shows that Ir\u2013O unit is the most reactive part of the molecule with a major part of the molecular orbital localised in this region. The frontier orbitals are anti-bonding in nature between Ir-d and O-p with significant localization on O atom making it a suitable target for reaction. We believe this oxygen may be responsible for making the important O\u2013O bond during the formation of molecular O from water (). M\u2013O species responsible for oxidizing water are common in literature. In case of Mn-containing Photosystem II catalyst, the O\u2013O bond formation either happens through a nucleophilic attack at the Mn\u2013O center (Mn\u2013O, Mn\u2013O or Mn\u2013oxyl) species or by an oxyl\u2013oxyl radical coupling mechanism. But the exact nature of the species is debatable. It has been suggested in the literature that an electrophilic oxygen at the active site is essential to make reactions like O\u2013O bond formation and C\u2013H bond activation, possible. Wang  and Concepcion and coworkers suggested an O\u2013O bond formation using nucleophilic attack on Ru\ue001O site. Using DFT based theory, Mai  suggested that C\u2013H activation essentially consists of two parts, an Fe\ue001O species which was a precursor to Fe\u2013O\u02d9 oxyl species that carried out the hydrogen atom transfer. Similarly, using DFT calculations Yang  have argued that Ru\ue001O can act as a precursor to Ru\u2013O\u02d9 oxyl species which carries out water O\u2013O bond formation. For the IrO cluster shown in , the total L\u00f6wdin charge at the oxygen atom amounts to only \u22120.12 (as compared to \u22120.35 for the bridging oxo-s) and the L\u00f6wdin spin population at the central Ir and oxo amounts to 47% and 29%, respectively. Semantically, although this charge distribution would be compatible with a metal-oxyl (O\u02d9) species, the spin distribution rather indicates a much lower spin population at the oxygen (29%) than expected for a radical species (\u223c100%). This is the result of a somewhat covalent Ir\u2013O \u03c0-interaction that involves the spin carrying d orbital (t in octahedral symmetry) at Ir (ESI). We believe what we see in our experiment, is the structure that is precursor to the reactive oxyl species as proposed by Mai and Yang  The observation of a reactive oxyl radical species under experimental conditions remains difficult, specifically at room temperature. Herlihy  observed an oxyl species on TiO system using  ultrafast infrared spectroscopy. Based on our data, we claim an Ir\u2013O species that can in principle act as a precursor to a highly electrophilic oxyl species that reacts with water (or dissociated water) to form an O\u2013O bond."
+                        },
+                        {
+                            "inf": [
+                                "6",
+                                {
+                                    "it": "n"
+                                },
+                                {
+                                    "it": "x"
+                                },
+                                {
+                                    "it": "y"
+                                },
+                                "2",
+                                {
+                                    "it": "z"
+                                },
+                                "2",
+                                "2"
+                            ],
+                            "it": [
+                                "ex situ",
+                                "in situ"
+                            ],
+                            "figref": {
+                                "@idrefs": "fig4",
+                                "#text": "Fig. 4"
+                            },
+                            "#text": "The scaffold enabling the OER is derived from a highly hydrous [IrO] species (of the type IrO(OH)(HO)), where each Ir atom is octahedrally coordinated by oxygens. Whereas the colour and vibrational spectroscopy of most of this material can be traced using  spectroscopy, the formation of an active a square pyramidal \u201cIr\u2013O\u201d species is detectable only through  spectroscopy under applied potential. We propose that this Ir\u2013O species is the active site within the molecule which is open to attack from HO molecules leading to formation of O through formation of an O\u2013O bond as shown in . The OER chemistry is likely to proceed primarily in the ligand sphere."
+                        },
+                        "The authors thank BMWi for supporting this work through grant 03ESP106D (EKOLYSER). Open Access funding provided by the Max Planck Society."
+                    ],
+                    "figure": [
+                        {
+                            "@id": "fig1",
+                            "@xsrc": "c7cc05669a-f1.tif",
+                            "title": {
+                                "it": [
+                                    "In situ",
+                                    "et al.",
+                                    "in situ"
+                                ],
+                                "inf": [
+                                    {
+                                        "it": "x"
+                                    },
+                                    {
+                                        "it": "x"
+                                    }
+                                ],
+                                "fnoteref": {
+                                    "@idrefs": "fn1"
+                                },
+                                "citref": {
+                                    "@idrefs": "cit11",
+                                    "#text": "11"
+                                },
+                                "#text": "(a)  Raman spectroscopy of IrO/Au system in 0.1 M NaOH. The peaks labeled by greek letters originate from Ir\u2013O stretch vibrations. Rest of the peaks can be assigned to Au substrate (ESI, Section 2). \u03b7 peak is only visible during the process of OER and disappears with removal of applied potential. Peak assignments (in greek letters) have been borrowed from Pavlovic  (b) CV of IrO/Au in 0.1 M NaOH (c) Average currents from  experiments in various electrochemical media."
+                            }
+                        },
+                        {
+                            "@id": "fig2",
+                            "@xsrc": "c7cc05669a-f2.tif",
+                            "title": "Raman spectra of the \u03b7 peak in various isotopically labeled electrolytes. The peaks are background corrected and normalized (details in Experimental section)."
+                        },
+                        {
+                            "@id": "fig3",
+                            "@xsrc": "c7cc05669a-f3.tif",
+                            "title": {
+                                "inf": {
+                                    "it": "x"
+                                },
+                                "sup": "4+",
+                                "#text": "Theoretical calculations were carried out on IrO species containing with \u201cIr\u2013O\u201d moiety. The calculations resulted in an Ir\u2013O species that was essentially square pyramidal at the Ir center. (Top) Ir containing species with the central atom having the Ir\u2013O bond. The oxygen atom has been labeled with a O* (Top). (bottom) SOMO of the species."
+                            }
+                        },
+                        {
+                            "@id": "fig4",
+                            "@xsrc": "c7cc05669a-f4.tif",
+                            "title": {
+                                "inf": {
+                                    "it": "x"
+                                },
+                                "#text": "Proposed active species responsible for water oxidation in IrO materials (alkaline media). Suggested mechanism of oxidation of water and regeneration of the active site is shown. The oxo species is likely to go through an oxyl type species before the O\u2013O bond is formed."
+                            }
+                        }
+                    ],
+                    "table-entry": {
+                        "@id": "tab1",
+                        "title": {
+                            "inf": {
+                                "it": "x"
+                            },
+                            "it": "et al.",
+                            "citref": {
+                                "@idrefs": "cit11",
+                                "#text": "11"
+                            },
+                            "#text": "Peaks obtained in the Raman spectra of IrO/Au labeled at 0.8 V. The peaks tend to move with applied potential and thus their exact location can be described only at a certain potential. The Ir\u2013O stretching assignments have been borrowed from Pavolovic"
+                        },
+                        "table": {
+                            "tgroup": {
+                                "@cols": "6",
+                                "colspec": [
+                                    {
+                                        "@colname": "1",
+                                        "@colnum": "1"
+                                    },
+                                    {
+                                        "@colname": "2",
+                                        "@colnum": "2"
+                                    },
+                                    {
+                                        "@colname": "3",
+                                        "@colnum": "3"
+                                    },
+                                    {
+                                        "@colname": "4",
+                                        "@colnum": "4"
+                                    },
+                                    {
+                                        "@colname": "5",
+                                        "@colnum": "5"
+                                    },
+                                    {
+                                        "@colname": "6",
+                                        "@colnum": "6"
+                                    }
+                                ],
+                                "thead": {
+                                    "row": {
+                                        "entry": [
+                                            "Peak labels",
+                                            {
+                                                "inf": "2",
+                                                "#text": "HO"
+                                            },
+                                            {
+                                                "inf": "2",
+                                                "#text": "DO"
+                                            },
+                                            {
+                                                "inf": "2",
+                                                "citref": {
+                                                    "@idrefs": "cit18",
+                                                    "#text": "18"
+                                                },
+                                                "#text": "HO"
+                                            },
+                                            {
+                                                "inf": [
+                                                    "2",
+                                                    "2"
+                                                ],
+                                                "citref": {
+                                                    "@idrefs": "cit18",
+                                                    "#text": "18"
+                                                },
+                                                "#text": "1\u2009:\u20091 (HO\u2009:\u2009HO)"
+                                            },
+                                            {
+                                                "inf": [
+                                                    "2",
+                                                    "2"
+                                                ],
+                                                "citref": {
+                                                    "@idrefs": "cit18",
+                                                    "#text": "18"
+                                                },
+                                                "#text": "HO tested in HO"
+                                            }
+                                        ]
+                                    }
+                                },
+                                "tfoot": {
+                                    "row": {
+                                        "entry": {
+                                            "@nameend": "6",
+                                            "@namest": "1",
+                                            "footnote": {
+                                                "@id": "tab1fna",
+                                                "#text": "Collected at 1.7 V."
+                                            }
+                                        }
+                                    }
+                                },
+                                "tbody": {
+                                    "row": [
+                                        {
+                                            "entry": [
+                                                "\u03b3",
+                                                "476",
+                                                "475",
+                                                "423",
+                                                "454, 482",
+                                                "430, 458, 480"
+                                            ]
+                                        },
+                                        {
+                                            "entry": [
+                                                "\u03b4",
+                                                "527",
+                                                "554",
+                                                "476",
+                                                "541, 482",
+                                                "554"
+                                            ]
+                                        },
+                                        {
+                                            "entry": [
+                                                "\u03b5",
+                                                "595",
+                                                "602",
+                                                "554",
+                                                "605, 552",
+                                                "608"
+                                            ]
+                                        },
+                                        {
+                                            "entry": [
+                                                {
+                                                    "fnoteref": {
+                                                        "@idrefs": "tab1fna"
+                                                    },
+                                                    "#text": "\u03b7"
+                                                },
+                                                "771",
+                                                "767",
+                                                "712",
+                                                "722, 771",
+                                                "\u2014"
+                                            ]
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "title": "Conflicts of interest",
+                    "p": "There are no conflicts to declare."
+                }
+            ]
+        },
+        "art-back": {
+            "biblist": {
+                "citgroup": [
+                    {
+                        "@id": "cit1",
+                        "journalcit": {
+                            "citauth": {
+                                "fname": "J. A.",
+                                "surname": "Turner"
+                            },
+                            "title": "Science",
+                            "year": "2004",
+                            "volumeno": "305",
+                            "pages": {
+                                "fpage": "972",
+                                "lpage": "974"
+                            }
+                        }
+                    },
+                    {
+                        "@id": "cit2",
+                        "journalcit": {
+                            "citauth": {
+                                "fname": "R.",
+                                "surname": "Schl\u00f6gl"
+                            },
+                            "title": "ChemSusChem",
+                            "year": "2010",
+                            "volumeno": "3",
+                            "issueno": "2",
+                            "pages": {
+                                "fpage": "209",
+                                "lpage": "222"
+                            }
+                        }
+                    },
+                    {
+                        "@id": "cit3",
+                        "journalcit": {
+                            "citauth": [
+                                {
+                                    "fname": "C. C. L.",
+                                    "surname": "McCrory"
+                                },
+                                {
+                                    "fname": "S. H.",
+                                    "surname": "Jung"
+                                },
+                                {
+                                    "fname": "J. C.",
+                                    "surname": "Peters"
+                                },
+                                {
+                                    "fname": "T. F.",
+                                    "surname": "Jaramillo"
+                                }
+                            ],
+                            "title": "J. Am. Chem. Soc.",
+                            "year": "2013",
+                            "volumeno": "135",
+                            "issueno": "45",
+                            "pages": {
+                                "fpage": "16977",
+                                "lpage": "16987"
+                            }
+                        }
+                    },
+                    {
+                        "@id": "cit4",
+                        "journalcit": {
+                            "citauth": [
+                                {
+                                    "fname": "A.",
+                                    "surname": "Hrussanova"
+                                },
+                                {
+                                    "fname": "E.",
+                                    "surname": "Guerrini"
+                                },
+                                {
+                                    "fname": "S.",
+                                    "surname": "Trasatti"
+                                }
+                            ],
+                            "title": "J. Electroanal. Chem.",
+                            "year": "2004",
+                            "volumeno": "564",
+                            "pages": {
+                                "fpage": "151",
+                                "lpage": "157"
+                            }
+                        }
+                    },
+                    {
+                        "@id": "cit5",
+                        "journalcit": {
+                            "citauth": [
+                                {
+                                    "fname": "A.",
+                                    "surname": "Damjanovic"
+                                },
+                                {
+                                    "fname": "M. K. Y.",
+                                    "surname": "Wong"
+                                }
+                            ],
+                            "title": "J. Electrochem. Soc.",
+                            "year": "1967",
+                            "volumeno": "114",
+                            "pages": {
+                                "fpage": "592",
+                                "lpage": "593"
+                            }
+                        }
+                    },
+                    {
+                        "@id": "cit6",
+                        "journalcit": {
+                            "citauth": [
+                                {
+                                    "fname": "E.",
+                                    "surname": "Guerrini"
+                                },
+                                {
+                                    "fname": "H.",
+                                    "surname": "Chen"
+                                },
+                                {
+                                    "fname": "S.",
+                                    "surname": "Trasatti"
+                                }
+                            ],
+                            "title": "J. Solid. State. Electrochem.",
+                            "year": "2007",
+                            "volumeno": "11",
+                            "pages": {
+                                "fpage": "939",
+                                "lpage": "945"
+                            }
+                        }
+                    },
+                    {
+                        "@id": "cit7",
+                        "journalcit": {
+                            "citauth": {
+                                "fname": "S.",
+                                "surname": "Trasatti"
+                            },
+                            "title": "Electrochim. Acta",
+                            "year": "1991",
+                            "volumeno": "36",
+                            "pages": {
+                                "fpage": "225",
+                                "lpage": "241"
+                            }
+                        }
+                    },
+                    {
+                        "@id": "cit8",
+                        "citation": {
+                            "@type": "book",
+                            "citauth": {
+                                "fname": "S.",
+                                "surname": "Trasatti"
+                            },
+                            "title": "Electrodes of Conductive Metallic Oxides, Part A and Part B",
+                            "citpub": {
+                                "it": "Elsevier"
+                            },
+                            "pubplace": {
+                                "it": "Amsterdam"
+                            },
+                            "year": "1980\u20131981",
+                            "#text": ", , , ,"
+                        }
+                    },
+                    {
+                        "@id": "cit9",
+                        "journalcit": {
+                            "citauth": [
+                                {
+                                    "fname": "Y.",
+                                    "surname": "Zhao"
+                                },
+                                {
+                                    "fname": "N. M.",
+                                    "surname": "Vargas-Barbosa"
+                                },
+                                {
+                                    "fname": "E. A.",
+                                    "surname": "Hernandez-Pagan"
+                                },
+                                {
+                                    "fname": "T. E.",
+                                    "surname": "Mallouk"
+                                }
+                            ],
+                            "title": "Small",
+                            "year": "2011",
+                            "volumeno": "7",
+                            "issueno": "14",
+                            "pages": {
+                                "fpage": "2087",
+                                "lpage": "2093"
+                            }
+                        }
+                    },
+                    {
+                        "@id": "cit10",
+                        "journalcit": {
+                            "citauth": [
+                                {
+                                    "fname": "Y.",
+                                    "surname": "Zhao"
+                                },
+                                {
+                                    "fname": "N. M.",
+                                    "surname": "Vargas-Barbosa"
+                                },
+                                {
+                                    "fname": "M. E.",
+                                    "surname": "Strayer"
+                                },
+                                {
+                                    "fname": "N. S.",
+                                    "surname": "McCool"
+                                },
+                                {
+                                    "surname": "Maria-Erini Pandelia"
+                                },
+                                {
+                                    "fname": "T. P.",
+                                    "surname": "Saunders"
+                                },
+                                {
+                                    "fname": "J. R.",
+                                    "surname": "Swierk"
+                                },
+                                {
+                                    "fname": "J. F.",
+                                    "surname": "Callejas"
+                                },
+                                {
+                                    "fname": "L.",
+                                    "surname": "Jensen"
+                                },
+                                {
+                                    "fname": "T. E.",
+                                    "surname": "Mallouk"
+                                }
+                            ],
+                            "title": "J. Am. Chem. Soc.",
+                            "year": "2015",
+                            "volumeno": "137",
+                            "issueno": "27",
+                            "pages": {
+                                "fpage": "8749",
+                                "lpage": "8757"
+                            }
+                        }
+                    },
+                    {
+                        "@id": "cit11",
+                        "journalcit": {
+                            "citauth": [
+                                {
+                                    "fname": "Z.",
+                                    "surname": "Pavlovic"
+                                },
+                                {
+                                    "fname": "C.",
+                                    "surname": "Ranjan"
+                                },
+                                {
+                                    "fname": "Q.",
+                                    "surname": "Gao"
+                                },
+                                {
+                                    "fname": "M.",
+                                    "surname": "van Gastel"
+                                },
+                                {
+                                    "fname": "R.",
+                                    "surname": "Schloegl"
+                                }
+                            ],
+                            "title": "ACS Catalysis",
+                            "year": "2016",
+                            "volumeno": "6",
+                            "issueno": "12",
+                            "pages": {
+                                "fpage": "8098",
+                                "lpage": "8105"
+                            }
+                        }
+                    },
+                    {
+                        "@id": "cit12",
+                        "journalcit": {
+                            "citauth": [
+                                {
+                                    "fname": "H. G.",
+                                    "surname": "Sanchez Casalongue"
+                                },
+                                {
+                                    "fname": "M.",
+                                    "surname": "Ling Ng"
+                                },
+                                {
+                                    "fname": "S.",
+                                    "surname": "Kaya"
+                                },
+                                {
+                                    "fname": "D.",
+                                    "surname": "Friebel"
+                                },
+                                {
+                                    "fname": "H.",
+                                    "surname": "Ogasawara"
+                                },
+                                {
+                                    "fname": "A.",
+                                    "surname": "Nilsson"
+                                }
+                            ],
+                            "title": "Angew. Chem., Int. Ed.",
+                            "year": "2014",
+                            "volumeno": "53",
+                            "pages": {
+                                "fpage": "7169",
+                                "lpage": "7172"
+                            }
+                        }
+                    },
+                    {
+                        "@id": "cit13",
+                        "journalcit": {
+                            "citauth": [
+                                {
+                                    "fname": "A.",
+                                    "surname": "Minguzzi"
+                                },
+                                {
+                                    "fname": "O.",
+                                    "surname": "Lugaresi"
+                                },
+                                {
+                                    "fname": "E.",
+                                    "surname": "Achilli"
+                                },
+                                {
+                                    "fname": "C.",
+                                    "surname": "Locatelli"
+                                },
+                                {
+                                    "fname": "A.",
+                                    "surname": "Vertova"
+                                },
+                                {
+                                    "fname": "P.",
+                                    "surname": "Ghigna"
+                                },
+                                {
+                                    "fname": "S.",
+                                    "surname": "Rondinini"
+                                }
+                            ],
+                            "title": "Chem. Sci.",
+                            "year": "2014",
+                            "volumeno": "5",
+                            "pages": {
+                                "fpage": "3591",
+                                "lpage": "3597"
+                            }
+                        }
+                    },
+                    {
+                        "@id": "cit14",
+                        "journalcit": {
+                            "citauth": [
+                                {
+                                    "fname": "T.",
+                                    "surname": "Reier"
+                                },
+                                {
+                                    "fname": "Z.",
+                                    "surname": "Pawolek"
+                                },
+                                {
+                                    "fname": "S.",
+                                    "surname": "Cherevko"
+                                },
+                                {
+                                    "fname": "M.",
+                                    "surname": "Bruns"
+                                },
+                                {
+                                    "fname": "T.",
+                                    "surname": "Jones"
+                                },
+                                {
+                                    "fname": "D.",
+                                    "surname": "Teschner"
+                                },
+                                {
+                                    "fname": "S.",
+                                    "surname": "Selve"
+                                },
+                                {
+                                    "fname": "A.",
+                                    "surname": "Bergmann"
+                                },
+                                {
+                                    "fname": "H. N.",
+                                    "surname": "Nong"
+                                },
+                                {
+                                    "fname": "R.",
+                                    "surname": "Schl\u00f6gl"
+                                },
+                                {
+                                    "fname": "K. J. J.",
+                                    "surname": "Mayrhofer"
+                                },
+                                {
+                                    "fname": "P.",
+                                    "surname": "Strasser"
+                                }
+                            ],
+                            "title": "J. Am. Chem. Soc.",
+                            "year": "2015",
+                            "volumeno": "137",
+                            "issueno": "40",
+                            "pages": {
+                                "fpage": "13031",
+                                "lpage": "13040"
+                            }
+                        }
+                    },
+                    {
+                        "@id": "cit15",
+                        "journalcit": {
+                            "citauth": [
+                                {
+                                    "fname": "T.",
+                                    "surname": "Reier"
+                                },
+                                {
+                                    "fname": "H. N.",
+                                    "surname": "Nong"
+                                },
+                                {
+                                    "fname": "D.",
+                                    "surname": "Teschner"
+                                },
+                                {
+                                    "fname": "R.",
+                                    "surname": "Schl\u00f6gl"
+                                },
+                                {
+                                    "fname": "P.",
+                                    "surname": "Strasser"
+                                }
+                            ],
+                            "title": "Adv. Energy Mater.",
+                            "year": "2016",
+                            "pages": {
+                                "fpage": "1601275"
+                            },
+                            "link": {
+                                "@type": "doi",
+                                "#text": "10.1002/aenm.201601275"
+                            }
+                        }
+                    },
+                    {
+                        "@id": "cit16",
+                        "journalcit": {
+                            "citauth": [
+                                {
+                                    "fname": "V.",
+                                    "surname": "Pfeifer"
+                                },
+                                {
+                                    "fname": "T. E.",
+                                    "surname": "Jones"
+                                },
+                                {
+                                    "fname": "J. J.",
+                                    "surname": "Velasco V\u00e9lez"
+                                },
+                                {
+                                    "fname": "C.",
+                                    "surname": "Massu\u00e9"
+                                },
+                                {
+                                    "fname": "M. T.",
+                                    "surname": "Greiner"
+                                },
+                                {
+                                    "fname": "R.",
+                                    "surname": "Arrigo"
+                                },
+                                {
+                                    "fname": "D.",
+                                    "surname": "Teschner"
+                                },
+                                {
+                                    "fname": "F.",
+                                    "surname": "Girgsdies"
+                                },
+                                {
+                                    "fname": "M.",
+                                    "surname": "Scherzer"
+                                },
+                                {
+                                    "fname": "J.",
+                                    "surname": "Allan"
+                                },
+                                {
+                                    "fname": "M.",
+                                    "surname": "Hashagen"
+                                },
+                                {
+                                    "fname": "G.",
+                                    "surname": "Weinberg"
+                                },
+                                {
+                                    "fname": "S.",
+                                    "surname": "Piccinin"
+                                },
+                                {
+                                    "fname": "M.",
+                                    "surname": "H\u00e4vecker"
+                                },
+                                {
+                                    "fname": "A.",
+                                    "surname": "Knop-Gericke"
+                                },
+                                {
+                                    "fname": "R.",
+                                    "surname": "Schl\u00f6gl"
+                                }
+                            ],
+                            "title": "Phys. Chem. Chem. Phys.",
+                            "year": "2016",
+                            "volumeno": "18",
+                            "pages": {
+                                "fpage": "2292"
+                            }
+                        }
+                    },
+                    {
+                        "@id": "cit17",
+                        "journalcit": {
+                            "citauth": [
+                                {
+                                    "fname": "Y.",
+                                    "surname": "Mo"
+                                },
+                                {
+                                    "fname": "I. C.",
+                                    "surname": "Stefan"
+                                },
+                                {
+                                    "fname": "W. B.",
+                                    "surname": "Cai"
+                                },
+                                {
+                                    "fname": "J.",
+                                    "surname": "Dong"
+                                },
+                                {
+                                    "fname": "P.",
+                                    "surname": "Carey"
+                                },
+                                {
+                                    "fname": "D. A.",
+                                    "surname": "Scherson"
+                                }
+                            ],
+                            "title": "J. Phys. Chem. B",
+                            "year": "2002",
+                            "volumeno": "106",
+                            "pages": {
+                                "fpage": "3681",
+                                "lpage": "3686"
+                            }
+                        }
+                    },
+                    {
+                        "@id": "cit18",
+                        "journalcit": {
+                            "citauth": [
+                                {
+                                    "fname": "N.",
+                                    "surname": "Sivasankar"
+                                },
+                                {
+                                    "fname": "W. W.",
+                                    "surname": "Weare"
+                                },
+                                {
+                                    "fname": "H.",
+                                    "surname": "Frei"
+                                }
+                            ],
+                            "title": "J. Am. Chem. Soc.",
+                            "year": "2011",
+                            "volumeno": "133",
+                            "pages": {
+                                "fpage": "12976"
+                            }
+                        }
+                    },
+                    {
+                        "@id": "cit19",
+                        "journalcit": {
+                            "citauth": [
+                                {
+                                    "surname": "Hohenberger"
+                                },
+                                {
+                                    "surname": "Johannes"
+                                },
+                                {
+                                    "surname": "Ray"
+                                },
+                                {
+                                    "surname": "Kallol"
+                                },
+                                {
+                                    "surname": "Meyer"
+                                },
+                                {
+                                    "surname": "Karsten"
+                                }
+                            ],
+                            "title": "Nat. Commun.",
+                            "year": "2012",
+                            "volumeno": "3",
+                            "pages": {
+                                "fpage": "720"
+                            }
+                        }
+                    },
+                    {
+                        "@id": "cit20",
+                        "journalcit": {
+                            "citauth": [
+                                {
+                                    "fname": "N.",
+                                    "surname": "Cox"
+                                },
+                                {
+                                    "fname": "D. A.",
+                                    "surname": "Pantazis"
+                                },
+                                {
+                                    "fname": "F.",
+                                    "surname": "Neese"
+                                },
+                                {
+                                    "fname": "W.",
+                                    "surname": "Lubitz"
+                                }
+                            ],
+                            "title": "Acc. Chem. Res.",
+                            "year": "2013",
+                            "volumeno": "46",
+                            "pages": {
+                                "fpage": "1588",
+                                "lpage": "1596"
+                            }
+                        }
+                    },
+                    {
+                        "@id": "cit21",
+                        "journalcit": {
+                            "citauth": {
+                                "fname": "L.",
+                                "surname": "Rapatskiy"
+                            },
+                            "arttitle": {
+                                "it": "et al."
+                            },
+                            "title": "J. Am. Chem. Soc.",
+                            "year": "2012",
+                            "volumeno": "134",
+                            "pages": {
+                                "fpage": "16619",
+                                "lpage": "16634"
+                            }
+                        }
+                    },
+                    {
+                        "@id": "cit22",
+                        "journalcit": {
+                            "citauth": {
+                                "fname": "P. E. M.",
+                                "surname": "Siegbahn"
+                            },
+                            "title": "Biochim. Biophys. Acta",
+                            "year": "2013",
+                            "volumeno": "1827",
+                            "pages": {
+                                "fpage": "1003",
+                                "lpage": "1019"
+                            }
+                        }
+                    },
+                    {
+                        "@id": "cit23",
+                        "journalcit": {
+                            "citauth": [
+                                {
+                                    "fname": "B. K.",
+                                    "surname": "Mai"
+                                },
+                                {
+                                    "fname": "Y.",
+                                    "surname": "Kim"
+                                }
+                            ],
+                            "title": "Inorg. Chem.",
+                            "year": "2016",
+                            "volumeno": "55",
+                            "issueno": "8",
+                            "pages": {
+                                "fpage": "3844",
+                                "lpage": "3852"
+                            }
+                        }
+                    },
+                    {
+                        "@id": "cit24",
+                        "journalcit": {
+                            "citauth": [
+                                {
+                                    "fname": "X.",
+                                    "surname": "Yang"
+                                },
+                                {
+                                    "fname": "M. H.",
+                                    "surname": "Baik"
+                                }
+                            ],
+                            "title": "J. Am. Chem. Soc.",
+                            "year": "2006",
+                            "volumeno": "128",
+                            "issueno": "23",
+                            "pages": {
+                                "fpage": "7476",
+                                "lpage": "7485"
+                            }
+                        }
+                    },
+                    {
+                        "@id": "cit25",
+                        "journalcit": {
+                            "citauth": [
+                                {
+                                    "fname": "L. P.",
+                                    "surname": "Wang"
+                                },
+                                {
+                                    "fname": "Q.",
+                                    "surname": "Wu"
+                                },
+                                {
+                                    "fname": "T.",
+                                    "surname": "Van Voorhis"
+                                }
+                            ],
+                            "title": "Inorg. Chem.",
+                            "year": "2010",
+                            "volumeno": "49",
+                            "pages": {
+                                "fpage": "4543"
+                            }
+                        }
+                    },
+                    {
+                        "@id": "cit26",
+                        "journalcit": {
+                            "citauth": [
+                                {
+                                    "fname": "J. J.",
+                                    "surname": "Concepcion"
+                                },
+                                {
+                                    "fname": "M. K.",
+                                    "surname": "Tsai"
+                                },
+                                {
+                                    "fname": "J. T.",
+                                    "surname": "Muckerman"
+                                },
+                                {
+                                    "fname": "T. J.",
+                                    "surname": "Meyer"
+                                }
+                            ],
+                            "title": "J. Am. Chem. Soc.",
+                            "year": "2010",
+                            "volumeno": "132",
+                            "pages": {
+                                "fpage": "1545"
+                            }
+                        }
+                    },
+                    {
+                        "@id": "cit27",
+                        "journalcit": {
+                            "citauth": [
+                                {
+                                    "fname": "D. M.",
+                                    "surname": "Herlihy"
+                                },
+                                {
+                                    "fname": "M. M.",
+                                    "surname": "Waegele"
+                                },
+                                {
+                                    "fname": "X.",
+                                    "surname": "Chen"
+                                },
+                                {
+                                    "fname": "C. D.",
+                                    "surname": "Pemmaraju"
+                                },
+                                {
+                                    "fname": "D.",
+                                    "surname": "Prendergast"
+                                },
+                                {
+                                    "fname": "T.",
+                                    "surname": "Cuk"
+                                }
+                            ],
+                            "title": "Nat. Chem.",
+                            "year": "2016",
+                            "volumeno": "8",
+                            "pages": {
+                                "fpage": "549",
+                                "lpage": "555"
+                            }
+                        }
+                    }
+                ]
+            },
+            "compoundgrp": null,
+            "annotationgrp": null,
+            "datagrp": null,
+            "resourcegrp": null
+        }
+    }
+}
