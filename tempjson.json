@@ -43,7 +43,7 @@
             "endPage" : "lpage",
             "sequenceNumber" : " ",
             "publishingInfo" : {
-                "publisher" : " "
+                "publisher" : "The Royal Society of Chemistry"
             },
             "identifiers" : [{
                 "id" : " ",
@@ -82,7 +82,7 @@
     },
     "files" : [ {
       "visibility" : "PUBLIC",
-      "content" : "returned by staging",
+      "content" : "returned_by_staging",
       "storage" : "INTERNAL_MANAGED",
       "metadata" : {
         "title" : "xx.pdf",
