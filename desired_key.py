@@ -1,7 +1,7 @@
 import json
 import xmltodict
 # ==== dict to read from ====
-with open("sample.xml", 'r', encoding="utf8") as f:
+with open("./30759\C7NH00111H\c7nh00111h.xml", 'r', encoding="utf8") as f:
     xmlString = f.read()
 xmldict = json.loads(json.dumps(xmltodict.parse(xmlString), indent = 2))# dict of xml content
 # ==== dict to write in ====

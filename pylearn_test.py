@@ -36,3 +36,6 @@ for author in authors:
         org = findByValue(aff, orgs)
         print(aff)
         print(org['@id'])
+
+# how to load a .py file in python environment
+# exec(open("./path/to/script.py").read(), globals())
