@@ -12,7 +12,7 @@
           "familyName": "Pavlovic",
           "organizations": [
             {
-              "identifier": "ou_persistant13",
+              "identifier": "ou_1863404",
               "name": "Department of Heterogeneous Catalysis, Max Planck Institute for Chemical Energy Conversion, Stiftstrasse 34-36",
               "address": "Muelheim and Ruhr, 45470, Germany"
             }
@@ -27,7 +27,7 @@
           "familyName": "Ranjan",
           "organizations": [
             {
-              "identifier": "ou_persistant13",
+              "identifier": "ou_1863404",
               "name": "Department of Heterogeneous Catalysis, Max Planck Institute for Chemical Energy Conversion, Stiftstrasse 34-36",
               "address": "Muelheim and Ruhr, 45470, Germany"
             }
@@ -42,7 +42,7 @@
           "familyName": "van Gastel",
           "organizations": [
             {
-              "identifier": "ou_persistant13",
+              "identifier": "ou_1863404",
               "name": "Department of Heterogeneous Catalysis, Max Planck Institute for Chemical Energy Conversion, Stiftstrasse 34-36",
               "address": "Muelheim and Ruhr, 45470, Germany"
             }
@@ -57,7 +57,7 @@
           "familyName": "Schl\u00f6gl",
           "organizations": [
             {
-              "identifier": "ou_persistant13",
+              "identifier": "ou_1863404",
               "name": "Department of Heterogeneous Catalysis, Max Planck Institute for Chemical Energy Conversion, Stiftstrasse 34-36",
               "address": "Muelheim and Ruhr, 45470, Germany"
             }
@@ -137,7 +137,7 @@
   "files": [
     {
       "visibility": "PUBLIC",
-      "content": "returned_by_staging",
+      "content": "2065856",
       "storage": "INTERNAL_MANAGED",
       "metadata": {
         "title": "C7CC05669A.pdf",

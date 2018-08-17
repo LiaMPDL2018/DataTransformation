@@ -12,7 +12,7 @@
           "familyName": "Melchior",
           "organizations": [
             {
-              "identifier": "ou_persistent35",
+              "identifier": "ou_2421692",
               "name": "Max Planck Institute for Solid State Research",
               "address": "Heisenbergstra\u00dfe 1, 70569 Stuttgart, Germany"
             }
@@ -27,7 +27,7 @@
           "familyName": "Frick",
           "organizations": [
             {
-              "identifier": "oupersistant22",
+              "identifier": "ou_persistent22",
               "name": "Institut Laue-Langevin",
               "address": "71, avenue des Martyrs, CS 20156, F-38042 Grenoble, France"
             }
@@ -108,7 +108,7 @@
   "files": [
     {
       "visibility": "PUBLIC",
-      "content": "returned_by_staging",
+      "content": "2065864",
       "storage": "INTERNAL_MANAGED",
       "metadata": {
         "title": "C7CP04116K.pdf",

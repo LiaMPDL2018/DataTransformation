@@ -5,7 +5,7 @@ import copy
 import os
 import pandas as pd
 from pyExcelReader import pyExlDict
-from urlRequest import affRequest
+from urlRequest import loginRequest, affRequest, upfileRequest, itemsRequest
 ## help function for transformation
 def findByValue(value, orglist):
     if type(orglist)!=list:
@@ -18,7 +18,7 @@ def xmlNamesPaths(desiredPath):
         for f in filenames:
             if f.endswith('.xml'):
                 filepath = os.path.join(root, f)
-                yield os.path.splitext(f)[0], filepath
+                yield os.path.splitext(f)[0], filepath, root
 def flatten(lst):
 	new_lst = []
 	flatten_helper(lst, new_lst)
@@ -41,13 +41,18 @@ dictAbbrJournal = pyExlDict(fileAbbrRSC)
 # print(dictAbbrJournal)
 
 desiredPath = './30759'
+
+# ==== query: log in - get token ====
+namePass = "hlia:hard2Remember"
+Token = loginRequest(namePass)
+
 # ==== process iteratively for all the .xml in the folders and subforders
-for name, filepath in xmlNamesPaths(desiredPath):
-    print(name, filepath)                
+for name, filePath, folderPath in xmlNamesPaths(desiredPath):
+    print(name, filePath, folderPath)                
     transformedFileName = name
 
     # ==== dict to read from ====
-    with open(filepath, 'r', encoding="utf8") as f:
+    with open(filePath, 'r', encoding="utf8") as f:
         xmlString = f.read()
     xmlDict = json.loads(json.dumps(xmltodict.parse(xmlString), indent = 2))# dict of xml content
     xmlArt = xmlDict['article']
@@ -89,6 +94,7 @@ for name, filepath in xmlNamesPaths(desiredPath):
             if isinstance(name, list):
                 name = ', '.join(name)
             # print(name)
+            # --== query: affiliation Id ==--
             ouId = affRequest(name)
             address = ', '.join(flatten(list(org['address'].values())))
             creatorTemp['person']['organizations'].append(
@@ -202,12 +208,18 @@ for name, filepath in xmlNamesPaths(desiredPath):
         del metaData['projectInfo']
     # ---- files ---- list
     jsondict['files'][0]['metadata']['title'] = transformedFileName.upper() + '.pdf'
+    # --== query: staging - uploading files ==-- 
+    pdfPath = folderPath +'\\' + transformedFileName.upper() + '.pdf'
+    upfileId = upfileRequest(Token, pdfPath, transformedFileName)
+    jsondict['files'][0]['content'] = upfileId
 
-
-    jsonwrite = json.dumps(jsondict, indent=2)
-
+    jsonwrite = json.dumps(jsondict, indent=2) # conver json obj to string to write in files
     # save step
     outpath = './autoTranEg/'
     outfile = outpath + transformedFileName + '.json'
     with open(outfile, 'w') as f:
         f.write(jsonwrite) # output the json format of xml content
+
+    # --== query: items - publication ==--
+    itemsRequest(Token, jsonwrite)
+    

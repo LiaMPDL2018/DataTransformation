@@ -12,7 +12,7 @@
           "familyName": "Eidi",
           "organizations": [
             {
-              "identifier": "oupersistant22",
+              "identifier": "ou_persistent22",
               "name": "Department of Physics, Institute for Advanced Studies in Basic Sciences (IASBS)",
               "address": "Zanjan 45137-66731, Iran"
             }
@@ -27,7 +27,7 @@
           "familyName": "Mohammad-Rafiee",
           "organizations": [
             {
-              "identifier": "oupersistant22",
+              "identifier": "ou_persistent22",
               "name": "Department of Physics, Institute for Advanced Studies in Basic Sciences (IASBS)",
               "address": "Zanjan 45137-66731, Iran"
             }
@@ -42,7 +42,7 @@
           "familyName": "Khorrami",
           "organizations": [
             {
-              "identifier": "oupersistant22",
+              "identifier": "ou_persistent22",
               "name": "Department of Physics, Alzahra University",
               "address": "Tehran, Iran"
             }
@@ -114,7 +114,7 @@
   "files": [
     {
       "visibility": "PUBLIC",
-      "content": "returned_by_staging",
+      "content": "2065886",
       "storage": "INTERNAL_MANAGED",
       "metadata": {
         "title": "C7SM01568B.pdf",

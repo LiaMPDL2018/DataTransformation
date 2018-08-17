@@ -47,7 +47,7 @@
               "address": "Max-Planck-Str. 1, 40237 D\u00fcsseldorf, Germany"
             },
             {
-              "identifier": "oupersistant22",
+              "identifier": "ou_persistent22",
               "name": "Department of Materials Science and Engineering, NTNU, Norwegian University of Science and Technology",
               "address": "7491 Trondheim, Norway"
             }
@@ -127,7 +127,7 @@
   "files": [
     {
       "visibility": "PUBLIC",
-      "content": "returned_by_staging",
+      "content": "2065878",
       "storage": "INTERNAL_MANAGED",
       "metadata": {
         "title": "C7NH00111H.pdf",

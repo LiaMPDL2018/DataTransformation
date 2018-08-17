@@ -42,7 +42,7 @@
           "familyName": "Yimer",
           "organizations": [
             {
-              "identifier": "oupersistant22",
+              "identifier": "ou_persistent22",
               "name": "Department of Chemical Engineering, University of Washington, 105 Benson Hall",
               "address": "Seattle, WA 98195, USA"
             }
@@ -57,7 +57,7 @@
           "familyName": "Pfaendtner",
           "organizations": [
             {
-              "identifier": "oupersistant22",
+              "identifier": "ou_persistent22",
               "name": "Department of Chemical Engineering, University of Washington, 105 Benson Hall",
               "address": "Seattle, WA 98195, USA"
             }
@@ -92,12 +92,12 @@
               "address": "Ackermannweg 10, 55128 Mainz, Germany"
             },
             {
-              "identifier": "oupersistant22",
+              "identifier": "ou_persistent22",
               "name": "Department of Chemical Engineering, University of Washington, 105 Benson Hall",
               "address": "Seattle, WA 98195, USA"
             },
             {
-              "identifier": "oupersistant22",
+              "identifier": "ou_persistent22",
               "name": "Department of Chemistry, Aarhus University",
               "address": "Langelandsgade 140, 8000 Aarhus C, Denmark"
             }
@@ -220,7 +220,7 @@
   "files": [
     {
       "visibility": "PUBLIC",
-      "content": "returned_by_staging",
+      "content": "2065868",
       "storage": "INTERNAL_MANAGED",
       "metadata": {
         "title": "C7CP05897G.pdf",

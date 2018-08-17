@@ -12,7 +12,7 @@
           "familyName": "Garc\u00eda-Jimeno",
           "organizations": [
             {
-              "identifier": "oupersistant22",
+              "identifier": "ou_persistent22",
               "name": "Secci\u00f3 de Fisicoqu\u00edmica, Facultat de Farm\u00e0cia i Ci\u00e8ncies de l'Alimentaci\u00f3, Universitat de Barcelona",
               "address": "Avda. Joan XXIII 17-31, E-08028, Barcelona, Catalonia, Spain"
             }
@@ -27,7 +27,7 @@
           "familyName": "Estelrich",
           "organizations": [
             {
-              "identifier": "oupersistant22",
+              "identifier": "ou_persistent22",
               "name": "Secci\u00f3 de Fisicoqu\u00edmica, Facultat de Farm\u00e0cia i Ci\u00e8ncies de l'Alimentaci\u00f3, Universitat de Barcelona",
               "address": "Avda. Joan XXIII 17-31, E-08028, Barcelona, Catalonia, Spain"
             }
@@ -42,7 +42,7 @@
           "familyName": "Callejas-Fern\u00e1ndez",
           "organizations": [
             {
-              "identifier": "oupersistant22",
+              "identifier": "ou_persistent22",
               "name": "Grupo de F\u00edsica de Fluidos y Biocoloides, Departamento de F\u00edsica Aplicada, Facultad de Ciencias, Universidad de Granada",
               "address": "E-18071, Granada, Spain"
             }
@@ -115,7 +115,7 @@
   "files": [
     {
       "visibility": "PUBLIC",
-      "content": "returned_by_staging",
+      "content": "2065880",
       "storage": "INTERNAL_MANAGED",
       "metadata": {
         "title": "C7NR05301K.pdf",

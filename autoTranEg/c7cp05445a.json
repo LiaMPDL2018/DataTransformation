@@ -27,7 +27,7 @@
           "familyName": "Roeters",
           "organizations": [
             {
-              "identifier": "oupersistant22",
+              "identifier": "ou_persistent22",
               "name": "Department of Chemistry, Aarhus University",
               "address": "8000 Aarhus C, Denmark"
             }
@@ -62,7 +62,7 @@
               "address": "Ackermannweg 10, D-55128 Mainz, Germany"
             },
             {
-              "identifier": "oupersistant22",
+              "identifier": "ou_persistent22",
               "name": "Department of Chemistry, Aarhus University",
               "address": "8000 Aarhus C, Denmark"
             }
@@ -150,7 +150,7 @@
   "files": [
     {
       "visibility": "PUBLIC",
-      "content": "returned_by_staging",
+      "content": "2065866",
       "storage": "INTERNAL_MANAGED",
       "metadata": {
         "title": "C7CP05445A.pdf",

@@ -12,7 +12,7 @@
           "familyName": "Ipparthi",
           "organizations": [
             {
-              "identifier": "oupersistant22",
+              "identifier": "ou_persistent22",
               "name": "IRIDIA, CoDE, Universit\u00e9 libre de Bruxelles",
               "address": "Brussels, Belgium"
             }
@@ -27,7 +27,7 @@
           "familyName": "Winslow",
           "organizations": [
             {
-              "identifier": "oupersistant22",
+              "identifier": "ou_persistent22",
               "name": "D\u00e9partement d'Informatique, Universit\u00e9 libre de Bruxelles",
               "address": "Brussels, Belgium"
             }
@@ -47,7 +47,7 @@
               "address": "Stuttgart, Germany"
             },
             {
-              "identifier": "oupersistant22",
+              "identifier": "ou_persistent22",
               "name": "Max Planck ETH Center for Learning Systems",
               "address": "Stuttgart, Germany"
             }
@@ -62,7 +62,7 @@
           "familyName": "Dorigo",
           "organizations": [
             {
-              "identifier": "oupersistant22",
+              "identifier": "ou_persistent22",
               "name": "IRIDIA, CoDE, Universit\u00e9 libre de Bruxelles",
               "address": "Brussels, Belgium"
             }
@@ -82,7 +82,7 @@
               "address": "Stuttgart, Germany"
             },
             {
-              "identifier": "oupersistant22",
+              "identifier": "ou_persistent22",
               "name": "Max Planck ETH Center for Learning Systems",
               "address": "Stuttgart, Germany"
             }
@@ -163,7 +163,7 @@
   "files": [
     {
       "visibility": "PUBLIC",
-      "content": "returned_by_staging",
+      "content": "2065884",
       "storage": "INTERNAL_MANAGED",
       "metadata": {
         "title": "C7SM01189J.pdf",

@@ -12,7 +12,7 @@
           "familyName": "Purr",
           "organizations": [
             {
-              "identifier": "oupersistant22",
+              "identifier": "ou_persistent22",
               "name": "TU Braunschweig, Institute of Microtechnology",
               "address": "38124 Braunschweig, Germany"
             },
@@ -62,7 +62,7 @@
           "familyName": "Th\u00fcrmann",
           "organizations": [
             {
-              "identifier": "oupersistant22",
+              "identifier": "ou_persistent22",
               "name": "TU Braunschweig, Institute of Microtechnology",
               "address": "38124 Braunschweig, Germany"
             }
@@ -77,7 +77,7 @@
           "familyName": "Dietzel",
           "organizations": [
             {
-              "identifier": "oupersistant22",
+              "identifier": "ou_persistent22",
               "name": "TU Braunschweig, Institute of Microtechnology",
               "address": "38124 Braunschweig, Germany"
             }
@@ -193,7 +193,7 @@
   "files": [
     {
       "visibility": "PUBLIC",
-      "content": "returned_by_staging",
+      "content": "2065876",
       "storage": "INTERNAL_MANAGED",
       "metadata": {
         "title": "C7LC00929A.pdf",

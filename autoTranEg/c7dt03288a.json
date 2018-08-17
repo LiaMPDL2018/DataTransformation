@@ -12,7 +12,7 @@
           "familyName": "Bette",
           "organizations": [
             {
-              "identifier": "ou_persistent35",
+              "identifier": "ou_2421692",
               "name": "Max Planck Institute for Solid State Research",
               "address": "Heisenbergstr. 1, 70569 Stuttgart, Germany"
             }
@@ -27,7 +27,7 @@
           "familyName": "Kremer",
           "organizations": [
             {
-              "identifier": "ou_persistent35",
+              "identifier": "ou_2421692",
               "name": "Max Planck Institute for Solid State Research",
               "address": "Heisenbergstr. 1, 70569 Stuttgart, Germany"
             }
@@ -42,7 +42,7 @@
           "familyName": "Eggert",
           "organizations": [
             {
-              "identifier": "oupersistant22",
+              "identifier": "ou_persistent22",
               "name": "State Academy of Art and Design",
               "address": "Am Wei\u00dfenhof 1, 70191 Stuttgart, Germany"
             }
@@ -57,7 +57,7 @@
           "familyName": "Tang",
           "organizations": [
             {
-              "identifier": "oupersistant22",
+              "identifier": "ou_persistent22",
               "name": "High Resolution Powder Diffraction Beamline (I11), Diamond Light Source Ltd, Harwell Science and Innovation Campus",
               "address": "Didcot, Oxfordshire, OX11 0DE, UK"
             }
@@ -72,7 +72,7 @@
           "familyName": "Dinnebier",
           "organizations": [
             {
-              "identifier": "ou_persistent35",
+              "identifier": "ou_2421692",
               "name": "Max Planck Institute for Solid State Research",
               "address": "Heisenbergstr. 1, 70569 Stuttgart, Germany"
             }
@@ -152,7 +152,7 @@
   "files": [
     {
       "visibility": "PUBLIC",
-      "content": "returned_by_staging",
+      "content": "2065872",
       "storage": "INTERNAL_MANAGED",
       "metadata": {
         "title": "C7DT03288A.pdf",

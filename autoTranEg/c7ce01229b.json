@@ -12,12 +12,12 @@
           "familyName": "Meng",
           "organizations": [
             {
-              "identifier": "oupersistant22",
+              "identifier": "ou_persistent22",
               "name": "College of Marine Science and Biological Engineering, Qingdao University of Science and Technology",
               "address": "Qingdao, Shandong 266042, P.R. China"
             },
             {
-              "identifier": "oupersistant22",
+              "identifier": "ou_persistent22",
               "name": "Key Laboratory of Marine Chemistry Theory and Technology, Ministry of Education, College of Chemistry and Chemical Engineering, Ocean University of China",
               "address": "Qingdao, Shandong 266100, P.R. China"
             }
@@ -32,7 +32,7 @@
           "familyName": "Cui",
           "organizations": [
             {
-              "identifier": "oupersistant22",
+              "identifier": "ou_persistent22",
               "name": "College of Chemistry and Environmental Engineering, Baise University",
               "address": "Baise, Guangxi 533000, P.R. China"
             }
@@ -47,7 +47,7 @@
           "familyName": "Wang",
           "organizations": [
             {
-              "identifier": "oupersistant22",
+              "identifier": "ou_persistent22",
               "name": "College of Marine Science and Biological Engineering, Qingdao University of Science and Technology",
               "address": "Qingdao, Shandong 266042, P.R. China"
             }
@@ -62,7 +62,7 @@
           "familyName": "Zhang",
           "organizations": [
             {
-              "identifier": "oupersistant22",
+              "identifier": "ou_persistent22",
               "name": "Key Laboratory of Marine Chemistry Theory and Technology, Ministry of Education, College of Chemistry and Chemical Engineering, Ocean University of China",
               "address": "Qingdao, Shandong 266100, P.R. China"
             }
@@ -77,7 +77,7 @@
           "familyName": "Zhang",
           "organizations": [
             {
-              "identifier": "oupersistant22",
+              "identifier": "ou_persistent22",
               "name": "Key Laboratory of Marine Chemistry Theory and Technology, Ministry of Education, College of Chemistry and Chemical Engineering, Ocean University of China",
               "address": "Qingdao, Shandong 266100, P.R. China"
             }
@@ -92,7 +92,7 @@
           "familyName": "Bi",
           "organizations": [
             {
-              "identifier": "ou_persistant13",
+              "identifier": "ou_2481692",
               "name": "Max Planck Institute for Terrestrial Microbiology & LOEWE Center for Synthetic Microbiology (SYNMIKRO)",
               "address": "Marburg, Germany"
             }
@@ -172,7 +172,7 @@
   "files": [
     {
       "visibility": "PUBLIC",
-      "content": "returned_by_staging",
+      "content": "2065858",
       "storage": "INTERNAL_MANAGED",
       "metadata": {
         "title": "C7CE01229B.pdf",

@@ -12,7 +12,7 @@
           "familyName": "Nalepa",
           "organizations": [
             {
-              "identifier": "ou_persistant13",
+              "identifier": "ou_1445580",
               "name": "Max-Planck-Institut f\u00fcr Chemische Energiekonversion",
               "address": "Stiftstrasse 34-36, D-45470 M\u00fclheim an der Ruhr, Germany"
             }
@@ -27,7 +27,7 @@
           "familyName": "Malferrari",
           "organizations": [
             {
-              "identifier": "oupersistant22",
+              "identifier": "ou_persistent22",
               "name": "Laboratorio di Biochimica e Biofisica, Dipartimento di Farmacia e Biotecnologie, FaBiT, Universit\u00e0 di Bologna",
               "address": "via Irnerio 42, I-40126 Bologna, Italy"
             }
@@ -42,7 +42,7 @@
           "familyName": "Lubitz",
           "organizations": [
             {
-              "identifier": "ou_persistant13",
+              "identifier": "ou_1445580",
               "name": "Max-Planck-Institut f\u00fcr Chemische Energiekonversion",
               "address": "Stiftstrasse 34-36, D-45470 M\u00fclheim an der Ruhr, Germany"
             }
@@ -57,12 +57,12 @@
           "familyName": "Venturoli",
           "organizations": [
             {
-              "identifier": "oupersistant22",
+              "identifier": "ou_persistent22",
               "name": "Laboratorio di Biochimica e Biofisica, Dipartimento di Farmacia e Biotecnologie, FaBiT, Universit\u00e0 di Bologna",
               "address": "via Irnerio 42, I-40126 Bologna, Italy"
             },
             {
-              "identifier": "oupersistant22",
+              "identifier": "ou_persistent22",
               "name": "Consorzio Nazionale Interuniversitario per le Scienze Fisiche della Materia (CNISM), c/o Dipartimento di Fisica, Universit\u00e0 di Bologna",
               "address": "via Irnerio 46, I-40126 Bologna, Italy"
             }
@@ -77,12 +77,12 @@
           "familyName": "M\u00f6bius",
           "organizations": [
             {
-              "identifier": "ou_persistant13",
+              "identifier": "ou_1445580",
               "name": "Max-Planck-Institut f\u00fcr Chemische Energiekonversion",
               "address": "Stiftstrasse 34-36, D-45470 M\u00fclheim an der Ruhr, Germany"
             },
             {
-              "identifier": "oupersistant22",
+              "identifier": "ou_persistent22",
               "name": "Department of Physics, Free University Berlin",
               "address": "Arnimallee 14, D-14195 Berlin, Germany"
             }
@@ -97,7 +97,7 @@
           "familyName": "Savitsky",
           "organizations": [
             {
-              "identifier": "ou_persistant13",
+              "identifier": "ou_1445580",
               "name": "Max-Planck-Institut f\u00fcr Chemische Energiekonversion",
               "address": "Stiftstrasse 34-36, D-45470 M\u00fclheim an der Ruhr, Germany"
             }
@@ -178,7 +178,7 @@
   "files": [
     {
       "visibility": "PUBLIC",
-      "content": "returned_by_staging",
+      "content": "2065862",
       "storage": "INTERNAL_MANAGED",
       "metadata": {
         "title": "C7CP03942E.pdf",
