@@ -1,5 +1,22 @@
 # Import pandas
 import pandas as pd
+def from_DOI(f_doi, doi):
+    """
+    from doi get the MPI_ID, then from MPI_ID get ou_ID and ctx_ID
+    f_doi contains mapping from the input doi to MPI_ID
+    the mapping from MPI_ID to ou_ID and ctx_ID should be relatively constant, directly being given here
+    """
+
+    df_DOI = pd.read_csv(f_doi, sep = ';', header = None, names = ['DOI','MPI'], index_col=False, usecols=[0,3])
+    DOI_ind = list(df_DOI.get('DOI').values).index(doi.upper())
+    MPI_ID = df_DOI.get('MPI').values[DOI_ind]
+
+    f_MPI = "subsidiary_doc/instId_ctxId.xlsx"
+    df_MPI = pd.read_excel(f_MPI, sheet_name = 0, usecols = [0,1,2])
+    MPI_ind = list(df_MPI.get('MPI-ID').values).index(MPI_ID)
+    CTX = df_MPI.get('Context-ID').values[MPI_ind]
+    OU = df_MPI.get('OU-ID').values[MPI_ind]
+    return CTX, OU
 
 def pyExlDict(filexl):
     """
