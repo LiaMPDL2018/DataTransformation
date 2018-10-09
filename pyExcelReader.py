@@ -8,7 +8,12 @@ def from_DOI(f_doi, doi):
     """
 
     df_DOI = pd.read_csv(f_doi, sep = ';', header = None, names = ['DOI','MPI'], index_col=False, usecols=[0,3])
-    DOI_ind = list(df_DOI.get('DOI').values).index(doi.upper())
+    list_DOI_lower = [item.lower() for item in df_DOI.get('DOI').values] # to avoid case sensitive when searching for the string
+    try:
+        DOI_ind = list_DOI_lower.index(doi.lower())
+    except ValueError: 
+        # deal with the occasion that the doi is not in the list
+        return 'xxx', 'xxx'
     MPI_ID = df_DOI.get('MPI').values[DOI_ind]
 
     f_MPI = "subsidiary_doc/instId_ctxId.xlsx"
