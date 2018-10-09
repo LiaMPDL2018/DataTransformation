@@ -3,7 +3,7 @@ import json
 
 def loginRequest(namePass):
     # namePass should be a string in form of "name:password"
-    url = 'https://qa.pure.mpdl.mpg.de/rest/login'
+    url = 'https://dev.pure.mpdl.mpg.de/rest/login'
     response = requests.post(url, data=namePass)
     if response.ok:
         return response.headers['Token']
@@ -42,7 +42,7 @@ def affRequest(name, ouID_MPI):
         data = {"query": {"query_string":query_string},"size" : "5"}
         # print(json.dumps(data))
         # -------- send url request to search for the ouId --------
-        url = 'https://qa.pure.mpdl.mpg.de/rest/ous/search'
+        url = 'https://dev.pure.mpdl.mpg.de/rest/ous/search' 
         response = requests.post(url, data=json.dumps(data), headers={"Content-Type": "application/json"})
         if response.ok:
             jData = (response.json())
@@ -80,7 +80,7 @@ def affRequest(name, ouID_MPI):
 def upfileRequest(Token, filePath, filename):
     # Token: Authorization Token got in the login process
     # filename: the name without extension of the file wanted to upload
-    url = 'https://qa.pure.mpdl.mpg.de/rest/staging/' + filename.upper() + '.pdf'
+    url = 'https://dev.pure.mpdl.mpg.de/rest/staging/' + filename.upper() + '.pdf' 
     headers = {'Authorization' : Token}
     try:
         files = {'file': open(filePath, 'rb')}
@@ -90,7 +90,7 @@ def upfileRequest(Token, filePath, filename):
     return res.text
 
 def itemsRequest(Token, jsonfile):
-    url = 'https://qa.pure.mpdl.mpg.de/rest/items'
+    url = 'https://dev.pure.mpdl.mpg.de/rest/items' 
     headers = {'Authorization' : Token, 'Content-Type' : 'application/json'}
     res = requests.post(url, data = jsonfile, headers = headers)
     return res
