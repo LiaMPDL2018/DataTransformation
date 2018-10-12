@@ -49,7 +49,7 @@ dictAbbrJournal = pyExlDict(fileAbbrRSC)
 desiredPath = './30759'
 
 # ==== query: log in - get token ====
-namePass = "hlia:hard2Remember"
+namePass = "hliu:hard2Remember"
 Token = loginRequest(namePass)
 
 # ==== process iteratively for all the .xml in the folders and subforders
@@ -109,7 +109,7 @@ for name, filePath, folderPath in xmlNamesPaths(desiredPath):
             # print(name)
             # --== query: affiliation Id ==--
             ouId = affRequest(name, ouID)
-            print(ouId)
+            # print(ouId)
             address = ', '.join(flatten(list(org['address'].values())))
             creatorTemp['person']['organizations'].append(
                 {'identifier': ouId, 'name': name, 
@@ -218,12 +218,13 @@ for name, filePath, folderPath in xmlNamesPaths(desiredPath):
         print("%s: no projectInfo" % transformedFileName)
         del metaData['projectInfo']
     # ---- files ---- list
-    jsondict['files'][0]['metadata']['title'] = transformedFileName.upper() + '.pdf'
+    pdfName = transformedFileName.upper() + '.pdf'
+    jsondict['files'][0]['metadata']['title'] = pdfName
     # --== query: staging - uploading files ==-- 
-    pdfPath = folderPath +'\\' + transformedFileName.upper() + '.pdf'
-    upfileId = upfileRequest(Token, pdfPath, transformedFileName)
+    pdfPath = folderPath +'\\' + pdfName
+    upfileId = upfileRequest(Token, pdfPath, pdfName)
     if upfileId == "No PDF":
-        print("item" + name + "has no PDF attached")
+        print("item" + transformedFileName + "has no PDF attached")
         del jsondict['files']
     else:
         jsondict['files'][0]['content'] = upfileId
@@ -231,7 +232,7 @@ for name, filePath, folderPath in xmlNamesPaths(desiredPath):
     jsonwrite = json.dumps(jsondict, indent=2) # conver json obj to string to upload via REST API
     
     # --== query: items - publication ==--
-    item_res = itemsRequest(Token, jsonwrite)
-    if item_res.ok==False:
-        print("item" + name + "metadata uploading fail")
+    itemsRequest(Token, jsonwrite)
+    # if item_res.ok==False:
+    #     print("item" + transformedFileName + "metadata uploading fail")
     

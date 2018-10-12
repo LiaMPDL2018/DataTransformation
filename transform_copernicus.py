@@ -2,6 +2,7 @@
 import json
 import xmltodict
 import copy
+import os
 from urlRequest import loginRequest, affRequest, upfileRequest, itemsRequest
 from pyExcelReader import from_DOI
 # from pandas.io.json import json_normalize
@@ -10,6 +11,26 @@ from pyExcelReader import from_DOI
 #              for kk, vv in dd.items()
 #              for k, v in flatten(vv, separator, kk).items()
 #              } if isinstance(dd, dict) else { prefix : dd }
+def xmlNamesPaths(desiredPath):
+    """
+    Return the iterative list of file names, filepaths and folder paths in the desiredPath folder
+    """
+    for root, _, filenames in os.walk(desiredPath):
+        for f in filenames:
+            if f.endswith('.xml'):
+                filepath = os.path.join(root, f)
+                yield os.path.splitext(f)[0], filepath, root
+def findPDF(name, folder):
+    """
+    check if the desired PDF file is in the folder
+    if yes, return the PDF name
+    else, return False
+    """
+    for root, _, filename in os.walk(folder):
+        if name in filename:
+            return os.path.join(root, name)
+        else:
+            return False
 def flatten_dict(d, level_mark = -1):
     level_mark += 1
     def items():
@@ -102,152 +123,189 @@ def findByValue(value, orglist):
 # ==== subsidiary mapping files ====
 fileDOIaff = ".//copernicus//copernicus_DOI_aff.csv"
 
-# ==== dict to read from ====
-with open("./copernicus//cpd-11-2483-2015.xml", 'r', encoding="utf8") as f:#copernicus//cpd-11-2483-2015.xml
-# with open("sample.xml", 'r', encoding="utf8") as f:
-    xmlString = f.read()
-xmldict = json.loads(json.dumps(xmltodict.parse(xmlString, postprocessor=post_processor), indent = 2))# dict of xml content
-flat_dict = flatten_dict(xmldict)
-# print(flat_dict)
-# keys = list(flat_dict.keys())
-# print("keys of xml: %s" % keys)
+desiredPath = './/copernicus'
 
-# ==== dict to write in ====
-with open("tempjson.json", 'r') as fj:
-    jsonString = fj.read()
-jsondict = json.loads(jsonString) # dict of json template
+# ==== query: log in - get token ====
+namePass = "hliu:hard2Remember"
+Token = loginRequest(namePass)
 
-# ==== transformation process ====
-jsondict['context']['objectId'] = 'ctx_persistent3'
-metaData = jsondict['metadata']
-# ---- search for title ----
-content = search_by_key('title', flat_dict)
-metaData['title'] = content
-print('title: %s' % content)
-# ---- identifiers ----
-# print(flat_dict)
-content = search_by_key('identifier', flat_dict)
-# print('identifiers: %s' % content)
-# the structure of 'identifier' from xmldict is [{'type':'ISSN', 'text':'xxxx'},{'type':'ISBN', 'text':'xxxx'}, {'type':'DOI', 'text':'xxxx'}]
-ISSN = findByValue('ISSN', content)['text']
-ISBN = findByValue('ISBN', content)['text']
-DOI = findByValue('DOI', content)['text'] # the key 'text' is found by looking up to the xmldict
-print("IDs: %s" % DOI)
-metaData['identifiers'][0]['id'] = DOI
-ctxID, ouID = from_DOI(fileDOIaff, DOI)
-# print("ctxID: %s \n ouID: %s" % (ctxID, ouID))
-if ctxID is not 'xxx':
-    jsondict['context']['objectId'] = ctxID
-# ---- add creators ----
-content = search_by_key('creator', flat_dict)
-# print('creator: %s' % content)
-creator = metaData['creators'][0]
-if not isinstance(content, list):
-    content = [content]
-metaData['creators'] = []
-for each in content: 
-    # ---- operate on each creator ----
-    creatorTemp = creator.copy() # copy the metadata template of the creator
+# ==== process iteratively for all the .xml in the folders and subforders
+for transformedFileName, filePath, folderPath in xmlNamesPaths(desiredPath):
+    print(transformedFileName, filePath, folderPath)                
+    # transformedFileName = name
+
+    # ==== load xml metadata dict to read from ====
+    # ==== dict to read from ====
+    with open(filePath, 'r', encoding="utf8") as f:#copernicus//cpd-11-2483-2015.xml
+    # with open("sample.xml", 'r', encoding="utf8") as f:
+        xmlString = f.read()
+    xmldict = json.loads(json.dumps(xmltodict.parse(xmlString, postprocessor=post_processor), indent = 2))# dict of xml content
+    flat_dict = flatten_dict(xmldict)
+    # print(flat_dict)
+    # keys = list(flat_dict.keys())
+    # print("keys of xml: %s" % keys)
+
+    # ==== dict to write in ====
+    with open("tempjson.json", 'r') as fj:
+        jsonString = fj.read()
+    jsondict = json.loads(jsonString) # dict of json template
+
+    # ==== transformation process ====
+    jsondict['context']['objectId'] = 'ctx_persistent3'
+    metaData = jsondict['metadata']
+    # ---- search for title ----
+    content = search_by_key('title', flat_dict)
+    metaData['title'] = content
+    print('title: %s' % content)
+    # ---- identifiers ----
+    # print(flat_dict)
+    content = search_by_key('identifier', flat_dict)
+    # print('identifiers: %s' % content)
+    # the structure of 'identifier' from xmldict is [{'type':'ISSN', 'text':'xxxx'},{'type':'ISBN', 'text':'xxxx'}, {'type':'DOI', 'text':'xxxx'}]
+    try: # some example doesn't have ISSN value or ISBN value
+        ISSN = findByValue('ISSN', content)['text']
+    except KeyError:
+        ISSN = ''
     try:
+        ISBN = findByValue('ISBN', content)['text']
+    except KeyError:
+        ISBN = ''
+    DOI = findByValue('DOI', content)['text'] # the key 'text' is found by looking up to the xmldict
+    print("IDs: %s" % DOI)
+    metaData['identifiers'][0]['id'] = DOI
+    ctxID, ouID = from_DOI(fileDOIaff, DOI)
+    # print("ctxID: %s \n ouID: %s" % (ctxID, ouID))
+    if ctxID is not 'xxx':
+        # jsondict['context']['objectId'] = ctxID
+        print(ctxID)
+    # ---- add creators ----
+    content = search_by_key('creator', flat_dict)
+    # print('creator: %s' % content)
+    creator = metaData['creators'][0]
+    if not isinstance(content, list):
+        content = [content]
+    metaData['creators'] = []
+    for each in content: 
+        # ---- operate on each creator ----
+        creatorTemp = creator.copy() # copy the metadata template of the creator
         each_flat = flatten_dict(each)
-    except AttributeError:
-        break
-    # print(each_flat)
-    # -- find the given name of the creator --
-    subcon = search_by_key('given', each_flat) 
-    creatorTemp['person']['givenName'] = subcon
-    # --  --
-    # -- find the family name of the creator --
-    subcon = search_by_key('family', each_flat)
-    creatorTemp['person']['familyName'] = subcon
-    # --  --
-    # -- find the affaliations of the creator --
-    subcon = search_by_key('org', each_flat)
-    # print('organizations: %s' % subcon)
-    if isinstance(subcon, list): # the case that there are multiple organizations of this creator
-        creatorTemp['person']['organizations'] = []
-        for org in subcon:
-            name = search_by_key('title', org)
-            # print('each affa name: %s' % name)
-            addr = search_by_key('addr', org)
-            ouId = ouID # ouId = affRequest(name, ouID) # not avaliable until 26.09.2018, function needs modification after then
+        # print(each_flat)
+        # -- find the given name of the creator --
+        subcon = search_by_key('given', each_flat) 
+        creatorTemp['person']['givenName'] = subcon
+        # --  --
+        # -- find the family name of the creator --
+        subcon = search_by_key('family', each_flat)
+        creatorTemp['person']['familyName'] = subcon
+        # --  --
+        # -- find the affaliations of the creator --
+        subcon = search_by_key('org', each_flat)
+        # print('organizations: %s' % subcon)
+        if isinstance(subcon, list): # the case that there are multiple organizations of this creator
+            creatorTemp['person']['organizations'] = []
+            for org in subcon:
+                name = search_by_key('title', org)
+                # print('each affa name: %s' % name)
+                addr = search_by_key('addr', org)
+                # --== query: affiliation Id ==--
+                ouId = affRequest(name, ouID)
+                # print(ouId)
+                creatorTemp['person']['organizations'].append({'identifier': ouId, 'name': name, 'address':addr})
+        elif subcon: # the case that there is only one organization of this creator
+            creatorTemp['person']['organizations'] = []
+            name = subcon
+            addr = search_by_key('addr', each_flat)
+            # --== query: affiliation Id ==--
+            ouId = affRequest(name, ouID) 
             creatorTemp['person']['organizations'].append({'identifier': ouId, 'name': name, 'address':addr})
-    else: # the case that there is only one organization of this creator
-        creatorTemp['person']['organizations'] = []
-        name = subcon
-        addr = search_by_key('addr', each_flat)
-        ouId = ouID # ouId = affRequest(name, ouID) # not avaliable until 26.09.2018, function needs modification after then
-        creatorTemp['person']['organizations'].append({'identifier': ouId, 'name': name, 'address':addr})
-    metaData['creators'].append(copy.deepcopy(creatorTemp))
-    # --  --
-# ---- dates ----
-keypart_xml = ['created', 'modified', 'online','print','issued']# # of keys here equals to the # of keys in key_json, and the order should be mapped to each other
-key_json = ['dateSubmitted', 'dateModified', 'datePublishedOnline','datePublishedInPrint', 'dateAccepted']
-for i in range(len(key_json)):
-    content = search_by_key(keypart_xml[i], flat_dict)
-    if  content == False:
-        del metaData[key_json[i]]
+        else: # the case that there no organization info of this authore
+            del creatorTemp['person']['organizations']
+        metaData['creators'].append(copy.deepcopy(creatorTemp))
+        # --  --
+    # ---- dates ----
+    keypart_xml = ['created', 'modified', 'online','print','issued']# # of keys here equals to the # of keys in key_json, and the order should be mapped to each other
+    key_json = ['dateSubmitted', 'dateModified', 'datePublishedOnline','datePublishedInPrint', 'dateAccepted']
+    for i in range(len(key_json)):
+        content = search_by_key(keypart_xml[i], flat_dict)
+        if  content == False:
+            del metaData[key_json[i]]
+        else:
+            metaData[key_json[i]] = content
+        # print(content)
+
+    # ---- events ----
+    content = search_by_key('event', flat_dict)
+    if content == False:
+        del metaData['event']
     else:
-        metaData[key_json[i]] = content
-    # print(content)
+        print(content)
+        input("enter a number and press enter to continue")
 
-# ---- events ----
-content = search_by_key('event', flat_dict)
-if content == False:
-    del metaData['event']
-else:
-    print(content)
-    input("enter a number and press enter to continue")
-
-# ---- sources ----
-keypart_xml = ['source', 'volume', 'issue','start','end','sequence']# # of keys here equals to the # of keys in key_json, and the order should be mapped to each other
-key_json = ['title', 'volume', 'issue','startPage', 'endPage', 'sequenceNumber']
-for i in range(len(key_json)):
-    content = search_by_key(keypart_xml[i], flat_dict)
+    # ---- sources ----
+    keypart_xml = ['source', 'volume', 'issue','start','end','sequence']# # of keys here equals to the # of keys in key_json, and the order should be mapped to each other
+    key_json = ['title', 'volume', 'issue','startPage', 'endPage', 'sequenceNumber']
+    for i in range(len(key_json)):
+        content = search_by_key(keypart_xml[i], flat_dict)
+        if  content == False:
+            del metaData['sources'][0][key_json[i]]
+        else:
+            metaData['sources'][0][key_json[i]] = content
+    # the following publisher and identifier is not at the same level as the keys in key_json, so they need to be process independently
+    content = search_by_key('publish', flat_dict) # find the publisher
     if  content == False:
-        del metaData['sources'][0][key_json[i]]
+        del metaData['sources'][0]['publishingInfo']
     else:
-        metaData['sources'][0][key_json[i]] = content
-# the following publisher and identifier is not at the same level as the keys in key_json, so they need to be process independently
-content = search_by_key('publish', flat_dict) # find the publisher
-if  content == False:
-    del metaData['sources'][0]['publishingInfo']
-else:
-    metaData['sources'][0]['publishingInfo']['publisher'] = content 
+        metaData['sources'][0]['publishingInfo']['publisher'] = content 
 
-metaData['sources'][0]['identifiers'] = [{'id':ISSN, 'type':'ISSN'}]
-metaData['sources'][0]['identifiers'].append({'id':ISBN, 'type':'ISBN'})
+    metaData['sources'][0]['identifiers'] = [{'id':ISSN, 'type':'ISSN'}]
+    metaData['sources'][0]['identifiers'].append({'id':ISBN, 'type':'ISBN'})
+    # ---- abstract ----
+    content = search_by_key('abstract', flat_dict)
+    if content == False:
+        del metaData['abstract']
+    else:
+        metaData['abstracts'][0]['value'] = content
 
-# ---- abstract ----
-content = search_by_key('abstract', flat_dict)
-if content == False:
-    del metaData['abstract']
-else:
-    metaData['abstracts'][0]['value'] = content
+    # ---- freeKeywords ----
+    content = search_by_key('subject', flat_dict)
+    if content == False:
+        del metaData['freeKeywords']
+    else:
+        metaData['freeKeywords'] = content
 
-# ---- freeKeywords ----
-content = search_by_key('subject', flat_dict)
-if content == False:
-    del metaData['freeKeywords']
-else:
-    metaData['freeKeywords'] = content
+    # ---- totalNumberOfPages ----
+    content = search_by_key('total', flat_dict)
+    if content == False:
+        del metaData['totalNumberOfPages']
+    else:
+        metaData['totalNumberOfPages'] = content
+    # ---- projectInfo ----
+    content = search_by_key('project-info', flat_dict)
+    if content == False:
+        del metaData['projectInfo']
+    else:
+        print('projectInfo:%s' % content)
+        input("type in a number and press enter to continue")
+        metaData['projectInfo'][0] = content
+    # ---- files ----
+    pdfName = transformedFileName + '.pdf'
+    jsondict['files'][0]['metadata']['title'] = pdfName
+    pdfPath = folderPath + '\\' + pdfName
+    upfileId = upfileRequest(Token, pdfPath, pdfName)
+    if upfileId == "No PDF":
+        print("item " + transformedFileName + " has no PDF attached")
+        del jsondict['files']
+    else:
+        print(upfileId)
+        jsondict['files'][0]['content'] = upfileId
 
-# ---- totalNumberOfPages ----
-content = search_by_key('total', flat_dict)
-if content == False:
-    del metaData['totalNumberOfPages']
-else:
-    metaData['totalNumberOfPages'] = content
-# ---- projectInfo ----
-content = search_by_key('project-info', flat_dict)
-if content == False:
-    del metaData['projectInfo']
-else:
-    print('projectInfo:%s' % content)
-    input("type in a number and press enter to continue")
-    metaData['projectInfo'][0] = content
+    jsonwrite = json.dumps(jsondict, indent=2)
+    # outfile = 'output.json'
+    # with open(outfile, 'w') as f:
+    #     f.write(jsonwrite) # output the json format of xml content
 
-jsonwrite = json.dumps(jsondict, indent=2)
-outfile = 'output.json'
-with open(outfile, 'w') as f:
-    f.write(jsonwrite) # output the json format of xml content
+    # --== query: items - publication ==--
+    itemsRequest(Token, jsonwrite)
+    # if item_res.ok==False:
+    #     print("item" + transformedFileName + "metadata uploading fail")    
+    # input("check output and press enter to continue")
