@@ -3,14 +3,9 @@ import json
 import xmltodict
 import copy
 import os
-from urlRequest import loginRequest, affRequest, upfileRequest, itemsRequest
-from pyExcelReader import from_DOI
-# from pandas.io.json import json_normalize
-# def flatten(dd, level_mark='0', prefix=''):
-#     return { k if prefix else k : v
-#              for kk, vv in dd.items()
-#              for k, v in flatten(vv, separator, kk).items()
-#              } if isinstance(dd, dict) else { prefix : dd }
+from urlRequest import loginRequest, affRequest, upfileRequest, itemsRequest # functions to interact with PuRe via REST API
+from pyExcelReader import from_DOI # function to read from .xlsx or .csv files
+
 def xmlNamesPaths(desiredPath):
     """
     Return the iterative list of file names, filepaths and folder paths in the desiredPath folder
@@ -20,22 +15,17 @@ def xmlNamesPaths(desiredPath):
             if f.endswith('.xml'):
                 filepath = os.path.join(root, f)
                 yield os.path.splitext(f)[0], filepath, root
-def findPDF(name, folder):
-    """
-    check if the desired PDF file is in the folder
-    if yes, return the PDF name
-    else, return False
-    """
-    for root, _, filename in os.walk(folder):
-        if name in filename:
-            return os.path.join(root, name)
-        else:
-            return False
+
 def flatten_dict(d, level_mark = -1):
+    """
+    This function converts a nested dict d into a flat dict in order to make searching a certain key easier.
+    The key of previous layer is added into the key of current layer.
+    level_mark is used to mark how deep the current layer is, also added into the key of current layer.
+    """
     level_mark += 1
     def items():
         for key, value in d.items():
-            if isinstance(value, dict) and level_mark<6: # level_mark < 6 controls how deep the dict should be flatterned. If 'creators' only have one object, there will be problem if flattening down to the floor layer, so we stop at the creator layer. 
+            if isinstance(value, dict) and level_mark<6: # level_mark < 6 controls how deep the dict should be flatterned. If 'creators' only have one object, there will be problem if flattening down to the deepest layer, so we stop at the creator layer. 
                 if ':' in key:
                     ind = key.index(':')
                     prekey = key[ind+1:]
@@ -51,31 +41,11 @@ def flatten_dict(d, level_mark = -1):
 
     return dict(items())
 
-# def flatten_dict_or_list(d):
-#     """
-#     flatten a mixed dict and list nest into a dict
-#     """
-#     def items():
-#         for key, value in d.items():
-#             if isinstance(value, dict):
-#                 for subkey, subvalue in flatten_dict(value).items():
-#                     yield '.'.join([key,subkey]), subvalue
-#             elif isinstance(value, list):
-#                 list_mark = -1
-#                 for each in value:
-#                     list_mark += 1
-#                     if isinstance(each, dict):
-#                         for subkey, subvalue in flatten_dict(each).items():
-#                             yield '.'.join([key,subkey])+str(list_mark), subvalue
-#                     else:
-#                         yield key+str(list_mark), value
-#             else:
-#                 yield key, value
-
-#     return dict(items())
 def post_processor(path, key, value):
-    # print('path:%s \n key:%s\n value:%s\n' % (path, key, value))
-    # input('enter to continue')
+    """
+    a function called in xmltodict.parse(... , postprocessor=post_processor, ...) 
+    delete the '@', '#' symbols in the keys
+    """
     if '@' in key:
         for tar in ['ISSN', 'ISBN', 'DOI']:
             if tar in value:
@@ -98,7 +68,9 @@ def search_key(keypart, keys):
             return key
 def search_by_key(keypart, target_dict):
     """
-    return the value of the key that contatins keypart from the target_dict
+    return the value of the key that contatins keypart from the dict 'target_dict'
+    if the keypart is founded, delete the (key,value) pair from the dict 'target_dict'
+    else, return False
     output: the content
     """
     key = search_key(keypart, list(target_dict.keys()))
@@ -110,20 +82,21 @@ def search_by_key(keypart, target_dict):
     return value
 def findByValue(value, orglist):
     """
-    Return the affaliation dict whose attribute id = value.
-    orglist is a list of all affaliation dicts.
+    This function here is used to find the identifiers of the item.
+    'value' is the identifier's type, e.g., ISSN, DOI
+    'orglist' is the list of all identifiers.
+    Return the dict whose attribute id = value.
     """
     if type(orglist)!=list:
         orglist = [orglist]
-    # print(orglist)
     for org in orglist:
-        if value in org['xsi:type']:
+        if value in org['xsi:type']: # the key 'xsi:type' is known by understanding the structure of the .xml files
             return org
 
 # ==== subsidiary mapping files ====
-fileDOIaff = ".//copernicus//copernicus_DOI_aff.csv"
+fileDOIaff = ".//copernicus//copernicus_DOI_aff.csv" # the helping file providing the mapping between DOI of metadata and the ctxID of the affiliation where the item should be sent to and the ou_ID of the corresponding author.
 
-desiredPath = './/copernicus'
+desiredPath = './/copernicus' # where stores the metadata files that is to be transformed
 
 # ==== query: log in - get token ====
 namePass = "hliu:hard2Remember"
@@ -131,36 +104,29 @@ Token = loginRequest(namePass)
 
 # ==== process iteratively for all the .xml in the folders and subforders
 for transformedFileName, filePath, folderPath in xmlNamesPaths(desiredPath):
-    print(transformedFileName, filePath, folderPath)                
-    # transformedFileName = name
+    print(transformedFileName, filePath, folderPath)
 
     # ==== load xml metadata dict to read from ====
-    # ==== dict to read from ====
-    with open(filePath, 'r', encoding="utf8") as f:#copernicus//cpd-11-2483-2015.xml
-    # with open("sample.xml", 'r', encoding="utf8") as f:
+    # ---- dict to read from ----
+    with open(filePath, 'r', encoding="utf8") as f:
         xmlString = f.read()
-    xmldict = json.loads(json.dumps(xmltodict.parse(xmlString, postprocessor=post_processor), indent = 2))# dict of xml content
+    xmldict = json.loads(json.dumps(xmltodict.parse(xmlString, postprocessor=post_processor), indent = 2)) # dict of xml metadata
     flat_dict = flatten_dict(xmldict)
-    # print(flat_dict)
-    # keys = list(flat_dict.keys())
-    # print("keys of xml: %s" % keys)
 
-    # ==== dict to write in ====
+    # ---- json template dict to write in ----
     with open("tempjson.json", 'r') as fj:
         jsonString = fj.read()
     jsondict = json.loads(jsonString) # dict of json template
 
     # ==== transformation process ====
-    jsondict['context']['objectId'] = 'ctx_persistent3'
+    jsondict['context']['objectId'] = 'ctx_persistent3' # mpdl internal testing ctx_ID
     metaData = jsondict['metadata']
     # ---- search for title ----
     content = search_by_key('title', flat_dict)
     metaData['title'] = content
     print('title: %s' % content)
     # ---- identifiers ----
-    # print(flat_dict)
     content = search_by_key('identifier', flat_dict)
-    # print('identifiers: %s' % content)
     # the structure of 'identifier' from xmldict is [{'type':'ISSN', 'text':'xxxx'},{'type':'ISBN', 'text':'xxxx'}, {'type':'DOI', 'text':'xxxx'}]
     try: # some example doesn't have ISSN value or ISBN value
         ISSN = findByValue('ISSN', content)['text']
@@ -170,14 +136,13 @@ for transformedFileName, filePath, folderPath in xmlNamesPaths(desiredPath):
         ISBN = findByValue('ISBN', content)['text']
     except KeyError:
         ISBN = ''
-    DOI = findByValue('DOI', content)['text'] # the key 'text' is found by looking up to the xmldict
-    print("IDs: %s" % DOI)
+    DOI = findByValue('DOI', content)['text'] # the key 'text' is found by understanding the structure of xml metadata
+    print("DOI: %s" % DOI)
     metaData['identifiers'][0]['id'] = DOI
     ctxID, ouID = from_DOI(fileDOIaff, DOI)
-    # print("ctxID: %s \n ouID: %s" % (ctxID, ouID))
     if ctxID is not 'xxx':
-        # jsondict['context']['objectId'] = ctxID
-        print(ctxID)
+        # jsondict['context']['objectId'] = ctxID # uncomment this to forward the item to corresponding affiliation
+        print('ctxID: %s' % ctxID)
     # ---- add creators ----
     content = search_by_key('creator', flat_dict)
     # print('creator: %s' % content)
@@ -189,15 +154,14 @@ for transformedFileName, filePath, folderPath in xmlNamesPaths(desiredPath):
         # ---- operate on each creator ----
         creatorTemp = creator.copy() # copy the metadata template of the creator
         each_flat = flatten_dict(each)
-        # print(each_flat)
         # -- find the given name of the creator --
-        subcon = search_by_key('given', each_flat) 
+        subcon = search_by_key('given', each_flat)
         creatorTemp['person']['givenName'] = subcon
-        # --  --
+        # -- -- --
         # -- find the family name of the creator --
         subcon = search_by_key('family', each_flat)
         creatorTemp['person']['familyName'] = subcon
-        # --  --
+        # -- -- --
         # -- find the affaliations of the creator --
         subcon = search_by_key('org', each_flat)
         # print('organizations: %s' % subcon)
@@ -209,21 +173,20 @@ for transformedFileName, filePath, folderPath in xmlNamesPaths(desiredPath):
                 addr = search_by_key('addr', org)
                 # --== query: affiliation Id ==--
                 ouId = affRequest(name, ouID)
-                # print(ouId)
                 creatorTemp['person']['organizations'].append({'identifier': ouId, 'name': name, 'address':addr})
-        elif subcon: # the case that there is only one organization of this creator
+        elif subcon: # the case that there is only one organization of this creator; in this case, 'subcon' is the name of the affaliation
             creatorTemp['person']['organizations'] = []
             name = subcon
             addr = search_by_key('addr', each_flat)
             # --== query: affiliation Id ==--
             ouId = affRequest(name, ouID) 
             creatorTemp['person']['organizations'].append({'identifier': ouId, 'name': name, 'address':addr})
-        else: # the case that there no organization info of this authore
+        else: # the case that there no organization info of this authors
             del creatorTemp['person']['organizations']
         metaData['creators'].append(copy.deepcopy(creatorTemp))
-        # --  --
+        # -- -- --
     # ---- dates ----
-    keypart_xml = ['created', 'modified', 'online','print','issued']# # of keys here equals to the # of keys in key_json, and the order should be mapped to each other
+    keypart_xml = ['created', 'modified', 'online','print','issued']# the number of keys here equals to the number of keys in 'key_json', and the order should be mapped to each other
     key_json = ['dateSubmitted', 'dateModified', 'datePublishedOnline','datePublishedInPrint', 'dateAccepted']
     for i in range(len(key_json)):
         content = search_by_key(keypart_xml[i], flat_dict)
@@ -231,18 +194,18 @@ for transformedFileName, filePath, folderPath in xmlNamesPaths(desiredPath):
             del metaData[key_json[i]]
         else:
             metaData[key_json[i]] = content
-        # print(content)
 
     # ---- events ----
     content = search_by_key('event', flat_dict)
     if content == False:
         del metaData['event']
     else:
-        print(content)
+        # since in the examples tested so far there is no instance that contains 'event' information, it is not known how to map the 'xml-event' to 'json-event'. This part needs modification if the 'event' shows up in xml metadata in the future. 
+        print('event: %s' % content)
         input("enter a number and press enter to continue")
 
     # ---- sources ----
-    keypart_xml = ['source', 'volume', 'issue','start','end','sequence']# # of keys here equals to the # of keys in key_json, and the order should be mapped to each other
+    keypart_xml = ['source', 'volume', 'issue','start','end','sequence']# the number of keys here equals to the number of keys in key_json, and the order should be mapped to each other
     key_json = ['title', 'volume', 'issue','startPage', 'endPage', 'sequenceNumber']
     for i in range(len(key_json)):
         content = search_by_key(keypart_xml[i], flat_dict)
@@ -250,7 +213,7 @@ for transformedFileName, filePath, folderPath in xmlNamesPaths(desiredPath):
             del metaData['sources'][0][key_json[i]]
         else:
             metaData['sources'][0][key_json[i]] = content
-    # the following publisher and identifier is not at the same level as the keys in key_json, so they need to be process independently
+    # the following publisher and identifiers is not at the same level as the keys above in 'key_json', so they need to be process independently
     content = search_by_key('publish', flat_dict) # find the publisher
     if  content == False:
         del metaData['sources'][0]['publishingInfo']
@@ -259,6 +222,7 @@ for transformedFileName, filePath, folderPath in xmlNamesPaths(desiredPath):
 
     metaData['sources'][0]['identifiers'] = [{'id':ISSN, 'type':'ISSN'}]
     metaData['sources'][0]['identifiers'].append({'id':ISBN, 'type':'ISBN'})
+    
     # ---- abstract ----
     content = search_by_key('abstract', flat_dict)
     if content == False:
@@ -279,14 +243,17 @@ for transformedFileName, filePath, folderPath in xmlNamesPaths(desiredPath):
         del metaData['totalNumberOfPages']
     else:
         metaData['totalNumberOfPages'] = content
+    
     # ---- projectInfo ----
     content = search_by_key('project-info', flat_dict)
     if content == False:
         del metaData['projectInfo']
     else:
-        print('projectInfo:%s' % content)
+        # the same situation as 'event'
+        print('projectInfo: %s' % content)
         input("type in a number and press enter to continue")
-        metaData['projectInfo'][0] = content
+        # metaData['projectInfo'][0] = content
+    
     # ---- files ----
     pdfName = transformedFileName + '.pdf'
     jsondict['files'][0]['metadata']['title'] = pdfName
@@ -296,16 +263,9 @@ for transformedFileName, filePath, folderPath in xmlNamesPaths(desiredPath):
         print("item " + transformedFileName + " has no PDF attached")
         del jsondict['files']
     else:
-        print(upfileId)
         jsondict['files'][0]['content'] = upfileId
 
     jsonwrite = json.dumps(jsondict, indent=2)
-    # outfile = 'output.json'
-    # with open(outfile, 'w') as f:
-    #     f.write(jsonwrite) # output the json format of xml content
 
     # --== query: items - publication ==--
     itemsRequest(Token, jsonwrite)
-    # if item_res.ok==False:
-    #     print("item" + transformedFileName + "metadata uploading fail")    
-    # input("check output and press enter to continue")

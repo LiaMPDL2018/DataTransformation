@@ -3,7 +3,7 @@ import json # packadge used for json files
 import xmltodict # packadge used for xml files
 import copy # packadge to copy nested dict variables
 import os
-from pyExcelReader import pyExlDict, from_DOI # functions reading from .xlsx or .csv files
+from pyExcelReader import pyExlDict, from_DOI # functions to read from .xlsx or .csv files
 from urlRequest import loginRequest, affRequest, upfileRequest, itemsRequest # functions to interact with PuRe via REST API
 # ==== help function for transformation ====
 def findByValue(value, orglist):
@@ -71,11 +71,13 @@ for name, filePath, folderPath in xmlNamesPaths(desiredPath):
 
     # ==== transformation process ====
     metaData = jsondict['metadata']
+    
     # ---- search for title ----
     if isinstance(xmlFront['titlegrp']['title'], dict):
         metaData['title'] = xmlFront['titlegrp']['title']['#text']
     else:
         metaData['title'] = xmlFront['titlegrp']['title']
+    
     # ---- doi ----
     metaData['identifiers'][0]['id'] = xmlAdmin['doi']
     ctxID, ouID = from_DOI(fileDOIaff, xmlAdmin['doi'])
@@ -116,6 +118,7 @@ for name, filePath, folderPath in xmlNamesPaths(desiredPath):
                 'address':address})
         storeCreator = copy.deepcopy(creatorTemp)
         metaData['creators'].append(storeCreator)
+    
     # ---- dates ----
     # -- dateSubmitted --
     xmlReceived = xmlAdmin['received']
@@ -126,6 +129,7 @@ for name, filePath, folderPath in xmlNamesPaths(desiredPath):
         day = '0' + day
     metaData['dateSubmitted'] = year +'-' + month + '-' + day
     # print((metaData['dateSubmitted']))
+    
     # -- dateAcceptd --
     xmlDate = xmlAdmin['date']
     year = xmlDate['year']
@@ -135,8 +139,10 @@ for name, filePath, folderPath in xmlNamesPaths(desiredPath):
         day = '0' + day
     metaData['dateAccepted'] = year +'-' + month + '-' + day
     # print(metaData['dateAccepted'])
+    
     # -- dateModiefied --
     del metaData['dateModified'] # no information can be assigned
+    
     # -- datePublishedOnline -- 
     xmlPub = xmlArt['published']
     year = xmlPub[0]['pubfront']['date']['year']
@@ -146,6 +152,7 @@ for name, filePath, folderPath in xmlNamesPaths(desiredPath):
         day = '0' + day
     metaData['datePublishedOnline'] = year +'-' + month + '-' + day
     # print(metaData['datePublishedOnline'])
+    
     # -- datePublishedInPrint -- 
     year = xmlPub[1]['pubfront']['date']['year']
     try:
@@ -160,8 +167,10 @@ for name, filePath, folderPath in xmlNamesPaths(desiredPath):
     else:
         metaData['datePublishedInPrint'] = year +'-' + month + '-' + day
     # print(metaData['datePublishedInPrint'])
+    
     # ---- event ----
     del metaData['event'] # no infomation can be assigned
+    
     # ---- sources ----
     source = metaData['sources'][0]
     source['title'] = dictAbbrJournal[xmlPub[0]['journalref']['link']]
@@ -182,6 +191,7 @@ for name, filePath, folderPath in xmlNamesPaths(desiredPath):
         metaData['abstracts'][0]['value'] = xmlArt['art-front']['abstract']['p']['#text']
     else:
         metaData['abstracts'][0]['value'] = xmlArt['art-front']['abstract']['p']
+    
     # ---- subjects ----
     del metaData['subjects'] # no information can be assigned
 
@@ -217,9 +227,11 @@ for name, filePath, folderPath in xmlNamesPaths(desiredPath):
     else:
         print("%s: no projectInfo" % transformedFileName)
         del metaData['projectInfo']
+    
     # ---- files ---- list
     pdfName = transformedFileName.upper() + '.pdf'
     jsondict['files'][0]['metadata']['title'] = pdfName
+    
     # --== query: staging - uploading files ==-- 
     pdfPath = folderPath +'\\' + pdfName
     upfileId = upfileRequest(Token, pdfPath, pdfName)
@@ -233,6 +245,4 @@ for name, filePath, folderPath in xmlNamesPaths(desiredPath):
     
     # --== query: items - publication ==--
     itemsRequest(Token, jsonwrite)
-    # if item_res.ok==False:
-    #     print("item" + transformedFileName + "metadata uploading fail")
     
