@@ -99,7 +99,7 @@ fileDOIaff = ".//copernicus//copernicus_DOI_aff.csv" # the helping file providin
 desiredPath = './/copernicus' # where stores the metadata files that is to be transformed
 
 # ==== query: log in - get token ====
-namePass = "hliu:hard2Remember"
+namePass = "***REMOVED***:***REMOVED***"
 Token = loginRequest(namePass)
 
 # ==== process iteratively for all the .xml in the folders and subforders
@@ -119,7 +119,7 @@ for transformedFileName, filePath, folderPath in xmlNamesPaths(desiredPath):
     jsondict = json.loads(jsonString) # dict of json template
 
     # ==== transformation process ====
-    jsondict['context']['objectId'] = 'ctx_persistent3' # mpdl internal testing ctx_ID
+    # jsondict['context']['objectId'] = 'ctx_persistent3' # mpdl internal testing ctx_ID
     metaData = jsondict['metadata']
     # ---- search for title ----
     content = search_by_key('title', flat_dict)
@@ -141,7 +141,7 @@ for transformedFileName, filePath, folderPath in xmlNamesPaths(desiredPath):
     metaData['identifiers'][0]['id'] = DOI
     ctxID, ouID = from_DOI(fileDOIaff, DOI)
     if ctxID is not 'xxx':
-        # jsondict['context']['objectId'] = ctxID # uncomment this to forward the item to corresponding affiliation
+        jsondict['context']['objectId'] = ctxID # uncomment this to forward the item to corresponding affiliation
         print('ctxID: %s' % ctxID)
     # ---- add creators ----
     content = search_by_key('creator', flat_dict)

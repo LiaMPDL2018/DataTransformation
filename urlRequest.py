@@ -3,7 +3,7 @@ import json
 
 def loginRequest(namePass):
     # namePass should be a string in form of "name:password"
-    url = 'https://dev.inge.mpdl.mpg.de/rest/login'
+    url = 'https://qa.pure.mpdl.mpg.de/rest/login'
     response = requests.post(url, data=namePass)
     if response.ok:
         return response.headers['Token']
@@ -45,7 +45,7 @@ def affRequest(name, ouID_MPI):
     if ('xxx' not in ouID_MPI) and internalFlag:
         return ouID_MPI
     else:
-        url = 'https://dev.inge.mpdl.mpg.de/rest/ous/search' 
+        url = 'https://qa.pure.mpdl.mpg.de/rest/ous/search' 
         response = requests.post(url, data=json.dumps(data), headers={"Content-Type": "application/json"})
         if response.ok:
             jData = (response.json())
@@ -67,7 +67,7 @@ def affRequest(name, ouID_MPI):
 def upfileRequest(Token, filePath, filename):
     # Token: Authorization Token got in the login process
     # filename: the name without extension of the file wanted to upload
-    url = 'https://dev.inge.mpdl.mpg.de/rest/staging/' + filename 
+    url = 'https://qa.pure.mpdl.mpg.de/rest/staging/' + filename 
     headers = {'Authorization' : Token}
     try: 
         files = {'file': open(filePath, 'rb')}
@@ -80,8 +80,27 @@ def upfileRequest(Token, filePath, filename):
         res.raise_for_status()
 
 def itemsRequest(Token, jsonfile):
-    url = 'https://dev.inge.mpdl.mpg.de/rest/items' 
+    """
+    send request to push the json metadata into pure (into pending state)
+    """
+    url = 'https://qa.pure.mpdl.mpg.de/rest/items' 
     headers = {'Authorization' : Token, 'Content-Type' : 'application/json'}
     res = requests.post(url, data = jsonfile, headers = headers)
     if not res.ok:
         res.raise_for_status()
+    else:
+        resjson = res.json()
+        itemsSubmit(Token, resjson['objectId'], resjson['modificationDate'])
+
+def itemsSubmit(Token, objId, modiDate):
+    """
+    performing item submission after item pushing, i.e., when the item is in pending state.
+    """
+    url = 'https://qa.pure.mpdl.mpg.de/rest/items/'+ objId +'/submit'
+    headers = {'Authorization' : Token, 'Content-Type' : 'application/json'}
+    data = {"comments":"Automatic submission of " + objId + " from RSC", "lastModificationDate" : modiDate}
+    res = requests.put(url, data = json.dumps(data), headers = headers)
+    if not res.ok:
+        res.raise_for_status()
+    else:
+        print("submitting %s successfully" % res.json()['objectId'])

@@ -49,7 +49,7 @@ dictAbbrJournal = pyExlDict(fileAbbrRSC)
 desiredPath = './30759'
 
 # ==== query: log in - get token ====
-namePass = "hliu:hard2Remember"
+namePass = "***REMOVED***:***REMOVED***"
 Token = loginRequest(namePass)
 
 # ==== process iteratively for all the .xml in the folders and subforders
@@ -68,6 +68,7 @@ for name, filePath, folderPath in xmlNamesPaths(desiredPath):
     with open("tempjson.json", 'r') as fj:
         jsonString = fj.read()
     jsondict = json.loads(jsonString) # dict of json template
+    # jsondict['context']['objectId'] = 'ctx_persistent3' #ctxID # 
 
     # ==== transformation process ====
     metaData = jsondict['metadata']
@@ -77,17 +78,20 @@ for name, filePath, folderPath in xmlNamesPaths(desiredPath):
         metaData['title'] = xmlFront['titlegrp']['title']['#text']
     else:
         metaData['title'] = xmlFront['titlegrp']['title']
-    
+    print('title: %s' % metaData['title'])
+
     # ---- doi ----
     metaData['identifiers'][0]['id'] = xmlAdmin['doi']
     ctxID, ouID = from_DOI(fileDOIaff, xmlAdmin['doi'])
+    print('ctxId: %s \n ouId: %s' % (ctxID, ouID))
     """
     ctx id of the one who will receive this publication item: 
-    ctx_persistent3 is Lia for testing purpose
+    ctx_persistent3 is mpdl inner Id for testing purpose
     ctxID is the one to whom the item should be sent to
     change 'ctx_persistent3' to ctxID in the following line when doing real data transformation and uploading
     """
-    jsondict['context']['objectId'] = 'ctx_persistent3' #ctxID 
+    if 'xxx' not in ctxID:
+        jsondict['context']['objectId'] = ctxID #'ctx_persistent3' #
 
     # ---- add authors ----
     authors = xmlFront['authgrp']['author']
@@ -245,4 +249,4 @@ for name, filePath, folderPath in xmlNamesPaths(desiredPath):
     
     # --== query: items - publication ==--
     itemsRequest(Token, jsonwrite)
-    
+    # input("pause")
