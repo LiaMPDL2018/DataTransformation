@@ -2,7 +2,7 @@
 import json
 import xmltodict
 import copy
-import os
+import os, send2trash
 from urlRequest import loginRequest, affRequest, upfileRequest, itemsRequest # functions to interact with PuRe via REST API
 from pyExcelReader import from_DOI # function to read from .xlsx or .csv files
 
@@ -102,9 +102,13 @@ desiredPath = './/copernicus' # where stores the metadata files that is to be tr
 namePass = "***REMOVED***:***REMOVED***"
 Token = loginRequest(namePass)
 
+# ==== read the text of doi of transformed files
+with open("transformed_cop.text", "r") as text_file:
+    doi_list_done = text_file.read().split('\n')
+
 # ==== process iteratively for all the .xml in the folders and subforders
 for transformedFileName, filePath, folderPath in xmlNamesPaths(desiredPath):
-    print(transformedFileName, filePath, folderPath)
+    # print(transformedFileName, filePath, folderPath)
 
     # ==== load xml metadata dict to read from ====
     # ---- dict to read from ----
@@ -121,13 +125,33 @@ for transformedFileName, filePath, folderPath in xmlNamesPaths(desiredPath):
     # ==== transformation process ====
     # jsondict['context']['objectId'] = 'ctx_persistent3' # mpdl internal testing ctx_ID
     metaData = jsondict['metadata']
-    # ---- search for title ----
-    content = search_by_key('title', flat_dict)
-    metaData['title'] = content
-    print('title: %s' % content)
+
     # ---- identifiers ----
     content = search_by_key('identifier', flat_dict)
     # the structure of 'identifier' from xmldict is [{'type':'ISSN', 'text':'xxxx'},{'type':'ISBN', 'text':'xxxx'}, {'type':'DOI', 'text':'xxxx'}]
+    DOI = findByValue('DOI', content)['text'] # the key 'text' is found by understanding the structure of xml metadata
+    print("DOI: %s" % DOI)
+    ctxID, ouID = from_DOI(fileDOIaff, DOI)
+    if DOI in doi_list_done:
+        """
+        if doi is in doi_list_done, this means it has already been transformed and uploaded.
+        """
+        send2trash.send2trash(filePath)
+        pdfName = transformedFileName + '.pdf'
+        try: 
+            send2trash.send2trash(pdfName)
+        except FileNotFoundError:
+            pass
+        print("file already submitted")
+        continue
+    if ('xxx' in ctxID):
+        """
+        'xxx' in ctxID means there's no matching for this doi, so do not do transformation or uploading; 
+        """
+        print("no ctxID matching")
+        continue
+        
+    metaData['identifiers'][0]['id'] = DOI
     try: # some example doesn't have ISSN value or ISBN value
         ISSN = findByValue('ISSN', content)['text']
     except KeyError:
@@ -136,13 +160,12 @@ for transformedFileName, filePath, folderPath in xmlNamesPaths(desiredPath):
         ISBN = findByValue('ISBN', content)['text']
     except KeyError:
         ISBN = ''
-    DOI = findByValue('DOI', content)['text'] # the key 'text' is found by understanding the structure of xml metadata
-    print("DOI: %s" % DOI)
-    metaData['identifiers'][0]['id'] = DOI
-    ctxID, ouID = from_DOI(fileDOIaff, DOI)
-    if ctxID is not 'xxx':
-        jsondict['context']['objectId'] = ctxID # uncomment this to forward the item to corresponding affiliation
-        print('ctxID: %s' % ctxID)
+    
+    # ---- search for title ----
+    content = search_by_key('title', flat_dict)
+    metaData['title'] = content
+    print('title: %s' % content)
+    
     # ---- add creators ----
     content = search_by_key('creator', flat_dict)
     # print('creator: %s' % content)
@@ -269,3 +292,13 @@ for transformedFileName, filePath, folderPath in xmlNamesPaths(desiredPath):
 
     # --== query: items - publication ==--
     itemsRequest(Token, jsonwrite)
+
+    # ==== add the doi and name of successful transformed file in to the list
+    with open("transformed_cop.text", "a") as text_file:
+        text_file.write("%s\n" % DOI)
+    # ==== remove the folder of the xml metadata and pdf, since they are succussfully uploaded
+    send2trash.send2trash(filePath)
+    try: 
+        send2trash.send2trash(pdfName)
+    except FileNotFoundError:
+        pass

@@ -2,7 +2,7 @@
 import json # packadge used for json files
 import xmltodict # packadge used for xml files
 import copy # packadge to copy nested dict variables
-import os
+import os, send2trash
 from pyExcelReader import pyExlDict, from_DOI # functions to read from .xlsx or .csv files
 from urlRequest import loginRequest, affRequest, upfileRequest, itemsRequest # functions to interact with PuRe via REST API
 # ==== help function for transformation ====
@@ -52,9 +52,13 @@ desiredPath = './30759'
 namePass = "***REMOVED***:***REMOVED***"
 Token = loginRequest(namePass)
 
+# ==== read the text of doi of transformed files
+with open("transformed_RSC.text", "r") as text_file:
+    doi_list_done = text_file.read().split('\n')
+    
 # ==== process iteratively for all the .xml in the folders and subforders
 for name, filePath, folderPath in xmlNamesPaths(desiredPath):
-    print(name, filePath)                
+    # print(name, filePath, folderPath)                
     transformedFileName = name
 
     # ==== load xml metadata dict to read from ====
@@ -73,25 +77,37 @@ for name, filePath, folderPath in xmlNamesPaths(desiredPath):
     # ==== transformation process ====
     metaData = jsondict['metadata']
     
-    # ---- search for title ----
-    if isinstance(xmlFront['titlegrp']['title'], dict):
-        metaData['title'] = xmlFront['titlegrp']['title']['#text']
-    else:
-        metaData['title'] = xmlFront['titlegrp']['title']
-    print('title: %s' % metaData['title'])
-
     # ---- doi ----
-    metaData['identifiers'][0]['id'] = xmlAdmin['doi']
+    DOI = xmlAdmin['doi']
     ctxID, ouID = from_DOI(fileDOIaff, xmlAdmin['doi'])
-    print('ctxId: %s \n ouId: %s' % (ctxID, ouID))
     """
     ctx id of the one who will receive this publication item: 
     ctx_persistent3 is mpdl inner Id for testing purpose
     ctxID is the one to whom the item should be sent to
     change 'ctx_persistent3' to ctxID in the following line when doing real data transformation and uploading
     """
-    if 'xxx' not in ctxID:
-        jsondict['context']['objectId'] = ctxID #'ctx_persistent3' #
+    print(DOI)
+    if DOI in doi_list_done:
+        """
+        if doi is in doi_list_done, this means it has already been transformed and uploaded.
+        """
+        send2trash.send2trash(folderPath)
+        print("file has been uploaded")
+        continue
+    if ('xxx' in ctxID):
+        """
+        'xxx' in ctxID means there's no matching for this doi, so do not do transformation or uploading
+        """
+        print("no ctxID matching")
+        continue 
+        
+    metaData['identifiers'][0]['id'] = xmlAdmin['doi']
+    # ---- search for title ----
+    if isinstance(xmlFront['titlegrp']['title'], dict):
+        metaData['title'] = xmlFront['titlegrp']['title']['#text']
+    else:
+        metaData['title'] = xmlFront['titlegrp']['title']
+    print('title: %s' % metaData['title'])
 
     # ---- add authors ----
     authors = xmlFront['authgrp']['author']
@@ -112,10 +128,8 @@ for name, filePath, folderPath in xmlNamesPaths(desiredPath):
             name = org['org']['orgname']['nameelt']
             if isinstance(name, list):
                 name = ', '.join(name)
-            # print(name)
             # --== query: affiliation Id ==--
             ouId = affRequest(name, ouID)
-            # print(ouId)
             address = ', '.join(flatten(list(org['address'].values())))
             creatorTemp['person']['organizations'].append(
                 {'identifier': ouId, 'name': name, 
@@ -249,4 +263,9 @@ for name, filePath, folderPath in xmlNamesPaths(desiredPath):
     
     # --== query: items - publication ==--
     itemsRequest(Token, jsonwrite)
-    # input("pause")
+    
+    # ==== add the doi and name of successful transformed file in to the list ====
+    with open("transformed_RSC.text", "a") as text_file:
+        text_file.write("%s\n" % DOI)
+    # ==== remove the folder of the xml metadata and pdf, since they are succussfully uploaded ====
+    send2trash.send2trash(folderPath)
