@@ -5,6 +5,19 @@ import copy # packadge to copy nested dict variables
 import os, send2trash
 from pyExcelReader import pyExlDict, from_DOI # functions to read from .xlsx or .csv files
 from urlRequest import loginRequest, affRequest, upfileRequest, itemsRequest # functions to interact with PuRe via REST API
+# ==== supplement mapping files ====
+fileMonthNum = './/subsidiary_doc//Month.xlsx'
+fileAbbrRSC = './/subsidiary_doc//Abbr-RSC.xlsx'
+fileDOIaff = './/30759//rsc_201701-201807.csv' # file name need to be changed
+dictMonthNum = pyExlDict(fileMonthNum)
+dictAbbrJournal = pyExlDict(fileAbbrRSC)
+
+desiredPath = './30759' # folder name need to be changed
+
+# ==== query: log in - get token ====
+namePass = "***REMOVED***:***REMOVED***"
+Token = loginRequest(namePass)
+
 # ==== help function for transformation ====
 def findByValue(value, orglist):
     """
@@ -39,21 +52,9 @@ def flatten_helper(lst, new_lst):
 			flatten_helper(element, new_lst)
 		else:
 			new_lst.append(element)
-# ==== supplement mapping files ====
-fileMonthNum = './/subsidiary_doc//Month.xlsx'
-fileAbbrRSC = './/subsidiary_doc//Abbr-RSC.xlsx'
-fileDOIaff = './/30759//rsc_201701-201807.csv'
-dictMonthNum = pyExlDict(fileMonthNum)
-dictAbbrJournal = pyExlDict(fileAbbrRSC)
-
-desiredPath = './30759'
-
-# ==== query: log in - get token ====
-namePass = "***REMOVED***:***REMOVED***"
-Token = loginRequest(namePass)
 
 # ==== read the text of doi of transformed files
-with open("transformed_RSC.text", "r") as text_file:
+with open("transformed_RSC.txt", "r") as text_file:
     doi_list_done = text_file.read().split('\n')
     
 # ==== process iteratively for all the .xml in the folders and subforders
@@ -102,6 +103,7 @@ for name, filePath, folderPath in xmlNamesPaths(desiredPath):
         continue 
         
     metaData['identifiers'][0]['id'] = xmlAdmin['doi']
+    jsondict['context']['objectId'] = ctxID
     # ---- search for title ----
     if isinstance(xmlFront['titlegrp']['title'], dict):
         metaData['title'] = xmlFront['titlegrp']['title']['#text']
@@ -114,7 +116,31 @@ for name, filePath, folderPath in xmlNamesPaths(desiredPath):
     orgs = xmlFront['authgrp']['aff']
     creator = metaData['creators'][0]
     metaData['creators'] = []
-    for author in authors:
+    if isinstance(authors, list): # for the case there are multiple authors
+        for author in authors:
+            creatorTemp = creator.copy()
+            creatorTemp['person']['givenName'] = author['person']['persname']['fname']
+            if isinstance(author['person']['persname']['surname'], dict):
+                creatorTemp['person']['familyName'] = author['person']['persname']['surname']['#text']
+            else:
+                creatorTemp['person']['familyName'] = author['person']['persname']['surname']
+            aff = author['@aff'].split()
+            creatorTemp['person']['organizations'] = []
+            for affele in aff:
+                org = findByValue(affele, orgs)
+                name = org['org']['orgname']['nameelt']
+                if isinstance(name, list):
+                    name = ', '.join(name)
+                # --== query: affiliation Id ==--
+                ouId = affRequest(name, ouID)
+                address = ', '.join(flatten(list(org['address'].values())))
+                creatorTemp['person']['organizations'].append(
+                    {'identifier': ouId, 'name': name, 
+                    'address':address})
+            storeCreator = copy.deepcopy(creatorTemp)
+            metaData['creators'].append(storeCreator)
+    else:   
+        author = authors # for the case there is only one author
         creatorTemp = creator.copy()
         creatorTemp['person']['givenName'] = author['person']['persname']['fname']
         if isinstance(author['person']['persname']['surname'], dict):
@@ -136,7 +162,6 @@ for name, filePath, folderPath in xmlNamesPaths(desiredPath):
                 'address':address})
         storeCreator = copy.deepcopy(creatorTemp)
         metaData['creators'].append(storeCreator)
-    
     # ---- dates ----
     # -- dateSubmitted --
     xmlReceived = xmlAdmin['received']
@@ -149,13 +174,17 @@ for name, filePath, folderPath in xmlNamesPaths(desiredPath):
     # print((metaData['dateSubmitted']))
     
     # -- dateAcceptd --
-    xmlDate = xmlAdmin['date']
-    year = xmlDate['year']
-    month = dictMonthNum[xmlDate['month']]
-    day = xmlDate['day']
-    if len(day) < 2:
-        day = '0' + day
-    metaData['dateAccepted'] = year +'-' + month + '-' + day
+    Flg_dateAccept = True
+    try:
+        xmlDate = xmlAdmin['date']
+        year = xmlDate['year']
+        month = dictMonthNum[xmlDate['month']]
+        day = xmlDate['day']
+        if len(day) < 2:
+            day = '0' + day
+        metaData['dateAccepted'] = year +'-' + month + '-' + day
+    except KeyError:
+        del metaData['dateAccepted']
     # print(metaData['dateAccepted'])
     
     # -- dateModiefied --
@@ -164,22 +193,48 @@ for name, filePath, folderPath in xmlNamesPaths(desiredPath):
     # -- datePublishedOnline -- 
     xmlPub = xmlArt['published']
     year = xmlPub[0]['pubfront']['date']['year']
-    month = dictMonthNum[xmlPub[0]['pubfront']['date']['month']]
-    day = xmlPub[0]['pubfront']['date']['day']
-    if len(day) < 2:
-        day = '0' + day
-    metaData['datePublishedOnline'] = year +'-' + month + '-' + day
+    if 'month' in xmlPub[0]['pubfront']['date'].keys():
+        monthxml = xmlPub[0]['pubfront']['date']['month']
+        try:
+            month = dictMonthNum[monthxml]
+        except:
+            month = xmlPub[0]['pubfront']['date']['month']
+        if len(month) < 2:
+            month = '0' + month
+    else:
+        month = "Unassigned"
+    if 'day' in xmlPub[0]['pubfront']['date'].keys():
+        day = xmlPub[0]['pubfront']['date']['day']
+        if len(day) < 2:
+            day = '0' + day
+    else:
+        day = "Unassigned"
+        
+    if (year == "Unassigned" or month == "Unassigned" or day == "Unassigned"):
+        del metaData['datePublishedOnline']
+    else:
+        metaData['datePublishedOnline'] = year +'-' + month + '-' + day
     # print(metaData['datePublishedOnline'])
     
     # -- datePublishedInPrint -- 
     year = xmlPub[1]['pubfront']['date']['year']
-    try:
-        month = dictMonthNum[xmlPub[1]['pubfront']['date']['month']]
-    except:
-        month = xmlPub[1]['pubfront']['date']['month']
-    day = xmlPub[1]['pubfront']['date']['day']
-    if len(day) < 2:
-        day = '0' + day
+    if 'month' in xmlPub[1]['pubfront']['date'].keys():
+        monthxml = xmlPub[1]['pubfront']['date']['month']
+        try:
+            month = dictMonthNum[monthxml]
+        except:
+            month = xmlPub[1]['pubfront']['date']['month']
+        if len(month) < 2:
+            month = '0' + month
+    else:
+        month = "Unassigned"
+    if 'day' in xmlPub[1]['pubfront']['date'].keys():
+        day = xmlPub[1]['pubfront']['date']['day']
+        if len(day) < 2:
+            day = '0' + day
+    else:
+        day = "Unassigned"
+    
     if (year == "Unassigned" or month == "Unassigned" or day == "Unassigned"):
         del metaData['datePublishedInPrint']
     else:
@@ -265,7 +320,7 @@ for name, filePath, folderPath in xmlNamesPaths(desiredPath):
     itemsRequest(Token, jsonwrite)
     
     # ==== add the doi and name of successful transformed file in to the list ====
-    with open("transformed_RSC.text", "a") as text_file:
+    with open("transformed_RSC.txt", "a") as text_file:
         text_file.write("%s\n" % DOI)
     # ==== remove the folder of the xml metadata and pdf, since they are succussfully uploaded ====
     send2trash.send2trash(folderPath)

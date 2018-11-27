@@ -6,6 +6,16 @@ import os, send2trash
 from urlRequest import loginRequest, affRequest, upfileRequest, itemsRequest # functions to interact with PuRe via REST API
 from pyExcelReader import from_DOI # function to read from .xlsx or .csv files
 
+# ==== subsidiary mapping files ====
+fileDOIaff = ".//copernicus//copernicus_DOI_aff.csv" # the helping file providing the mapping between DOI of metadata and the ctxID of the affiliation where the item should be sent to and the ou_ID of the corresponding author.
+
+desiredPath = './/copernicus' # where stores the metadata files that is to be transformed
+
+# ==== query: log in - get token ====
+namePass = "***REMOVED***:***REMOVED***"
+Token = loginRequest(namePass)
+
+# ==== help function for transformation ====
 def xmlNamesPaths(desiredPath):
     """
     Return the iterative list of file names, filepaths and folder paths in the desiredPath folder
@@ -93,17 +103,8 @@ def findByValue(value, orglist):
         if value in org['xsi:type']: # the key 'xsi:type' is known by understanding the structure of the .xml files
             return org
 
-# ==== subsidiary mapping files ====
-fileDOIaff = ".//copernicus//copernicus_DOI_aff.csv" # the helping file providing the mapping between DOI of metadata and the ctxID of the affiliation where the item should be sent to and the ou_ID of the corresponding author.
-
-desiredPath = './/copernicus' # where stores the metadata files that is to be transformed
-
-# ==== query: log in - get token ====
-namePass = "***REMOVED***:***REMOVED***"
-Token = loginRequest(namePass)
-
 # ==== read the text of doi of transformed files
-with open("transformed_cop.text", "r") as text_file:
+with open("transformed_cop.txt", "r") as text_file:
     doi_list_done = text_file.read().split('\n')
 
 # ==== process iteratively for all the .xml in the folders and subforders
@@ -152,6 +153,7 @@ for transformedFileName, filePath, folderPath in xmlNamesPaths(desiredPath):
         continue
         
     metaData['identifiers'][0]['id'] = DOI
+    jsondict['context']['objectID'] = ctxID
     try: # some example doesn't have ISSN value or ISBN value
         ISSN = findByValue('ISSN', content)['text']
     except KeyError:
@@ -274,7 +276,7 @@ for transformedFileName, filePath, folderPath in xmlNamesPaths(desiredPath):
     else:
         # the same situation as 'event'
         print('projectInfo: %s' % content)
-        input("type in a number and press enter to continue")
+        # input("type in a number and press enter to continue")
         # metaData['projectInfo'][0] = content
     
     # ---- files ----
@@ -294,7 +296,7 @@ for transformedFileName, filePath, folderPath in xmlNamesPaths(desiredPath):
     itemsRequest(Token, jsonwrite)
 
     # ==== add the doi and name of successful transformed file in to the list
-    with open("transformed_cop.text", "a") as text_file:
+    with open("transformed_cop.txt", "a") as text_file:
         text_file.write("%s\n" % DOI)
     # ==== remove the folder of the xml metadata and pdf, since they are succussfully uploaded
     send2trash.send2trash(filePath)

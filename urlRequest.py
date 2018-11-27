@@ -87,6 +87,7 @@ def itemsRequest(Token, jsonfile):
     headers = {'Authorization' : Token, 'Content-Type' : 'application/json'}
     res = requests.post(url, data = jsonfile, headers = headers)
     if not res.ok:
+        print(jsonfile)
         res.raise_for_status()
     else:
         resjson = res.json()
