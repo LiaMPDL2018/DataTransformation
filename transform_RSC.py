@@ -5,6 +5,12 @@ import copy # packadge to copy nested dict variables
 import os, send2trash
 from pyExcelReader import pyExlDict, from_DOI # functions to read from .xlsx or .csv files
 from urlRequest import loginRequest, affRequest, upfileRequest, itemsRequest # functions to interact with PuRe via REST API
+import logging
+logging.basicConfig( filename="RSC.log",
+                     filemode='a',
+                     level=logging.INFO,
+                     format= '%(asctime)s - %(levelname)s - %(message)s',
+                   )
 # ==== supplement mapping files ====
 fileMonthNum = './/subsidiary_doc//Month.xlsx'
 fileAbbrRSC = './/subsidiary_doc//Abbr-RSC.xlsx'
@@ -93,13 +99,13 @@ for name, filePath, folderPath in xmlNamesPaths(desiredPath):
         if doi is in doi_list_done, this means it has already been transformed and uploaded.
         """
         send2trash.send2trash(folderPath)
-        print("file has been uploaded")
+        logging.warning("File: %s, DOI: %s has been uploaded." % (transformedFileName, DOI))
         continue
     if ('xxx' in ctxID):
         """
         'xxx' in ctxID means there's no matching for this doi, so do not do transformation or uploading
         """
-        print("no ctxID matching")
+        logging.warning("File: %s, DOI: %s has no ctxID matching." % (transformedFileName, DOI))
         continue 
         
     metaData['identifiers'][0]['id'] = xmlAdmin['doi']
@@ -130,7 +136,11 @@ for name, filePath, folderPath in xmlNamesPaths(desiredPath):
                 org = findByValue(affele, orgs)
                 name = org['org']['orgname']['nameelt']
                 if isinstance(name, list):
-                    name = ', '.join(name)
+                    try:
+                        name = ', '.join(name)
+                    except TypeError as e:
+                        name = ''
+                        logging.error(e)
                 # --== query: affiliation Id ==--
                 ouId = affRequest(name, ouID)
                 address = ', '.join(flatten(list(org['address'].values())))
@@ -184,6 +194,7 @@ for name, filePath, folderPath in xmlNamesPaths(desiredPath):
             day = '0' + day
         metaData['dateAccepted'] = year +'-' + month + '-' + day
     except KeyError:
+        logging.info("File: %s, DOI: %s has no dateAccepted!" % (transformedFileName, DOI))
         del metaData['dateAccepted']
     # print(metaData['dateAccepted'])
     
@@ -213,6 +224,7 @@ for name, filePath, folderPath in xmlNamesPaths(desiredPath):
     if (year == "Unassigned" or month == "Unassigned" or day == "Unassigned"):
         del metaData['datePublishedOnline']
     else:
+        logging.info("File: %s, DOI: %s has no datePublishedOnline!" % (transformedFileName, DOI))
         metaData['datePublishedOnline'] = year +'-' + month + '-' + day
     # print(metaData['datePublishedOnline'])
     
@@ -236,6 +248,7 @@ for name, filePath, folderPath in xmlNamesPaths(desiredPath):
         day = "Unassigned"
     
     if (year == "Unassigned" or month == "Unassigned" or day == "Unassigned"):
+        logging.info("File: %s, DOI: %s has no datePublishedInPrint!" % (transformedFileName, DOI))
         del metaData['datePublishedInPrint']
     else:
         metaData['datePublishedInPrint'] = year +'-' + month + '-' + day
@@ -280,7 +293,6 @@ for name, filePath, folderPath in xmlNamesPaths(desiredPath):
                 project['grantIdentifier']['id'] = xmlLinks['fundgrp']['funder']['award-number']
                 project['fundingInfo']['fundingOrganization']['title'] = xmlLinks['fundgrp']['funder']['funder-name']
             elif isinstance(xmlLinks['fundgrp']['funder'], list):
-                print("%s: multiple funders" % transformedFileName)
                 metaData['projectInfo'] = []
                 for funder in xmlLinks['fundgrp']['funder']:
                     projectTemp = project.copy()
@@ -292,13 +304,12 @@ for name, filePath, folderPath in xmlNamesPaths(desiredPath):
                     projectStore = copy.deepcopy(projectTemp)
                     metaData['projectInfo'].append(projectStore)
             else:
-                print("fungrp in %s.xml is neither dict nor list" % transformedFileName)
                 pass
         else:
-            print("%s: no projectInfo" % transformedFileName)
+            logging.info("File: %s, DOI: %s has no projectInfo" % (transformedFileName, DOI))
             del metaData['projectInfo']
     else:
-        print("%s: no projectInfo" % transformedFileName)
+        logging.info("File: %s, DOI: %s has no projectInfo" % (transformedFileName, DOI))
         del metaData['projectInfo']
     
     # ---- files ---- list
@@ -309,18 +320,23 @@ for name, filePath, folderPath in xmlNamesPaths(desiredPath):
     pdfPath = folderPath +'\\' + pdfName
     upfileId = upfileRequest(Token, pdfPath, pdfName)
     if upfileId == "No PDF":
-        print("item" + transformedFileName + "has no PDF attached")
+        logging.info("File: %s, DOI: %s has no PDF attached" % (transformedFileName, DOI))
         del jsondict['files']
-    else:
+    elif isinstance(upfileId, str):
         jsondict['files'][0]['content'] = upfileId
+    else:
+        logging.error("File: %s, DOI: %s has PDF staging error" % (transformedFileName, DOI))
 
     jsonwrite = json.dumps(jsondict, indent=2) # conver json obj to string to upload via REST API
     
     # --== query: items - publication ==--
-    itemsRequest(Token, jsonwrite)
-    
-    # ==== add the doi and name of successful transformed file in to the list ====
-    with open("transformed_RSC.txt", "a") as text_file:
-        text_file.write("%s\n" % DOI)
-    # ==== remove the folder of the xml metadata and pdf, since they are succussfully uploaded ====
-    send2trash.send2trash(folderPath)
+    res = itemsRequest(Token, jsonwrite)
+    if not res.ok:
+        logging.error("File: %s, DOI: %s" % (transformedFileName, DOI) +res.text, exc_info=True)
+    else:
+        logging.info("File: %s, DOI: %s is submitted successfully" % (transformedFileName, DOI))
+        # ==== add the doi and name of successful transformed file in to the list ====
+        with open("transformed_RSC.txt", "a") as text_file:
+            text_file.write("%s\n" % DOI)
+        # ==== remove the folder of the xml metadata and pdf, since they are succussfully uploaded ====
+        send2trash.send2trash(folderPath)

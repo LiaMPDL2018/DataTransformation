@@ -5,14 +5,19 @@ import copy
 import os, send2trash
 from urlRequest import loginRequest, affRequest, upfileRequest, itemsRequest # functions to interact with PuRe via REST API
 from pyExcelReader import from_DOI # function to read from .xlsx or .csv files
-
+import logging
+logging.basicConfig( filename="copernicus.log",
+                     filemode='a',
+                     level=logging.INFO,
+                     format= '%(asctime)s - %(levelname)s - %(message)s',
+                   )
 # ==== subsidiary mapping files ====
 fileDOIaff = ".//copernicus//copernicus_DOI_aff.csv" # the helping file providing the mapping between DOI of metadata and the ctxID of the affiliation where the item should be sent to and the ou_ID of the corresponding author.
 
 desiredPath = './/copernicus' # where stores the metadata files that is to be transformed
 
 # ==== query: log in - get token ====
-namePass = "name:password"
+namePass = "***REMOVED***:***REMOVED***"
 Token = loginRequest(namePass)
 
 # ==== help function for transformation ====
@@ -143,13 +148,13 @@ for transformedFileName, filePath, folderPath in xmlNamesPaths(desiredPath):
             send2trash.send2trash(pdfName)
         except FileNotFoundError:
             pass
-        print("file already submitted")
+        logging.warning("File: %s, DOI: %s has been uploaded." % (transformedFileName, DOI))
         continue
     if ('xxx' in ctxID):
         """
         'xxx' in ctxID means there's no matching for this doi, so do not do transformation or uploading; 
         """
-        print("no ctxID matching")
+        logging.warning("File: %s, DOI: %s has no ctxID matching." % (transformedFileName, DOI))
         continue
         
     metaData['identifiers'][0]['id'] = DOI
@@ -226,8 +231,8 @@ for transformedFileName, filePath, folderPath in xmlNamesPaths(desiredPath):
         del metaData['event']
     else:
         # since in the examples tested so far there is no instance that contains 'event' information, it is not known how to map the 'xml-event' to 'json-event'. This part needs modification if the 'event' shows up in xml metadata in the future. 
+        logging.warning("File: %s, DOI: %s has events.\n Transformation script needs to be adjusted for event.\n event: %s" % (transformedFileName, DOI, content))
         print('event: %s' % content)
-        input("enter a number and press enter to continue")
 
     # ---- sources ----
     keypart_xml = ['source', 'volume', 'issue','start','end','sequence']# the number of keys here equals to the number of keys in key_json, and the order should be mapped to each other
@@ -276,31 +281,37 @@ for transformedFileName, filePath, folderPath in xmlNamesPaths(desiredPath):
     else:
         # the same situation as 'event'
         print('projectInfo: %s' % content)
-        # input("type in a number and press enter to continue")
-        # metaData['projectInfo'][0] = content
+        logging.warning("File: %s, DOI: %s has projectInfo.\n Transformation script needs to be adjusted for projectinfo.\n projectinfo: %s" % (transformedFileName, DOI, content))
     
     # ---- files ----
     pdfName = transformedFileName + '.pdf'
     jsondict['files'][0]['metadata']['title'] = pdfName
     pdfPath = folderPath + '\\' + pdfName
     upfileId = upfileRequest(Token, pdfPath, pdfName)
+
     if upfileId == "No PDF":
-        print("item " + transformedFileName + " has no PDF attached")
+        logging.info("File: %s, DOI: %s has no PDF attached" % (transformedFileName, DOI))
         del jsondict['files']
-    else:
+    elif isinstance(upfileId, str):
         jsondict['files'][0]['content'] = upfileId
+    else:
+        logging.error("File: %s, DOI: %s has PDF staging error" % (transformedFileName, DOI))
 
     jsonwrite = json.dumps(jsondict, indent=2)
 
     # --== query: items - publication ==--
-    itemsRequest(Token, jsonwrite)
-
-    # ==== add the doi and name of successful transformed file in to the list
-    with open("transformed_cop.txt", "a") as text_file:
-        text_file.write("%s\n" % DOI)
-    # ==== remove the folder of the xml metadata and pdf, since they are succussfully uploaded
-    send2trash.send2trash(filePath)
-    try: 
-        send2trash.send2trash(pdfName)
-    except FileNotFoundError:
-        pass
+    res = itemsRequest(Token, jsonwrite)
+    if not res.ok:
+        logging.error("File: %s, DOI: %s" % (transformedFileName, DOI) +res.text, exc_info=True)
+    else:
+        logging.info("File: %s, DOI: %s is submitted successfully" % (transformedFileName, DOI))
+        
+        # ==== add the doi and name of successful transformed file in to the list
+        with open("transformed_cop.txt", "a") as text_file:
+            text_file.write("%s\n" % DOI)
+        # ==== remove the folder of the xml metadata and pdf, since they are succussfully uploaded
+        send2trash.send2trash(filePath)
+        try: 
+            send2trash.send2trash(pdfName)
+        except FileNotFoundError:
+            pass
