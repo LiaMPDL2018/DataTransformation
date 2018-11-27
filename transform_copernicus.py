@@ -12,7 +12,7 @@ fileDOIaff = ".//copernicus//copernicus_DOI_aff.csv" # the helping file providin
 desiredPath = './/copernicus' # where stores the metadata files that is to be transformed
 
 # ==== query: log in - get token ====
-namePass = "***REMOVED***:***REMOVED***"
+namePass = "name:password"
 Token = loginRequest(namePass)
 
 # ==== help function for transformation ====

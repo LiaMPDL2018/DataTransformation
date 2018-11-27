@@ -15,7 +15,7 @@ dictAbbrJournal = pyExlDict(fileAbbrRSC)
 desiredPath = './30759' # folder name need to be changed
 
 # ==== query: log in - get token ====
-namePass = "***REMOVED***:***REMOVED***"
+namePass = "name:password"
 Token = loginRequest(namePass)
 
 # ==== help function for transformation ====
